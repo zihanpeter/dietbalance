@@ -1,0 +1,25 @@
+# Cloudflare Tunnel 叠加文件：在 docker-compose.yml 基础上再跑一个 cloudflared
+# 容器，把服务通过出站连接暴露到 https://你的域名，服务器完全不需要开入站端口。
+#
+# 用法：
+#   1. 去 Cloudflare Zero Trust → Networks → Tunnels 创建 Tunnel，拿到 Token
+#   2. export CLOUDFLARE_TUNNEL_TOKEN=你的Token
+#   3. docker compose -f docker-compose.yml -f docker-compose.cloudflared.yml up -d
+#
+# 在 Cloudflare 控制台里，为这个 Tunnel 配置一条 Public Hostname：
+#   Subdomain: food   Domain: example.com
+#   Service:   HTTP   URL: http://web:8000
+#
+# Cloudflare 自动签发 SSL，浏览器 https://food.example.com 就能访问。
+
+services:
+  web:
+    ports: !reset []   # 关闭宿主机端口映射，只走内部网络
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: foodquery-cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - web

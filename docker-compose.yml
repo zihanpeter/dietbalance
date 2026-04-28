@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    image: foodquery:latest
+    container_name: foodquery
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      USDA_API_KEY: ${USDA_API_KEY:-DEMO_KEY}
+      WEB_CONCURRENCY: ${WEB_CONCURRENCY:-2}
+      GUNICORN_LOGLEVEL: info
+    volumes:
+      - foodquery_cache:/app/.cache
+
+volumes:
+  foodquery_cache:

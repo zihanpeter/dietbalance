@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }} · 食品营养查询</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <main class="page">
+        <header class="hero-header">
+            <div class="badge">Powered by USDA FoodData Central & Open Food Facts</div>
+            <h1>
+                <span class="brand">{{ app_name }}</span>
+                <span class="hero-sub">食品营养价值查询</span>
+            </h1>
+            <p class="subtitle">输入食品名称（中文或英文均可），查看每 100 克 / 毫升的营养信息。</p>
+
+            <form class="search-form" action="{{ url_for('index') }}" method="get" autocomplete="off">
+                <input
+                    type="text"
+                    name="q"
+                    value="{{ query }}"
+                    placeholder="例如：可乐、巧克力、apple、milk..."
+                    class="search-input"
+                    autofocus
+                    required
+                />
+                <button type="submit" class="btn btn-primary">搜索</button>
+            </form>
+        </header>
+
+        {% if error %}
+            <div class="alert alert-error">
+                <strong>出错了：</strong>{{ error }}
+            </div>
+        {% endif %}
+
+        {% if notice %}
+            <div class="alert alert-warn">
+                <strong>提示：</strong>{{ notice }}
+            </div>
+        {% endif %}
+
+        {% if searched and not error %}
+            {% if results %}
+                <section class="results">
+                    <div class="results-meta">
+                        找到 <strong>{{ results|length }}</strong> 条与 “<em>{{ query }}</em>” 相关的结果
+                    </div>
+
+                    {% for item in results %}
+                        <article class="food-card">
+                            <div class="food-head">
+                                {% if item.image_url %}
+                                    <img class="food-img" src="{{ item.image_url }}" alt="{{ item.name }}" loading="lazy" />
+                                {% else %}
+                                    <div class="food-img placeholder">无图</div>
+                                {% endif %}
+                                <div class="food-info">
+                                    <h2 class="food-name">{{ item.name }}</h2>
+                                    <div class="tag-row">
+                                        {% if item.source == "USDA" %}
+                                            <span class="source-tag source-usda">USDA</span>
+                                        {% elif item.source == "OpenFoodFacts" %}
+                                            <span class="source-tag source-off">Open Food Facts</span>
+                                        {% endif %}
+                                        {% if item.nutriscore %}
+                                            <span class="nutriscore nutriscore-{{ item.nutriscore|lower }}">
+                                                Nutri-Score {{ item.nutriscore }}
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                    {% if item.brand %}
+                                        <div class="food-brand">品牌：{{ item.brand }}</div>
+                                    {% endif %}
+                                    {% if item.quantity %}
+                                        <div class="food-meta">规格：{{ item.quantity }}</div>
+                                    {% endif %}
+                                    {% if item.categories %}
+                                        <div class="food-meta dim">{{ item.categories }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            {% if item.has_nutrition %}
+                                <div class="nutri-title">每 100 g / 100 ml 营养成分</div>
+                                <table class="nutri-table">
+                                    <tbody>
+                                    {% for n in item.nutrition_per_100g %}
+                                        {% if n.value is not none %}
+                                            <tr>
+                                                <th>{{ n.label }}</th>
+                                                <td>
+                                                    <span class="nutri-value">{{ '%g' % n.value }}</span>
+                                                    <span class="nutri-unit">{{ n.unit }}</span>
+                                                </td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <div class="muted">该食品暂无公开的详细营养数据。</div>
+                            {% endif %}
+
+                            {% if item.source_url %}
+                                <a class="source-link" href="{{ item.source_url }}" target="_blank" rel="noopener">
+                                    在 Open Food Facts 查看原始数据 →
+                                </a>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </section>
+            {% else %}
+                <div class="empty">
+                    没有找到与 “<em>{{ query }}</em>” 相关的食品，换个关键词试试？
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <footer class="footer">
+            <span>© {{ year }} {{ app_name }}</span>
+            <span class="dim">数据来源：USDA FoodData Central · Open Food Facts</span>
+        </footer>
+    </main>
+</body>
+</html>
