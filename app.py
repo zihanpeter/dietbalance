@@ -38,7 +38,7 @@ def index() -> str:
 
     return render_template(
         "index.html",
-        app_name="FoodQuery",
+        app_name="DietBalance",
         year=datetime.now().year,
         query=query,
         results=results,

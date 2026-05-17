@@ -10,7 +10,7 @@ from .models import FoodItem, NutritionFact
 SEARCH_URL_V3 = "https://search.openfoodfacts.org/search"
 SEARCH_URL_LEGACY = "https://world.openfoodfacts.org/cgi/search.pl"
 REQUEST_TIMEOUT = 10
-USER_AGENT = "FoodQuery/0.1 (https://example.com)"
+USER_AGENT = "DietBalance/0.1 (https://example.com)"
 
 FIELDS = [
     "code",

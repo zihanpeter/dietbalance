@@ -1,4 +1,4 @@
-# FoodQuery
+# DietBalance
 
 一个用 Flask 搭建的食品营养查询网页。输入食品名称（支持中文和英文），显示每 100 克 / 毫升的营养成分。
 
@@ -36,11 +36,16 @@ pip install -r requirements.txt
 
 ### 3. （可选）配置 USDA API Key
 
-默认使用 `DEMO_KEY`，限额 30 次/IP/小时。若频繁使用，建议在 [USDA 官网](https://fdc.nal.usda.gov/api-key-signup) 免费申请一个 API Key，然后设置环境变量：
+程序只会读取项目根目录 `.env` 文件中的 `USDA_API_KEY`。  
+若未读取到，会使用 `DEMO_KEY`（30 次/IP/小时）。
 
-```powershell
-$env:USDA_API_KEY = "你的KEY"
+建议在 [USDA 官网](https://fdc.nal.usda.gov/api-key-signup) 免费申请 API Key，然后写入 `.env`：
+
+```dotenv
+USDA_API_KEY=你的KEY
 ```
+
+不再支持通过环境变量直接注入 `USDA_API_KEY`。
 
 ### 4. 运行（开发模式）
 
@@ -66,23 +71,26 @@ gunicorn -c gunicorn.conf.py wsgi:app
 
 ## 生产部署
 
-详见 [DEPLOYMENT.md](./DEPLOYMENT.md)。最快路径：
+详见 [DEPLOYMENT.md](./DEPLOYMENT.md)。当前推荐 `systemd` 托管：
 
 ```bash
-docker compose up -d --build
+sudo systemctl enable --now dietbalance cloudflared
+```
+
+查看运行状态：
+
+```bash
+sudo systemctl status dietbalance cloudflared
 ```
 
 ## 项目结构
 
 ```
-FoodQuery/
+DietBalance/
 ├── .venv/                      # 虚拟环境（不入库）
 ├── app.py                      # Flask 入口（本地开发）
 ├── wsgi.py                     # 生产 WSGI 入口
 ├── gunicorn.conf.py            # Gunicorn 配置
-├── Dockerfile                  # 容器构建
-├── docker-compose.yml          # 一键启动
-├── Procfile                    # PaaS (Render/Fly.io) 启动
 ├── .env.example                # 环境变量样例
 ├── food_api.py                 # 搜索编排器（统一对外）
 ├── sources/

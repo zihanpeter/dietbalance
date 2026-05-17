@@ -2,11 +2,11 @@
 
 官方文档：https://fdc.nal.usda.gov/api-guide
 申请免费 API Key：https://fdc.nal.usda.gov/api-key-signup
-未设置 USDA_API_KEY 环境变量时使用 DEMO_KEY（30 次/IP/小时）。
+未在项目根目录 .env 中设置 USDA_API_KEY 时使用 DEMO_KEY（30 次/IP/小时）。
 """
 from __future__ import annotations
 
-import os
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -16,7 +16,8 @@ from .models import FoodItem, NutritionFact
 
 SEARCH_URL = "https://api.nal.usda.gov/fdc/v1/foods/search"
 REQUEST_TIMEOUT = 10
-USER_AGENT = "FoodQuery/0.1"
+USER_AGENT = "DietBalance/0.1"
+ENV_FILE_PATH = Path(__file__).resolve().parent.parent / ".env"
 
 # USDA nutrientId -> (中文标签, 单位, 换算系数)
 # USDA 中 sodium 是 mg，我们统一用 g。
@@ -38,8 +39,32 @@ NUTRIENT_MAP: dict[int, tuple[str, str, float]] = {
 DISPLAY_ORDER = [1008, 1003, 1004, 1258, 1005, 2000, 1079, 1093, 1087, 1089, 1162]
 
 
+def _read_key_from_env_file(file_path: Path) -> str:
+    """从 .env 风格文件读取 USDA_API_KEY，读取失败时返回空字符串。"""
+    if not file_path.exists() or not file_path.is_file():
+        return ""
+
+    try:
+        for raw_line in file_path.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            if key.strip() != "USDA_API_KEY":
+                continue
+            cleaned = value.strip().strip('"').strip("'")
+            if cleaned:
+                return cleaned
+    except OSError:
+        return ""
+    return ""
+
+
 def _api_key() -> str:
-    return os.environ.get("USDA_API_KEY", "DEMO_KEY").strip() or "DEMO_KEY"
+    key_from_file = _read_key_from_env_file(ENV_FILE_PATH)
+    if key_from_file:
+        return key_from_file
+    return "DEMO_KEY"
 
 
 def _parse_food(food: dict[str, Any]) -> FoodItem:
