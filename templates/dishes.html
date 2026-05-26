@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }} · 食堂菜品营养速查</title>
+    <meta name="description" content="{{ app_name }} 食堂菜品营养热量速查：每 100 g 的热量、宏量营养素占比与菜品特点。" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <main class="page">
+        <header class="hero-header">
+            <div class="badge">DISHES · 食堂菜品速查</div>
+            <h1>
+                <span class="brand">{{ app_name }}</span>
+                <span class="hero-sub">食堂菜品营养速查</span>
+            </h1>
+            <p class="subtitle">输入菜名即时筛选，查看每 100 g 的热量、宏量营养素分布与菜品特点。共收录 {{ dishes|length }} 道菜。</p>
+
+            <form class="search-form" onsubmit="return false" autocomplete="off">
+                <input
+                    id="dish-search"
+                    type="text"
+                    placeholder="输入菜名筛选，例如：宫保鸡丁、丝瓜、土豆..."
+                    class="search-input"
+                    autofocus
+                />
+                <a class="btn btn-secondary" href="{{ url_for('index') }}">← 返回首页</a>
+            </form>
+
+            <div class="chip-row" role="tablist" aria-label="按热量筛选">
+                <button type="button" class="chip is-active" data-level="all">全部</button>
+                <button type="button" class="chip" data-level="low">低热 · &lt; 100 kcal</button>
+                <button type="button" class="chip" data-level="mid">中热 · 100–199 kcal</button>
+                <button type="button" class="chip" data-level="high">高热 · ≥ 200 kcal</button>
+            </div>
+        </header>
+
+        <div class="results-meta" id="dish-count">显示全部 {{ dishes|length }} 道菜</div>
+
+        <section class="dish-grid" id="dish-grid">
+            {% for d in dishes %}
+                <article
+                    class="dish-card"
+                    data-name="{{ d.name }}"
+                    data-level="{{ d.calorie_level }}"
+                >
+                    <div class="dish-head">
+                        <h2 class="dish-name">{{ d.name }}</h2>
+                        <span class="kcal-badge kcal-{{ d.calorie_level }}">
+                            <span class="kcal-value">{{ d.kcal }}</span>
+                            <span class="kcal-unit">kcal / 100g</span>
+                        </span>
+                    </div>
+
+                    <div class="macro-bar" aria-hidden="true">
+                        {% if d.carb_pct %}
+                            <span class="macro-seg macro-carb" data-pct="{{ '%g' % d.carb_pct }}"></span>
+                        {% endif %}
+                        {% if d.protein_pct %}
+                            <span class="macro-seg macro-protein" data-pct="{{ '%g' % d.protein_pct }}"></span>
+                        {% endif %}
+                        {% if d.fat_pct %}
+                            <span class="macro-seg macro-fat" data-pct="{{ '%g' % d.fat_pct }}"></span>
+                        {% endif %}
+                    </div>
+
+                    <ul class="macro-legend">
+                        <li>
+                            <span class="dot dot-carb"></span>
+                            <span class="macro-label">碳水</span>
+                            <span class="macro-pct">{{ '%g' % d.carb_pct }}%</span>
+                            <span class="macro-grams">{{ '%g' % d.carb_g }} g</span>
+                        </li>
+                        <li>
+                            <span class="dot dot-protein"></span>
+                            <span class="macro-label">蛋白质</span>
+                            <span class="macro-pct">{{ '%g' % d.protein_pct }}%</span>
+                            <span class="macro-grams">{{ '%g' % d.protein_g }} g</span>
+                        </li>
+                        <li>
+                            <span class="dot dot-fat"></span>
+                            <span class="macro-label">脂肪</span>
+                            <span class="macro-pct">{{ '%g' % d.fat_pct }}%</span>
+                            <span class="macro-grams">{{ '%g' % d.fat_g }} g</span>
+                        </li>
+                    </ul>
+
+                    {% if d.features %}
+                        <p class="dish-features">{{ d.features }}</p>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </section>
+
+        <div class="empty" id="dish-empty" hidden>
+            没有匹配的菜品，换个关键词或筛选条件试试。
+        </div>
+
+        <footer class="footer">
+            <span>© {{ year }} {{ app_name }}</span>
+            <span class="dim">数据来源：食堂菜品营养热量与特点表（每 100 g）</span>
+        </footer>
+    </main>
+
+    <script>
+        (function () {
+            var input = document.getElementById('dish-search');
+            var grid = document.getElementById('dish-grid');
+            var empty = document.getElementById('dish-empty');
+            var counter = document.getElementById('dish-count');
+            var chips = document.querySelectorAll('.chip');
+            var cards = Array.prototype.slice.call(grid.querySelectorAll('.dish-card'));
+            var total = cards.length;
+            var activeLevel = 'all';
+
+            document.querySelectorAll('.macro-seg').forEach(function (seg) {
+                var pct = parseFloat(seg.getAttribute('data-pct'));
+                if (!isNaN(pct) && pct > 0) {
+                    seg.style.width = pct + '%';
+                }
+            });
+
+            function apply() {
+                var q = (input.value || '').trim().toLowerCase();
+                var shown = 0;
+                cards.forEach(function (card) {
+                    var name = (card.getAttribute('data-name') || '').toLowerCase();
+                    var level = card.getAttribute('data-level');
+                    var matchName = !q || name.indexOf(q) !== -1;
+                    var matchLevel = activeLevel === 'all' || level === activeLevel;
+                    var visible = matchName && matchLevel;
+                    card.hidden = !visible;
+                    if (visible) shown += 1;
+                });
+                if (shown === 0) {
+                    empty.hidden = false;
+                    counter.textContent = '没有匹配的菜品';
+                } else {
+                    empty.hidden = true;
+                    if (q || activeLevel !== 'all') {
+                        counter.textContent = '匹配 ' + shown + ' / ' + total + ' 道菜';
+                    } else {
+                        counter.textContent = '显示全部 ' + total + ' 道菜';
+                    }
+                }
+            }
+
+            input.addEventListener('input', apply);
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    chips.forEach(function (c) { c.classList.remove('is-active'); });
+                    chip.classList.add('is-active');
+                    activeLevel = chip.getAttribute('data-level') || 'all';
+                    apply();
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

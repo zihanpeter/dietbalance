@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ app_name }} · 食品营养查询</title>
+    <title>{{ app_name }} · 智能食品营养查询</title>
+    <meta name="description" content="{{ app_name }} 提供中英文食品检索与每 100 克 / 毫升营养信息查询。" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
@@ -12,9 +13,9 @@
             <div class="badge">Powered by USDA FoodData Central & Open Food Facts</div>
             <h1>
                 <span class="brand">{{ app_name }}</span>
-                <span class="hero-sub">食品营养价值查询</span>
+                <span class="hero-sub">智能饮食营养查询助手</span>
             </h1>
-            <p class="subtitle">输入食品名称（中文或英文均可），查看每 100 克 / 毫升的营养信息。</p>
+            <p class="subtitle">{{ app_name }} 支持中英文食品搜索，快速查看每 100 克 / 毫升的关键营养数据。</p>
 
             <form class="search-form" action="{{ url_for('index') }}" method="get" autocomplete="off">
                 <input
@@ -28,6 +29,10 @@
                 />
                 <button type="submit" class="btn btn-primary">搜索</button>
             </form>
+
+            <div class="hero-actions">
+                <a class="btn btn-secondary" href="{{ url_for('dishes') }}">查询菜品 →</a>
+            </div>
         </header>
 
         {% if error %}

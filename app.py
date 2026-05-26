@@ -5,6 +5,7 @@ from flask import Flask, render_template, request
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from food_api import search_food
+from sources.dishes import load_dishes
 
 app = Flask(__name__)
 app.config["PREFERRED_URL_SCHEME"] = os.environ.get("PREFERRED_URL_SCHEME", "https")
@@ -45,6 +46,18 @@ def index() -> str:
         error=error,
         notice=notice,
         searched=bool(query),
+    )
+
+
+@app.route("/dishes", methods=["GET"])
+def dishes() -> str:
+    """食堂菜品营养热量查询页面。"""
+    dish_list = [d.to_dict() for d in load_dishes()]
+    return render_template(
+        "dishes.html",
+        app_name="DietBalance",
+        year=datetime.now().year,
+        dishes=dish_list,
     )
 
 
