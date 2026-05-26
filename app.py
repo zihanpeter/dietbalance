@@ -1,7 +1,8 @@
 import os
 from datetime import datetime
+from pathlib import Path
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from food_api import search_food
@@ -9,6 +10,24 @@ from sources.dishes import load_dishes
 
 app = Flask(__name__)
 app.config["PREFERRED_URL_SCHEME"] = os.environ.get("PREFERRED_URL_SCHEME", "https")
+
+
+@app.context_processor
+def _inject_static_versioner():
+    """提供 ``versioned_static(filename)``：以静态文件 mtime 作为版本号，
+    避免修改 CSS / JS 后被 Cloudflare 或浏览器缓存咬住。"""
+    static_root = Path(app.static_folder or "static")
+
+    def versioned_static(filename: str) -> str:
+        url = url_for("static", filename=filename)
+        try:
+            mtime = int((static_root / filename).stat().st_mtime)
+        except OSError:
+            return url
+        sep = "&" if "?" in url else "?"
+        return f"{url}{sep}v={mtime}"
+
+    return {"versioned_static": versioned_static}
 
 # 反向代理层数：默认 1（即直接由 Cloudflare / Nginx / PaaS 前代理）。
 # 若链路是 Cloudflare → Nginx → app，则设为 2，以此类推。
