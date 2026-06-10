@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }} · 智能饮食营养查询助手</title>
+    <meta name="description" content="{{ app_name }} 让你一键查询食品营养与食堂菜品搭配，吃得明白又轻盈。" />
+    <link rel="stylesheet" href="{{ versioned_static('styles.css') }}" />
+</head>
+<body class="landing-body">
+    <main class="landing">
+        <div class="landing-card">
+            <div class="badge">DietBalance · 智能饮食助手</div>
+
+            <h1 class="landing-title">
+                <span class="brand">DietBalance</span>
+            </h1>
+            <p class="landing-desc-en">
+                This is a website that helps you check the calories of food,
+                manage your daily nutrient intake and look up cafeteria menus.
+                You can search for the calorie and nutrient composition of each
+                ingredient, browse the cafeteria menu to decide on your lunch,
+                or provide relevant information to get a meal schedule for
+                three meals a day for different purposes.
+            </p>
+
+            <div class="landing-actions">
+                <a class="btn btn-primary btn-lg" href="{{ url_for('search') }}">
+                    Let's Start <span class="btn-arrow">→</span>
+                </a>
+                <a class="btn btn-secondary btn-lg" href="{{ url_for('dishes') }}">
+                    浏览菜品库
+                </a>
+            </div>
+
+            <ul class="landing-features">
+                <li>
+                    <span class="feat-icon" aria-hidden="true">🔎</span>
+                    <div>
+                        <strong>食品营养查询</strong>
+                        <span>中英文搜索，每 100 g / ml 关键营养数据。</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="feat-icon" aria-hidden="true">🍱</span>
+                    <div>
+                        <strong>食堂菜品速查</strong>
+                        <span>194 道菜的热量、宏量素占比与菜品特点。</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="feat-icon" aria-hidden="true">⚖️</span>
+                    <div>
+                        <strong>均衡视角</strong>
+                        <span>一眼看清碳水、蛋白、脂肪的能量分配。</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <footer class="footer landing-footer">
+            <span>© {{ year }} {{ app_name }}</span>
+            <span class="dim">数据来源：USDA FoodData Central · Open Food Facts · 食堂菜品表</span>
+        </footer>
+    </main>
+</body>
+</html>

@@ -43,6 +43,17 @@ app.wsgi_app = ProxyFix(
 
 @app.route("/", methods=["GET"])
 def index() -> str:
+    """封面 / 落地页。"""
+    return render_template(
+        "landing.html",
+        app_name="DietBalance",
+        year=datetime.now().year,
+    )
+
+
+@app.route("/search", methods=["GET"])
+def search() -> str:
+    """食品营养查询页。"""
     query = (request.args.get("q") or "").strip()
     results = []
     error = ""

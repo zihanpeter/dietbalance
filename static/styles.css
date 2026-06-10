@@ -146,6 +146,33 @@ h1 {
     box-shadow: 0 6px 14px rgba(249, 115, 22, 0.2);
 }
 
+.btn-ghost {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+    color: #b45309;
+    background: rgba(249, 115, 22, 0.08);
+}
+
+.btn-lg {
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 14px;
+}
+
+.btn-arrow {
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.18s ease;
+}
+
+.btn-lg:hover .btn-arrow {
+    transform: translateX(3px);
+}
+
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -200,6 +227,10 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.dish-card[hidden] {
+    display: none;
 }
 
 .dish-head {
@@ -558,4 +589,156 @@ h1 {
 
 .dim {
     opacity: 0.7;
+}
+
+/* ===== Landing / Cover page ===== */
+
+.landing-body {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background:
+        radial-gradient(900px 600px at 80% 110%, rgba(251, 191, 36, 0.35) 0%, transparent 60%),
+        radial-gradient(1100px 700px at -10% -10%, rgba(248, 113, 113, 0.32) 0%, transparent 60%),
+        radial-gradient(800px 500px at 50% 50%, rgba(254, 215, 170, 0.45) 0%, transparent 70%),
+        linear-gradient(135deg, #fff7ed 0%, #fef2f2 100%);
+}
+
+.landing {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 22px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-height: 100vh;
+}
+
+.landing-card {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    padding: 44px 36px 38px;
+    box-shadow:
+        0 24px 60px rgba(251, 113, 133, 0.18),
+        0 4px 16px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.landing-title {
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 900;
+    margin-top: 6px;
+}
+
+.landing-title .brand {
+    background: linear-gradient(135deg, #f97316, #ef4444 60%, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.landing-tagline {
+    font-size: clamp(18px, 2.4vw, 22px);
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.01em;
+}
+
+.landing-desc {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 480px;
+}
+
+.landing-desc-en {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 560px;
+    letter-spacing: 0.005em;
+}
+
+.landing-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.landing-features {
+    list-style: none;
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    text-align: left;
+}
+
+.landing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(17, 24, 39, 0.05);
+    border-radius: 14px;
+    padding: 12px 14px;
+}
+
+.landing-features strong {
+    display: block;
+    color: #111827;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.landing-features span {
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.feat-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fed7aa, #fecaca);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-footer {
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .landing-features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .landing-features li {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px;
+    }
 }
