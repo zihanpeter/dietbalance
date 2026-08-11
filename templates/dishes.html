@@ -15,7 +15,7 @@
                 <span class="brand">{{ app_name }}</span>
                 <span class="hero-sub">食堂菜品营养速查</span>
             </h1>
-            <p class="subtitle">输入菜名即时筛选，查看每 100 g 的热量、宏量营养素分布与菜品特点。共收录 {{ dishes|length }} 道菜。</p>
+            <p class="subtitle">输入菜名即时筛选，查看一份出品总热量、每 100 g 营养分布与菜品特点。共收录 {{ dishes|length }} 道菜。</p>
 
             <form class="search-form" onsubmit="return false" autocomplete="off">
                 <input
@@ -48,11 +48,30 @@
                 >
                     <div class="dish-head">
                         <h2 class="dish-name">{{ d.name }}</h2>
-                        <span class="kcal-badge kcal-{{ d.calorie_level }}">
-                            <span class="kcal-value">{{ d.kcal }}</span>
-                            <span class="kcal-unit">kcal / 100g</span>
-                        </span>
+                        <div class="kcal-stack">
+                            {% if d.total_kcal is not none %}
+                                <span class="kcal-badge kcal-portion">
+                                    <span class="kcal-value">{{ d.total_kcal }}</span>
+                                    <span class="kcal-unit">kcal / 份</span>
+                                </span>
+                            {% endif %}
+                            <span class="kcal-badge kcal-{{ d.calorie_level }}">
+                                <span class="kcal-value">{{ d.kcal }}</span>
+                                <span class="kcal-unit">kcal / 100g</span>
+                            </span>
+                        </div>
                     </div>
+
+                    {% if d.total_kcal is not none or d.portion_g is not none %}
+                        <div class="portion-meta">
+                            {% if d.total_kcal is not none %}
+                                <span>一份约 <strong>{{ d.total_kcal }}</strong> kcal</span>
+                            {% endif %}
+                            {% if d.portion_g is not none %}
+                                <span class="dim">出品约 {{ d.portion_g }} g</span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
 
                     <div class="macro-bar" aria-hidden="true">
                         {% if d.carb_pct %}
@@ -100,7 +119,7 @@
 
         <footer class="footer">
             <span>© {{ year }} {{ app_name }}</span>
-            <span class="dim">数据来源：食堂菜品营养热量与特点表（每 100 g）</span>
+            <span class="dim">数据来源：食堂菜品营养热量与特点表 · 菜品热量估算表（一份出品）</span>
         </footer>
     </main>
 

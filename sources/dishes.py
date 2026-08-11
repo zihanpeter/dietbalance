@@ -1,11 +1,12 @@
 """菜品（食堂）数据加载与处理。
 
-数据源是仓库内 ``data/dishes.json``，由 ``scripts/build_dishes.py`` 从 Excel 表生成。
+数据源是仓库内 ``data/dishes.json``，由 ``scripts/build_dishes.py`` /
+``scripts/merge_portion_kcal.py`` 从 Excel 表生成。
 """
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from functools import lru_cache
 from pathlib import Path
 
@@ -27,6 +28,8 @@ class Dish:
     protein_pct: float
     fat_pct: float
     features: str
+    total_kcal: int | None = None  # 一份/一碗总热量
+    portion_g: int | None = None  # 出品重量（克）
 
     @property
     def carb_g(self) -> float:
@@ -42,7 +45,7 @@ class Dish:
 
     @property
     def calorie_level(self) -> str:
-        """根据热量划分等级，用于前端筛选。"""
+        """根据每 100 g 热量划分等级，用于前端筛选。"""
         if self.kcal < 100:
             return "low"
         if self.kcal < 200:
@@ -56,6 +59,15 @@ class Dish:
         data["fat_g"] = self.fat_g
         data["calorie_level"] = self.calorie_level
         return data
+
+
+def _optional_int(value: object) -> int | None:
+    if value is None or value == "":
+        return None
+    try:
+        return int(round(float(value)))
+    except (TypeError, ValueError):
+        return None
 
 
 @lru_cache(maxsize=1)
@@ -72,6 +84,8 @@ def load_dishes() -> list[Dish]:
             protein_pct=float(item.get("protein_pct", 0) or 0),
             fat_pct=float(item.get("fat_pct", 0) or 0),
             features=str(item.get("features", "")).strip(),
+            total_kcal=_optional_int(item.get("total_kcal")),
+            portion_g=_optional_int(item.get("portion_g")),
         )
         for item in raw
         if item.get("name")

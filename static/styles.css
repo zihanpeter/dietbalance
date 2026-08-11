@@ -248,6 +248,14 @@ h1 {
     word-break: break-word;
 }
 
+.kcal-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
 .kcal-badge {
     display: inline-flex;
     align-items: baseline;
@@ -259,6 +267,25 @@ h1 {
     font-variant-numeric: tabular-nums;
     flex-shrink: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.kcal-portion {
+    background: linear-gradient(135deg, #ea580c, #dc2626);
+    font-size: 14px;
+}
+
+.portion-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 13px;
+    color: #374151;
+    margin-top: -4px;
+}
+
+.portion-meta strong {
+    color: #ea580c;
+    font-variant-numeric: tabular-nums;
 }
 
 .kcal-value {
