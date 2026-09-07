@@ -63,6 +63,16 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
+启动前先把项目目录与缓存目录交给运行用户（默认 `www-data`），否则 USDA 缓存写不进 `.cache`：
+
+```bash
+sudo mkdir -p /opt/dietbalance/.cache
+sudo chown -R www-data:www-data /opt/dietbalance
+# 若你希望代码仍由部署用户拥有，至少保证缓存目录可写：
+# sudo chown -R www-data:www-data /opt/dietbalance/.cache
+# sudo chmod 775 /opt/dietbalance/.cache
+```
+
 启动并设为开机自启：
 
 ```bash
@@ -100,6 +110,15 @@ sudo systemctl restart dietbalance
 sudo systemctl restart cloudflared
 journalctl -u dietbalance -f
 journalctl -u cloudflared -f
+```
+
+若页面提示 `Permission denied: '/opt/dietbalance/.cache'`：
+
+```bash
+sudo mkdir -p /opt/dietbalance/.cache
+sudo chown -R www-data:www-data /opt/dietbalance/.cache
+sudo chmod 775 /opt/dietbalance/.cache
+sudo systemctl restart dietbalance
 ```
 
 ---
