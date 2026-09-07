@@ -7,6 +7,16 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 
 from food_api import search_food
 from sources.dishes import load_dishes
+from sources.planner import (
+    ACTIVITY_BY_KEY,
+    ACTIVITY_LEVELS,
+    GOAL_BY_KEY,
+    GOALS,
+    MEAL_BY_KEY,
+    MEALS,
+    build_plans,
+    build_target,
+)
 
 app = Flask(__name__)
 app.config["PREFERRED_URL_SCHEME"] = os.environ.get("PREFERRED_URL_SCHEME", "https")
@@ -88,6 +98,101 @@ def dishes() -> str:
         app_name="DietBalance",
         year=datetime.now().year,
         dishes=dish_list,
+    )
+
+
+def _parse_number(
+    raw: str,
+    label: str,
+    low: float,
+    high: float,
+    errors: list[str],
+    *,
+    required: bool = True,
+) -> float | None:
+    """解析并校验表单里的数值输入，出错时把提示写入 ``errors``。"""
+    raw = (raw or "").strip()
+    if not raw:
+        if required:
+            errors.append(f"请填写{label}")
+        return None
+    try:
+        value = float(raw)
+    except ValueError:
+        errors.append(f"{label}需要填数字")
+        return None
+    if not low <= value <= high:
+        errors.append(f"{label}请填 {low:g}–{high:g} 之间")
+        return None
+    return value
+
+
+@app.route("/plan", methods=["GET"])
+def plan() -> str:
+    """按 BMR / TDEE 推算目标热量，并给出食堂菜品搭配方案。"""
+    args = request.args
+    form = {
+        "gender": args.get("gender", "male"),
+        "age": args.get("age", ""),
+        "height": args.get("height", ""),
+        "weight": args.get("weight", ""),
+        "activity": args.get("activity", "light"),
+        "goal": args.get("goal", "fat_loss"),
+        "meal": args.get("meal", "lunch"),
+        "bmr": args.get("bmr", ""),
+    }
+
+    submitted = bool(args.get("weight") or args.get("height") or args.get("age"))
+    errors: list[str] = []
+    target = None
+    plans: list = []
+    meal = MEAL_BY_KEY.get(form["meal"], MEAL_BY_KEY["lunch"])
+    meal_kcal = meal_protein = 0.0
+
+    if submitted:
+        if form["gender"] not in {"male", "female"}:
+            errors.append("请选择性别")
+        if form["activity"] not in ACTIVITY_BY_KEY:
+            errors.append("请选择活动量")
+        if form["goal"] not in GOAL_BY_KEY:
+            errors.append("请选择目标")
+
+        age = _parse_number(form["age"], "年龄", 10, 100, errors)
+        height = _parse_number(form["height"], "身高", 120, 230, errors)
+        weight = _parse_number(form["weight"], "体重", 30, 200, errors)
+        manual_bmr = _parse_number(
+            form["bmr"], "基础代谢", 600, 4000, errors, required=False
+        )
+
+        if not errors and age and height and weight:
+            target = build_target(
+                gender=form["gender"],
+                weight_kg=weight,
+                height_cm=height,
+                age=int(age),
+                activity_key=form["activity"],
+                goal_key=form["goal"],
+                manual_bmr=manual_bmr,
+            )
+            meal_kcal = target.target_kcal * meal.ratio
+            meal_protein = target.protein_g * meal.ratio
+            plans = build_plans(meal_kcal, meal_protein, form["goal"])
+
+    return render_template(
+        "plan.html",
+        app_name="DietBalance",
+        year=datetime.now().year,
+        form=form,
+        errors=errors,
+        submitted=submitted,
+        target=target,
+        plans=plans,
+        meal=meal,
+        meal_kcal=meal_kcal,
+        meal_protein=meal_protein,
+        activity_levels=ACTIVITY_LEVELS,
+        goals=GOALS,
+        meals=MEALS,
     )
 
 

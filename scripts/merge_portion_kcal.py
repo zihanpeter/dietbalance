@@ -1,6 +1,6 @@
-"""把「菜品热量估算表」中的「总热量(kcal)」「出品重量(g)」合并进 dishes.json。
+"""把「菜品热量估算表」中的「总热量(kcal)」「出品重量(g)」「类别」合并进 dishes.json。
 
-按菜名精确匹配；匹配不上的菜保留原字段，``total_kcal`` / ``portion_g`` 置为 null。
+按菜名精确匹配；匹配不上的菜保留原字段，新增字段置为 null。
 """
 from __future__ import annotations
 
@@ -30,16 +30,20 @@ def _to_float(value: object) -> float | None:
         return None
 
 
-def load_portion_map(path: Path) -> dict[str, tuple[float | None, float | None]]:
+def load_portion_map(path: Path) -> dict[str, dict[str, object]]:
     wb = openpyxl.load_workbook(path, data_only=True)
     ws = wb["全部菜品热量"]
-    mapping: dict[str, tuple[float | None, float | None]] = {}
+    mapping: dict[str, dict[str, object]] = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
         if not row or not row[0]:
             continue
         name = str(row[0]).strip()
-        # 出品重量(g)=col6, 总热量(kcal)=col9
-        mapping[name] = (_to_float(row[9]), _to_float(row[6]))
+        # 类别=col1, 出品重量(g)=col6, 总热量(kcal)=col9
+        mapping[name] = {
+            "total_kcal": _to_float(row[9]),
+            "portion_g": _to_float(row[6]),
+            "category": str(row[1]).strip() if row[1] else None,
+        }
     return mapping
 
 
@@ -50,16 +54,16 @@ def main() -> None:
     matched = 0
     for dish in dishes:
         name = str(dish.get("name", "")).strip()
-        total, weight = portion.get(name, (None, None))
+        info = portion.get(name, {})
+        total = info.get("total_kcal")
+        weight = info.get("portion_g")
         if total is not None:
-            dish["total_kcal"] = round(total)
+            dish["total_kcal"] = round(float(total))
             matched += 1
         else:
             dish["total_kcal"] = None
-        if weight is not None:
-            dish["portion_g"] = round(weight)
-        else:
-            dish["portion_g"] = None
+        dish["portion_g"] = round(float(weight)) if weight is not None else None
+        dish["category"] = info.get("category")
 
     DISHES_JSON.write_text(
         json.dumps(dishes, ensure_ascii=False, indent=2),

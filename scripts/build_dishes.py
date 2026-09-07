@@ -47,21 +47,22 @@ def _to_kcal(value: object) -> int:
     return int(round(float(match.group(0)))) if match else 0
 
 
-def _load_portion_map(path: Path) -> dict[str, tuple[int | None, int | None]]:
-    """菜名 -> (总热量 kcal, 出品重量 g)。"""
+def _load_portion_map(path: Path) -> dict[str, tuple[int | None, int | None, str | None]]:
+    """菜名 -> (总热量 kcal, 出品重量 g, 类别)。"""
     if not path.exists():
         print(f"Portion table not found, skip: {path}")
         return {}
     wb = openpyxl.load_workbook(path, data_only=True)
     ws = wb["全部菜品热量"]
-    mapping: dict[str, tuple[int | None, int | None]] = {}
+    mapping: dict[str, tuple[int | None, int | None, str | None]] = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
         if not row or not row[0]:
             continue
         name = str(row[0]).strip()
         total = _to_kcal(row[9]) if row[9] not in (None, "") else None
         weight = _to_kcal(row[6]) if row[6] not in (None, "") else None
-        mapping[name] = (total, weight)
+        category = str(row[1]).strip() if row[1] else None
+        mapping[name] = (total, weight, category)
     print(f"Loaded portion calories for {len(mapping)} dishes from {path.name}")
     return mapping
 
@@ -82,7 +83,7 @@ def main() -> None:
         if not name or name.startswith("菜品名称"):
             continue
 
-        total_kcal, portion_g = portion.get(name, (None, None))
+        total_kcal, portion_g, category = portion.get(name, (None, None, None))
         if total_kcal is not None:
             matched += 1
 
@@ -96,6 +97,7 @@ def main() -> None:
                 "features": (str(row[5]).strip() if row[5] else ""),
                 "total_kcal": total_kcal,
                 "portion_g": portion_g,
+                "category": category,
             }
         )
 

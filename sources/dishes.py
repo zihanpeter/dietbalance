@@ -30,6 +30,7 @@ class Dish:
     features: str
     total_kcal: int | None = None  # 一份/一碗总热量
     portion_g: int | None = None  # 出品重量（克）
+    category: str | None = None  # 菜品类别，如「肉类-鸡肉」「蔬菜类」
 
     @property
     def carb_g(self) -> float:
@@ -86,6 +87,7 @@ def load_dishes() -> list[Dish]:
             features=str(item.get("features", "")).strip(),
             total_kcal=_optional_int(item.get("total_kcal")),
             portion_g=_optional_int(item.get("portion_g")),
+            category=(str(item["category"]).strip() if item.get("category") else None),
         )
         for item in raw
         if item.get("name")

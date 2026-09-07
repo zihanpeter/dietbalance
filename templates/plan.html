@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }} · 每日热量与配餐方案</title>
+    <meta name="description" content="{{ app_name }} 根据身高体重年龄与活动量推算基础代谢与每日热量目标，并从食堂菜品中给出搭配方案。" />
+    <link rel="stylesheet" href="{{ versioned_static('styles.css') }}" />
+</head>
+<body>
+    <main class="page">
+        <header class="hero-header">
+            <div class="badge">PLAN · 配餐方案</div>
+            <h1>
+                <span class="brand">{{ app_name }}</span>
+                <span class="hero-sub">每日热量与配餐方案</span>
+            </h1>
+            <p class="subtitle">填写身体数据与活动量，自动推算基础代谢（Mifflin-St Jeor）与每日热量目标，并从食堂菜品里给出搭配方案。</p>
+
+            <form class="plan-form" action="{{ url_for('plan') }}" method="get" autocomplete="off">
+                <div class="field">
+                    <label for="f-gender">性别</label>
+                    <select id="f-gender" name="gender">
+                        <option value="male" {% if form.gender == 'male' %}selected{% endif %}>男</option>
+                        <option value="female" {% if form.gender == 'female' %}selected{% endif %}>女</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-age">年龄</label>
+                    <input id="f-age" type="number" name="age" value="{{ form.age }}" min="10" max="100" placeholder="22" required />
+                </div>
+
+                <div class="field">
+                    <label for="f-height">身高 <span class="unit">cm</span></label>
+                    <input id="f-height" type="number" name="height" value="{{ form.height }}" min="120" max="230" step="0.1" placeholder="175" required />
+                </div>
+
+                <div class="field">
+                    <label for="f-weight">体重 <span class="unit">kg</span></label>
+                    <input id="f-weight" type="number" name="weight" value="{{ form.weight }}" min="30" max="200" step="0.1" placeholder="65" required />
+                </div>
+
+                <div class="field field-wide">
+                    <label for="f-activity">活动量</label>
+                    <select id="f-activity" name="activity">
+                        {% for a in activity_levels %}
+                            <option value="{{ a.key }}" {% if form.activity == a.key %}selected{% endif %}>
+                                {{ a.label }} · ×{{ a.factor }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-goal">目标</label>
+                    <select id="f-goal" name="goal">
+                        {% for g in goals %}
+                            <option value="{{ g.key }}" {% if form.goal == g.key %}selected{% endif %}>{{ g.label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-meal">配餐餐次</label>
+                    <select id="f-meal" name="meal">
+                        {% for m in meals %}
+                            <option value="{{ m.key }}" {% if form.meal == m.key %}selected{% endif %}>{{ m.label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-bmr">基础代谢 <span class="unit">kcal · 选填</span></label>
+                    <input id="f-bmr" type="number" name="bmr" value="{{ form.bmr }}" min="600" max="4000" step="1" placeholder="留空则自动计算" />
+                </div>
+
+                <div class="plan-form-actions">
+                    <button type="submit" class="btn btn-primary">生成方案</button>
+                    <a class="btn btn-secondary" href="{{ url_for('dishes') }}">菜品库 →</a>
+                    <a class="btn btn-ghost" href="{{ url_for('index') }}">封面</a>
+                </div>
+            </form>
+        </header>
+
+        {% if errors %}
+            <div class="alert alert-error">
+                <strong>请检查输入：</strong>{{ errors|join('；') }}
+            </div>
+        {% endif %}
+
+        {% if target %}
+            <section class="metric-grid">
+                <div class="metric-card">
+                    <span class="metric-label">基础代谢 BMR</span>
+                    <span class="metric-value">{{ target.bmr|round|int }}</span>
+                    <span class="metric-unit">kcal / 天</span>
+                    <span class="metric-note">
+                        {% if target.bmr_is_manual %}用户手动填写{% else %}Mifflin-St Jeor 公式{% endif %}
+                    </span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">每日消耗 TDEE</span>
+                    <span class="metric-value">{{ target.tdee|round|int }}</span>
+                    <span class="metric-unit">kcal / 天</span>
+                    <span class="metric-note">活动系数 ×{{ target.activity.factor }}</span>
+                </div>
+                <div class="metric-card metric-accent">
+                    <span class="metric-label">目标热量（{{ target.goal.label }}）</span>
+                    <span class="metric-value">{{ target.target_kcal|round|int }}</span>
+                    <span class="metric-unit">kcal / 天</span>
+                    <span class="metric-note">TDEE ×{{ target.goal.kcal_factor }} · {{ target.goal.note }}</span>
+                </div>
+            </section>
+
+            <section class="macro-target-card">
+                <div class="nutri-title">全天宏量素目标</div>
+                <ul class="macro-legend macro-target-legend">
+                    <li>
+                        <span class="dot dot-protein"></span>
+                        <span class="macro-label">蛋白质</span>
+                        <span class="macro-pct">{{ target.protein_g|round|int }} g</span>
+                        <span class="macro-grams">建议 {{ target.protein_range[0]|round|int }}–{{ target.protein_range[1]|round|int }} g</span>
+                    </li>
+                    <li>
+                        <span class="dot dot-carb"></span>
+                        <span class="macro-label">碳水</span>
+                        <span class="macro-pct">{{ target.carb_g|round|int }} g</span>
+                        <span class="macro-grams">占总热量 {{ (target.goal.carb_share[0] * 100)|round|int }}–{{ (target.goal.carb_share[1] * 100)|round|int }}%</span>
+                    </li>
+                    <li>
+                        <span class="dot dot-fat"></span>
+                        <span class="macro-label">脂肪</span>
+                        <span class="macro-pct">{{ target.fat_g|round|int }} g</span>
+                        <span class="macro-grams">补足剩余热量</span>
+                    </li>
+                </ul>
+            </section>
+        {% endif %}
+
+        {% if plans %}
+            <div class="results-meta">
+                <strong>{{ meal.label }}</strong>预算约
+                <strong>{{ meal_kcal|round|int }}</strong> kcal，蛋白质约
+                <strong>{{ meal_protein|round|int }}</strong> g —— 以下 {{ plans|length }} 套搭配供选择
+            </div>
+
+            <section class="plan-grid">
+                {% for p in plans %}
+                    <article class="plan-card">
+                        <div class="plan-head">
+                            <h2 class="plan-title">方案 {{ loop.index }}</h2>
+                            <span class="kcal-badge kcal-portion">
+                                <span class="kcal-value">{{ p.kcal }}</span>
+                                <span class="kcal-unit">kcal</span>
+                            </span>
+                        </div>
+
+                        <div class="plan-diff">
+                            {% if p.kcal_diff == 0 %}
+                                <span class="diff-tag diff-ok">正好达标</span>
+                            {% elif p.kcal_diff > 0 %}
+                                <span class="diff-tag diff-over">高出 {{ p.kcal_diff }} kcal</span>
+                            {% else %}
+                                <span class="diff-tag diff-under">少 {{ -p.kcal_diff }} kcal</span>
+                            {% endif %}
+                            <span class="dim">{{ p.dishes|length }} 道菜</span>
+                        </div>
+
+                        <ul class="plan-dishes">
+                            {% for d in p.dishes %}
+                                <li>
+                                    <span class="role-tag role-{{ d.role }}">{{ '荤' if d.role == 'protein' else '素' }}</span>
+                                    <span class="plan-dish-name">{{ d.name }}</span>
+                                    <span class="plan-dish-kcal">{{ d.kcal }} kcal</span>
+                                    {% if d.portion_g %}
+                                        <span class="plan-dish-portion">约 {{ d.portion_g }} g</span>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <div class="macro-bar" aria-hidden="true">
+                            <span class="macro-seg macro-carb" data-pct="{{ p.macro_shares.carb }}"></span>
+                            <span class="macro-seg macro-protein" data-pct="{{ p.macro_shares.protein }}"></span>
+                            <span class="macro-seg macro-fat" data-pct="{{ p.macro_shares.fat }}"></span>
+                        </div>
+
+                        <ul class="macro-legend">
+                            <li>
+                                <span class="dot dot-carb"></span>
+                                <span class="macro-label">碳水</span>
+                                <span class="macro-pct">{{ '%g' % p.carb_g }} g</span>
+                                <span class="macro-grams">{{ p.macro_shares.carb }}%</span>
+                            </li>
+                            <li>
+                                <span class="dot dot-protein"></span>
+                                <span class="macro-label">蛋白质</span>
+                                <span class="macro-pct">{{ '%g' % p.protein_g }} g</span>
+                                <span class="macro-grams">{{ p.macro_shares.protein }}%</span>
+                            </li>
+                            <li>
+                                <span class="dot dot-fat"></span>
+                                <span class="macro-label">脂肪</span>
+                                <span class="macro-pct">{{ '%g' % p.fat_g }} g</span>
+                                <span class="macro-grams">{{ p.macro_shares.fat }}%</span>
+                            </li>
+                        </ul>
+                    </article>
+                {% endfor %}
+            </section>
+
+            <p class="muted plan-tip">
+                方案仅统计菜品本身，主食（米饭 / 面食）请按剩余碳水缺口自行增减；
+                数据为估算值，特殊健康状况请遵医嘱。
+            </p>
+        {% elif submitted and not errors %}
+            <div class="empty">未能生成搭配方案，请调整目标或餐次后重试。</div>
+        {% elif not submitted %}
+            <div class="empty">填写上方数据后点击「生成方案」，即可得到 3 套食堂搭配。</div>
+        {% endif %}
+
+        <footer class="footer">
+            <span>© {{ year }} {{ app_name }}</span>
+            <span class="dim">计算依据：Mifflin-St Jeor 公式 · 活动系数法</span>
+        </footer>
+    </main>
+
+    <script>
+        document.querySelectorAll('.macro-seg').forEach(function (seg) {
+            var pct = parseFloat(seg.getAttribute('data-pct'));
+            seg.style.width = (!isNaN(pct) && pct > 0) ? pct + '%' : '0';
+        });
+    </script>
+</body>
+</html>
