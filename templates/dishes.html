@@ -9,6 +9,8 @@
 </head>
 <body>
     <main class="page">
+        {% include "_account_bar.html" %}
+
         <header class="hero-header">
             <div class="badge">DISHES · 食堂菜品速查</div>
             <h1>
@@ -35,6 +37,7 @@
                 <button type="button" class="chip" data-level="low">低热 · &lt; 100 kcal</button>
                 <button type="button" class="chip" data-level="mid">中热 · 100–199 kcal</button>
                 <button type="button" class="chip" data-level="high">高热 · ≥ 200 kcal</button>
+                <button type="button" class="chip" data-level="unknown">暂无热量数据</button>
             </div>
         </header>
 
@@ -56,12 +59,27 @@
                                     <span class="kcal-unit">kcal / 份</span>
                                 </span>
                             {% endif %}
-                            <span class="kcal-badge kcal-{{ d.calorie_level }}">
-                                <span class="kcal-value">{{ d.kcal }}</span>
-                                <span class="kcal-unit">kcal / 100g</span>
-                            </span>
+                            {% if d.kcal %}
+                                <span class="kcal-badge kcal-{{ d.calorie_level }}">
+                                    <span class="kcal-value">{{ d.kcal }}</span>
+                                    <span class="kcal-unit">kcal / 100g</span>
+                                </span>
+                            {% elif d.total_kcal is none %}
+                                <span class="kcal-badge kcal-unknown">暂无热量</span>
+                            {% endif %}
                         </div>
                     </div>
+
+                    {% if d.floors %}
+                        <div class="floor-tags">
+                            {% for f in d.floors %}
+                                <span class="floor-tag">{{ f }}</span>
+                            {% endfor %}
+                            {% if d.category %}
+                                <span class="floor-tag floor-cat">{{ d.category }}</span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
 
                     {% if d.total_kcal is not none or d.portion_g is not none %}
                         <div class="portion-meta">
@@ -74,6 +92,7 @@
                         </div>
                     {% endif %}
 
+                    {% if d.has_macros %}
                     <div class="macro-bar" aria-hidden="true">
                         {% if d.carb_pct %}
                             <span class="macro-seg macro-carb" data-pct="{{ '%g' % d.carb_pct }}"></span>
@@ -106,9 +125,12 @@
                             <span class="macro-grams">{{ '%g' % d.fat_g }} g</span>
                         </li>
                     </ul>
+                    {% endif %}
 
                     {% if d.features %}
                         <p class="dish-features">{{ d.features }}</p>
+                    {% elif not d.has_macros and d.total_kcal is none %}
+                        <p class="dish-features dim">来自当前楼层菜单，营养数据待补充。</p>
                     {% endif %}
                 </article>
             {% endfor %}

@@ -9,13 +9,23 @@
 </head>
 <body>
     <main class="page">
+        {% include "_account_bar.html" %}
+
         <header class="hero-header">
             <div class="badge">PLAN · 配餐方案</div>
             <h1>
                 <span class="brand">{{ app_name }}</span>
                 <span class="hero-sub">每日热量与配餐方案</span>
             </h1>
-            <p class="subtitle">填写身体数据与活动量，自动推算基础代谢（Mifflin-St Jeor）与每日热量目标，并从食堂菜品里给出搭配方案。</p>
+            <p class="subtitle">填写身体数据与活动量，自动推算基础代谢（Mifflin-St Jeor）与每日热量目标，并从食堂菜品里给出搭配方案。{% if current_user and profile_saved %} 已载入账号保存的身体数据。{% elif current_user %} 登录后可点击「保存到账号」记住本次填写。{% else %} <a href="{{ url_for('login') }}">登录</a> 后可保存身体数据，下次自动载入。{% endif %}</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="alert {% if category == 'error' %}alert-error{% else %}alert-ok{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endwith %}
 
             <form class="plan-form" action="{{ url_for('plan') }}" method="get" autocomplete="off">
                 <div class="field">
@@ -77,6 +87,17 @@
 
                 <div class="plan-form-actions">
                     <button type="submit" class="btn btn-primary">生成方案</button>
+                    {% if current_user %}
+                        <button
+                            type="submit"
+                            class="btn btn-secondary"
+                            name="action"
+                            value="save_profile"
+                            formmethod="post"
+                        >保存到账号</button>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{{ url_for('login', next=url_for('plan')) }}">登录后保存</a>
+                    {% endif %}
                     <a class="btn btn-secondary" href="{{ url_for('dishes') }}">菜品库 →</a>
                     <a class="btn btn-ghost" href="{{ url_for('index') }}">封面</a>
                 </div>

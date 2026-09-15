@@ -121,6 +121,12 @@ sudo chmod 775 /opt/dietbalance/.cache
 sudo systemctl restart dietbalance
 ```
 
+账号功能也依赖 `.cache`（用户库 `accounts.db`、会话密钥 `secret_key`），请保证该目录对 `www-data` 可写。可选在 `.env` 中设置：
+
+```bash
+SECRET_KEY=换成一串随机长字符串
+```
+
 ---
 
 ## 6) 检查清单

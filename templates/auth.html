@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }} · {% if mode == 'login' %}登录{% else %}注册{% endif %}</title>
+    <meta name="description" content="登录或注册 {{ app_name }} 账号，保存身体数据与活动量。" />
+    <link rel="stylesheet" href="{{ versioned_static('styles.css') }}" />
+</head>
+<body>
+    <main class="page">
+        {% include "_account_bar.html" %}
+
+        <header class="hero-header auth-card">
+            <div class="badge">{% if mode == 'login' %}ACCOUNT · 登录{% else %}ACCOUNT · 注册{% endif %}</div>
+            <h1>
+                <span class="brand">{{ app_name }}</span>
+                <span class="hero-sub">{% if mode == 'login' %}登录账号{% else %}创建账号{% endif %}</span>
+            </h1>
+            <p class="subtitle">
+                {% if mode == 'login' %}
+                    登录后可自动载入已保存的身体数据与活动量，并快速生成配餐方案。
+                {% else %}
+                    注册后即可保存性别、身高、体重、活动量与目标，下次打开不用重新填写。
+                {% endif %}
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="alert {% if category == 'error' %}alert-error{% else %}alert-ok{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endwith %}
+
+            {% if error %}
+                <div class="alert alert-error"><strong>出错了：</strong>{{ error }}</div>
+            {% endif %}
+
+            <form class="auth-form" method="post" action="{{ url_for(mode) }}" autocomplete="on">
+                {% if mode == 'login' %}
+                    <input type="hidden" name="next" value="{{ next_url or url_for('plan') }}" />
+                {% endif %}
+
+                <div class="field field-wide">
+                    <label for="username">用户名</label>
+                    <input id="username" name="username" type="text" value="{{ username }}"
+                           minlength="2" maxlength="24" required autofocus
+                           placeholder="2–24 个字符" />
+                </div>
+
+                <div class="field field-wide">
+                    <label for="password">密码</label>
+                    <input id="password" name="password" type="password" minlength="6" required
+                           placeholder="至少 6 位" />
+                </div>
+
+                {% if mode == 'register' %}
+                    <div class="field field-wide">
+                        <label for="password2">确认密码</label>
+                        <input id="password2" name="password2" type="password" minlength="6" required
+                               placeholder="再输入一次" />
+                    </div>
+                {% endif %}
+
+                <div class="plan-form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        {% if mode == 'login' %}登录{% else %}注册并登录{% endif %}
+                    </button>
+                    {% if mode == 'login' %}
+                        <a class="btn btn-secondary" href="{{ url_for('register') }}">没有账号？去注册</a>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{{ url_for('login') }}">已有账号？去登录</a>
+                    {% endif %}
+                    <a class="btn btn-ghost" href="{{ url_for('plan') }}">配餐方案</a>
+                </div>
+            </form>
+        </header>
+
+        <footer class="footer">
+            <span>© {{ year }} {{ app_name }}</span>
+            <span class="visit-count">浏览量 {{ "{:,}".format(visit_count) }}</span>
+            <span class="dim">账号数据仅保存在本站服务器</span>
+        </footer>
+    </main>
+</body>
+</html>

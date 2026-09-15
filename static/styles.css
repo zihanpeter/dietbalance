@@ -173,6 +173,66 @@ h1 {
     transform: translateX(3px);
 }
 
+.btn-sm {
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.account-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.landing .account-bar {
+    margin-bottom: -8px;
+}
+
+.account-user {
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.account-user strong {
+    color: #9a3412;
+}
+
+.account-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #b45309;
+    text-decoration: none;
+}
+
+.account-link:hover {
+    text-decoration: underline;
+}
+
+.account-logout {
+    display: inline;
+    margin: 0;
+}
+
+.auth-card {
+    max-width: 520px;
+}
+
+.auth-form {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.alert-ok {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -301,6 +361,37 @@ h1 {
 .kcal-low { background: linear-gradient(135deg, #16a34a, #22c55e); }
 .kcal-mid { background: linear-gradient(135deg, #f59e0b, #f97316); }
 .kcal-high { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+.kcal-unknown {
+    background: #e5e7eb;
+    color: #4b5563;
+    font-size: 12px;
+    box-shadow: none;
+}
+
+.floor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: -4px;
+}
+
+.floor-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #9a3412;
+    background: rgba(254, 215, 170, 0.55);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.floor-cat {
+    color: #374151;
+    background: rgba(243, 244, 246, 0.9);
+    border-color: rgba(17, 24, 39, 0.08);
+    font-weight: 500;
+}
 
 .macro-bar {
     display: flex;

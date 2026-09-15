@@ -1,619 +1,1596 @@
 [
   {
+    "name": "三明治",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
     "name": "三色玉米",
-    "kcal": 100,
+    "kcal": 130,
     "carb_pct": 70.0,
     "protein_pct": 15.0,
     "fat_pct": 15.0,
     "features": "香甜软糯，口感丰富，碳水含量极高，能快速补充能量，富含膳食纤维，适合日常食用",
     "total_kcal": 234,
     "portion_g": 180,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "丝瓜鸡蛋",
-    "kcal": 70,
-    "carb_pct": 35.0,
-    "protein_pct": 45.0,
-    "fat_pct": 20.0,
-    "features": "清淡爽口，丝瓜清甜，鸡蛋嫩滑，口感清爽，热量极低，适合减脂期食用",
-    "total_kcal": 316,
-    "portion_g": 200,
-    "category": "蛋类"
+    "name": "三鲜豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "三鲜通心粉",
+    "kcal": 211,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 592,
+    "portion_g": 280,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "上校鸡块",
+    "kcal": 352,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 528,
+    "portion_g": 150,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "东坡方肉",
+    "kcal": 254,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 967,
+    "portion_g": 380,
+    "category": "肉类-猪肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "东坡肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层",
+      "三层"
+    ]
   },
   {
     "name": "乡村黄焖鸡",
-    "kcal": 180,
+    "kcal": 182,
     "carb_pct": 10.0,
     "protein_pct": 40.0,
     "fat_pct": 50.0,
     "features": "家常烧菜，鸡肉软烂，酱香浓郁，口感醇厚，优质蛋白含量高，脂肪含量适中，适合下饭",
     "total_kcal": 420,
     "portion_g": 230,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "五彩桃仁虾仁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "五彩鱼粒",
-    "kcal": 120,
+    "kcal": 137,
     "carb_pct": 20.0,
     "protein_pct": 40.0,
     "fat_pct": 40.0,
     "features": "口感丰富，鱼粒嫩滑，搭配蔬菜丁，颜色鲜艳，营养均衡，优质蛋白含量高",
     "total_kcal": 275,
     "portion_g": 200,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "五彩鸡片",
-    "kcal": 120,
+    "kcal": 144,
     "carb_pct": 20.0,
     "protein_pct": 40.0,
     "fat_pct": 40.0,
     "features": "口感丰富，鸡片嫩滑，搭配蔬菜丁，颜色鲜艳，营养均衡，优质蛋白含量高",
     "total_kcal": 289,
     "portion_g": 200,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "什锦炒饭",
+    "kcal": 147,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 560,
+    "portion_g": 380,
+    "category": "主食-炒饭",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "什锦肉片",
-    "kcal": 120,
+    "kcal": 143,
     "carb_pct": 20.0,
     "protein_pct": 30.0,
     "fat_pct": 50.0,
     "features": "家常小炒，猪肉嫩滑，搭配多种蔬菜，口感丰富，营养均衡，热量适中",
     "total_kcal": 286,
     "portion_g": 200,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "元宝肉",
-    "kcal": 350,
-    "carb_pct": 10.0,
-    "protein_pct": 15.0,
-    "fat_pct": 75.0,
-    "features": "家常炖菜，猪肉软烂，口感醇厚，脂肪含量极高，能提供充足能量，适合下饭",
-    "total_kcal": 735,
-    "portion_g": 180,
-    "category": "肉类-猪肉"
+    "name": "什锦腐竹",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "养生排骨",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 35.0,
-    "fat_pct": 55.0,
-    "features": "家常炖菜，排骨软烂，口感醇厚，优质蛋白含量高，脂肪含量适中，适合补充营养",
-    "total_kcal": 415,
-    "portion_g": 180,
-    "category": "肉类-猪肉"
+    "name": "农家小炒鸡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "冬瓜排骨",
-    "kcal": 120,
+    "kcal": 152,
     "carb_pct": 30.0,
     "protein_pct": 30.0,
     "fat_pct": 40.0,
     "features": "家常炖菜，排骨软烂，冬瓜清甜，口感温润，营养均衡，能补充优质蛋白",
     "total_kcal": 427,
     "portion_g": 280,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "三层"
+    ]
   },
   {
-    "name": "冬笋肉丝",
-    "kcal": 120,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，冬笋脆嫩，猪肉嫩滑，口感丰富，热量适中，适合日常食用",
-    "total_kcal": 316,
-    "portion_g": 210,
-    "category": "肉类-猪肉"
+    "name": "冬笋炒肉片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "冬笋里肌丝",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "冰川脆皮龙利鱼",
-    "kcal": 100,
+    "kcal": 282,
     "carb_pct": 10.0,
     "protein_pct": 50.0,
     "fat_pct": 40.0,
     "features": "外酥里嫩，龙利鱼无肌间刺，口感嫩滑，优质蛋白含量高，脂肪含量低，适合所有人群",
     "total_kcal": 424,
     "portion_g": 150,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "剁椒肉末蒸蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "南瓜饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "卤蛋",
+    "kcal": 246,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 135,
+    "portion_g": 55,
+    "category": "蛋类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "叉烧肉套餐",
+    "kcal": 170,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 647,
+    "portion_g": 380,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "双椒炒鸡拌面",
+    "kcal": 192,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 728,
+    "portion_g": 380,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "口水鸡",
-    "kcal": 160,
+    "kcal": 264,
     "carb_pct": 5.0,
     "protein_pct": 58.0,
     "fat_pct": 37.0,
     "features": "川渝特色，麻辣鲜香，鸡肉紧实嫩滑，蛋白质含量极高，脂肪含量低，适合补充蛋白",
     "total_kcal": 475,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "口水鸡腿",
-    "kcal": 180,
+    "kcal": 264,
     "carb_pct": 5.0,
     "protein_pct": 40.0,
     "fat_pct": 55.0,
     "features": "麻辣鲜香，鸡腿紧实，口感丰富，优质蛋白含量高，脂肪含量适中，适合佐餐",
     "total_kcal": 475,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "口水鸭",
-    "kcal": 180,
-    "carb_pct": 5.0,
-    "protein_pct": 35.0,
-    "fat_pct": 60.0,
-    "features": "麻辣鲜香，鸭肉紧实，口感丰富，优质蛋白含量高，脂肪含量适中，适合佐餐",
-    "total_kcal": 494,
-    "portion_g": 180,
-    "category": "肉类-鸭肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "口水鸭腿",
-    "kcal": 200,
+    "kcal": 275,
     "carb_pct": 5.0,
     "protein_pct": 30.0,
     "fat_pct": 65.0,
     "features": "麻辣鲜香，鸭腿紧实，口感丰富，优质蛋白含量高，脂肪含量较高，适合佐餐",
     "total_kcal": 494,
     "portion_g": 180,
-    "category": "肉类-鸭肉"
+    "category": "肉类-鸭肉",
+    "floors": [
+      "三层"
+    ]
   },
   {
-    "name": "可乐翅根",
-    "kcal": 200,
-    "carb_pct": 20.0,
-    "protein_pct": 30.0,
-    "fat_pct": 50.0,
-    "features": "甜香入味，翅根软烂，口感丰富，脂肪含量较高，适合下饭",
-    "total_kcal": 385,
-    "portion_g": 150,
-    "category": "肉类-鸡肉"
+    "name": "口蘑肉酱意大利面",
+    "kcal": 237,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 710,
+    "portion_g": 300,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "咖喱鸡块",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "咖喱味浓郁，鸡块嫩滑，口感丰富，优质蛋白含量高，热量适中，适合下饭",
-    "total_kcal": 499,
-    "portion_g": 260,
-    "category": "肉类-鸡肉"
+    "name": "可乐鸡翅",
+    "kcal": 176,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 617,
+    "portion_g": 350,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "可乐鸡翅根",
+    "kcal": 176,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 617,
+    "portion_g": 350,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "咖喱炒饭",
+    "kcal": 185,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 649,
+    "portion_g": 350,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "咖喱牛肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "咖喱鸡肉套餐",
+    "kcal": 159,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 731,
+    "portion_g": 460,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "咖喱鸡肉饭",
+    "kcal": 159,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 731,
+    "portion_g": 460,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "咖喱鸡饭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "咸菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "回锅肉",
-    "kcal": 300,
+    "kcal": 272,
     "carb_pct": 10.0,
     "protein_pct": 20.0,
     "fat_pct": 70.0,
     "features": "经典川菜，猪肉咸香，搭配青椒，口感丰富，脂肪含量极高，适合下饭",
     "total_kcal": 599,
     "portion_g": 220,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "回锅腊肉",
-    "kcal": 300,
-    "carb_pct": 10.0,
-    "protein_pct": 20.0,
-    "fat_pct": 70.0,
-    "features": "经典川菜，腊肉咸香，搭配青椒，口感丰富，脂肪含量极高，适合佐餐",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
+    "name": "固始鸡块",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "圆白菜炒粉条",
-    "kcal": 100,
+    "kcal": 152,
     "carb_pct": 60.0,
     "protein_pct": 15.0,
     "fat_pct": 25.0,
     "features": "家常小炒，圆白菜脆嫩，粉条爽滑，口感丰富，碳水含量高，能快速补充能量",
     "total_kcal": 335,
     "portion_g": 220,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "土豆烧牛肉",
-    "kcal": 120,
+    "kcal": 134,
     "carb_pct": 40.0,
     "protein_pct": 30.0,
     "fat_pct": 30.0,
     "features": "家常炖菜，牛肉软烂，土豆绵密，口感醇厚，营养均衡，能补充优质蛋白和碳水",
     "total_kcal": 376,
     "portion_g": 280,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "土豆焗什锦",
+    "kcal": 134,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 374,
+    "portion_g": 280,
+    "category": "西餐",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "土豆片炒肉",
-    "kcal": 120,
+    "kcal": 180,
     "carb_pct": 50.0,
     "protein_pct": 20.0,
     "fat_pct": 30.0,
     "features": "家常小炒，土豆绵软，猪肉嫩滑，口感丰富，碳水含量高，能快速补充能量",
     "total_kcal": 360,
     "portion_g": 200,
-    "category": "肉类-综合"
+    "category": "肉类-综合",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "地三鲜",
-    "kcal": 150,
+    "kcal": 186,
     "carb_pct": 50.0,
     "protein_pct": 15.0,
     "fat_pct": 35.0,
     "features": "东北经典，土豆、茄子、青椒搭配，口感丰富，碳水含量高，能快速补充能量",
     "total_kcal": 429,
     "portion_g": 230,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "培根土豆泥",
+    "kcal": 88,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 159,
+    "portion_g": 180,
+    "category": "蔬菜类-综合",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "奥利奥面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "奥尔良烤肉套餐",
+    "kcal": 144,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 504,
+    "portion_g": 350,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "奥尔良烤鸡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "奥尔良鸡肉套餐",
+    "kcal": 144,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 504,
+    "portion_g": 350,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "孜然羊排",
-    "kcal": 250,
+    "kcal": 246,
     "carb_pct": 10.0,
     "protein_pct": 30.0,
     "fat_pct": 60.0,
     "features": "孜然味浓郁，羊排外焦里嫩，口感醇厚，脂肪含量较高，适合下酒佐餐",
     "total_kcal": 491,
     "portion_g": 200,
-    "category": "肉类-羊肉"
+    "category": "肉类-羊肉",
+    "floors": [
+      "一层",
+      "二层"
+    ]
   },
   {
-    "name": "孜然鸡丁",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "孜然味浓郁，鸡丁嫩滑，口感丰富，优质蛋白含量高，脂肪含量适中，适合下饭",
-    "total_kcal": 360,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "name": "孜然鸭丁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "宫保鸡丁",
-    "kcal": 170,
+    "kcal": 256,
     "carb_pct": 18.8,
     "protein_pct": 35.3,
     "fat_pct": 47.6,
     "features": "经典川菜，麻辣鲜香，鸡肉嫩滑，搭配花生、黄瓜丁，口感层次丰富，优质蛋白含量高",
     "total_kcal": 511,
     "portion_g": 200,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层",
+      "三层",
+      "二层"
+    ]
+  },
+  {
+    "name": "家乡小炒茄",
+    "kcal": 187,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 374,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "家常豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "小炒千叶豆腐",
-    "kcal": 100,
+    "kcal": 88,
     "carb_pct": 30.0,
     "protein_pct": 50.0,
     "fat_pct": 20.0,
     "features": "咸香入味，千叶豆腐Q弹，口感丰富，植物蛋白含量高，热量低，适合减脂期食用",
     "total_kcal": 159,
     "portion_g": 180,
-    "category": "蔬菜类-综合"
+    "category": "蔬菜类-综合",
+    "floors": [
+      "一层",
+      "三层",
+      "二层"
+    ]
   },
   {
     "name": "小炒木耳",
-    "kcal": 60,
+    "kcal": 142,
     "carb_pct": 40.0,
     "protein_pct": 20.0,
     "fat_pct": 40.0,
     "features": "家常小炒，木耳脆嫩，口感清爽，热量极低，富含膳食纤维，适合减脂期食用",
     "total_kcal": 285,
     "portion_g": 200,
-    "category": "其他"
+    "category": "其他",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "小炒杏鲍菇",
-    "kcal": 90,
+    "kcal": 122,
     "carb_pct": 40.0,
     "protein_pct": 30.0,
     "fat_pct": 30.0,
     "features": "菌香浓郁，杏鲍菇口感脆嫩，味道鲜香，热量极低，适合减脂期食用",
     "total_kcal": 268,
     "portion_g": 220,
-    "category": "菌菇类"
-  },
-  {
-    "name": "小炒白玉菇",
-    "kcal": 80,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "菌香浓郁，白玉菇脆嫩，口感清爽，热量极低，适合减脂期食用",
-    "total_kcal": 216,
-    "portion_g": 220,
-    "category": "菌菇类"
+    "category": "菌菇类",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "小炒肉",
-    "kcal": 200,
+    "kcal": 156,
     "carb_pct": 10.0,
     "protein_pct": 25.0,
     "fat_pct": 65.0,
     "features": "经典湘菜，香辣入味，猪肉搭配青椒，口感脆嫩，脂肪含量较高，下饭神器",
     "total_kcal": 360,
     "portion_g": 230,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "小炒肉",
+    "kcal": 156,
+    "carb_pct": 10.0,
+    "protein_pct": 25.0,
+    "fat_pct": 65.0,
+    "features": "经典湘菜，香辣入味，猪肉搭配青椒，口感脆嫩，脂肪含量较高，下饭神器",
+    "total_kcal": 360,
+    "portion_g": 230,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "小炒肥牛",
-    "kcal": 150,
+    "kcal": 167,
     "carb_pct": 10.0,
     "protein_pct": 40.0,
     "fat_pct": 50.0,
     "features": "家常小炒，肥牛鲜嫩，口感丰富，优质蛋白含量高，脂肪含量适中，适合下饭",
     "total_kcal": 333,
     "portion_g": 200,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "三层"
+    ]
   },
   {
-    "name": "小炒鸭块",
-    "kcal": 180,
-    "carb_pct": 10.0,
-    "protein_pct": 35.0,
-    "fat_pct": 55.0,
-    "features": "家常小炒，鸭肉紧实，搭配青椒，口感丰富，优质蛋白含量高，脂肪含量适中",
-    "total_kcal": 436,
-    "portion_g": 180,
-    "category": "肉类-鸭肉"
+    "name": "小炒菜花",
+    "kcal": 127,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 293,
+    "portion_g": 230,
+    "category": "蔬菜-肉炒",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "小炒鸡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "小炒鸡块",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "小炒黄牛肉",
-    "kcal": 120,
+    "kcal": 157,
     "carb_pct": 10.0,
     "protein_pct": 60.0,
     "fat_pct": 30.0,
     "features": "经典湘菜，香辣入味，牛肉嫩滑，优质蛋白含量极高，脂肪含量低，适合补充蛋白",
     "total_kcal": 314,
     "portion_g": 200,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "小炖肉",
-    "kcal": 350,
+    "kcal": 408,
     "carb_pct": 10.0,
     "protein_pct": 15.0,
     "fat_pct": 75.0,
     "features": "家常炖菜，猪肉软烂，口感醇厚，脂肪含量极高，能提供充足能量，适合下饭",
     "total_kcal": 735,
     "portion_g": 180,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "小笼包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "小米粥",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "尖椒木耳炒鸡蛋",
-    "kcal": 100,
+    "kcal": 157,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "家常小炒，口感丰富，鸡蛋嫩滑，木耳脆嫩，尖椒提味，营养均衡，热量适中",
     "total_kcal": 314,
     "portion_g": 200,
-    "category": "蛋类"
+    "category": "蛋类",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "尖椒炒腐竹",
-    "kcal": 100,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，腐竹软嫩，尖椒提味，口感丰富，植物蛋白含量高，热量低，适合减脂期食用",
-    "total_kcal": 525,
-    "portion_g": 200,
-    "category": "豆制品"
+    "name": "尖椒炒鸡蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "尖椒炒鸭片",
-    "kcal": 180,
+    "name": "尖椒炒鸭血",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "尖椒豆腐丝",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "尖椒鸭血",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "山城辣子鸡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "山药西兰花",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "岩烧乳酪面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "回锅肉",
+    "kcal": 272,
     "carb_pct": 10.0,
-    "protein_pct": 35.0,
-    "fat_pct": 55.0,
-    "features": "家常小炒，鸭肉紧实，尖椒提味，口感脆嫩，优质蛋白含量高，脂肪含量适中",
-    "total_kcal": 315,
-    "portion_g": 190,
-    "category": "肉类-鸭肉"
-  },
-  {
-    "name": "尖椒鸡蛋",
-    "kcal": 100,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，尖椒提味，鸡蛋嫩滑，口感清爽，营养均衡，热量适中",
-    "total_kcal": 314,
-    "portion_g": 200,
-    "category": "蛋类"
-  },
-  {
-    "name": "山西过油肉",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "山西特色，猪肉外软里嫩，醋香浓郁，口感丰富，脂肪含量较高，适合下饭",
-    "total_kcal": 435,
+    "protein_pct": 20.0,
+    "fat_pct": 70.0,
+    "features": "经典川菜，猪肉咸香，搭配青椒，口感丰富，脂肪含量极高，适合下饭",
+    "total_kcal": 599,
     "portion_g": 220,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "川香鸭柳",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "巧克力斑马蛋糕",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "巧克力甜甜圈面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "巧克力蛋糕",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "巧克力雷神面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "巧克力马芬蛋糕",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "干炸丸子",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "干炸小丸子",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "干锅口蘑",
-    "kcal": 150,
+    "kcal": 286,
     "carb_pct": 30.0,
     "protein_pct": 30.0,
     "fat_pct": 40.0,
     "features": "菌香浓郁，口蘑鲜香，口感醇厚，热量适中，适合下饭",
     "total_kcal": 657,
     "portion_g": 230,
-    "category": "菌菇类"
+    "category": "菌菇类",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "广式白切鸡",
-    "kcal": 160,
+    "kcal": 179,
     "carb_pct": 5.0,
     "protein_pct": 60.0,
     "fat_pct": 35.0,
     "features": "广东经典，鸡肉紧实嫩滑，原汁原味，蛋白质含量极高，脂肪含量低，适合补充蛋白",
     "total_kcal": 323,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "广式葱油鸡",
-    "kcal": 180,
+    "kcal": 219,
     "carb_pct": 5.0,
     "protein_pct": 40.0,
     "fat_pct": 55.0,
     "features": "广东特色，鸡肉嫩滑，葱香浓郁，口感清爽，优质蛋白含量高，脂肪含量适中",
     "total_kcal": 394,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "惹味包浆豆腐",
-    "kcal": 120,
+    "kcal": 185,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "外焦里嫩，豆腐包浆，口感丰富，植物蛋白含量高，热量适中，适合下饭",
     "total_kcal": 370,
     "portion_g": 200,
-    "category": "豆制品"
+    "category": "豆制品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "手撕圆白菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "手撕鸡柠檬",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "扬州狮子头",
-    "kcal": 300,
+    "kcal": 362,
     "carb_pct": 20.0,
     "protein_pct": 30.0,
     "fat_pct": 50.0,
     "features": "江苏经典，狮子头软烂，口感醇厚，脂肪含量较高，适合佐餐",
     "total_kcal": 796,
     "portion_g": 220,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "三层"
+    ]
   },
   {
-    "name": "春笋排骨",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常烧菜，排骨软烂，春笋脆嫩，口感丰富，优质蛋白含量高，热量适中",
-    "total_kcal": 435,
-    "portion_g": 260,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "春笋炒腊肠",
-    "kcal": 200,
-    "carb_pct": 20.0,
-    "protein_pct": 20.0,
-    "fat_pct": 60.0,
-    "features": "家常小炒，春笋脆嫩，腊肠咸香，口感丰富，脂肪含量较高，适合下饭",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
+    "name": "新疆拌面",
+    "kcal": 186,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 706,
+    "portion_g": 380,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "木耳油菜",
-    "kcal": 40,
+    "kcal": 76,
     "carb_pct": 50.0,
     "protein_pct": 25.0,
     "fat_pct": 25.0,
     "features": "家常小炒，油菜脆嫩，木耳Q弹，口感丰富，热量极低，富含膳食纤维，适合减脂期食用",
     "total_kcal": 152,
     "portion_g": 200,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "木须肉",
-    "kcal": 150,
+    "kcal": 157,
     "carb_pct": 20.0,
     "protein_pct": 30.0,
     "fat_pct": 50.0,
     "features": "北方家常菜，口感丰富，猪肉、鸡蛋、木耳、黄瓜搭配，营养均衡，口感嫩滑",
     "total_kcal": 362,
     "portion_g": 230,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层",
+      "三层",
+      "二层"
+    ]
   },
   {
-    "name": "杭椒肉片",
-    "kcal": 120,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "香辣入味，猪肉嫩滑，杭椒提味，口感脆嫩，优质蛋白含量高，脂肪含量适中，适合下饭",
-    "total_kcal": 315,
-    "portion_g": 200,
-    "category": "肉类-猪肉"
+    "name": "杂粮煎饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
-    "name": "杭椒鸡丁",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "香辣入味，鸡丁嫩滑，杭椒提味，口感脆嫩，优质蛋白含量高，脂肪含量适中，适合下饭",
-    "total_kcal": 342,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "name": "杏鲍菇炒肉",
+    "kcal": 122,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 268,
+    "portion_g": 220,
+    "category": "菌菇类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "杏鲍菇炒芹菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "枣卷",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "枣泥酥",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "柠檬手撕鸡",
-    "kcal": 150,
+    "kcal": 271,
     "carb_pct": 10.0,
     "protein_pct": 50.0,
     "fat_pct": 40.0,
     "features": "酸辣开胃，鸡肉紧实，柠檬提香，口感清爽，优质蛋白含量高，脂肪含量适中",
     "total_kcal": 488,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层",
+      "二层"
+    ]
+  },
+  {
+    "name": "核桃酥",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "梅花肉卤面",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "椒盐大虾",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "椒盐虾",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层",
+      "三层"
+    ]
+  },
+  {
+    "name": "椰汁流心球",
+    "kcal": 377,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 452,
+    "portion_g": 120,
+    "category": "甜品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "椰蓉芝士排包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "橙汁锅包肉",
+    "kcal": 391,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 781,
+    "portion_g": 200,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "毛氏红烧肉",
-    "kcal": 380,
+    "kcal": 408,
     "carb_pct": 10.0,
     "protein_pct": 15.0,
     "fat_pct": 75.0,
     "features": "湖南特色，色泽红亮，肉质软烂，肥而不腻，口感醇厚，脂肪含量较高",
     "total_kcal": 735,
     "portion_g": 180,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "毛血旺",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "经典川菜，麻辣鲜香，食材丰富，口感层次多，脂肪含量较高，适合多人聚餐",
-    "total_kcal": 609,
-    "portion_g": 320,
-    "category": "肉类-水产"
+    "name": "水果披萨",
+    "kcal": 226,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 588,
+    "portion_g": 260,
+    "category": "主食-披萨",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "水果时蔬披萨",
+    "kcal": 226,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 588,
+    "portion_g": 260,
+    "category": "主食-披萨",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "水煎包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "水煮什锦",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "水煮牛柳",
-    "kcal": 180,
+    "kcal": 174,
     "carb_pct": 10.0,
     "protein_pct": 45.0,
     "fat_pct": 45.0,
     "features": "麻辣鲜香，牛柳嫩滑，口感丰富，优质蛋白含量高，脂肪含量适中，适合重口味人群",
     "total_kcal": 454,
     "portion_g": 260,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "水煮牛肉",
-    "kcal": 120,
+    "kcal": 184,
     "carb_pct": 10.0,
     "protein_pct": 60.0,
     "fat_pct": 30.0,
     "features": "麻辣鲜香，牛肉嫩滑，口感丰富，优质蛋白含量极高，脂肪含量低，适合补充蛋白",
     "total_kcal": 515,
     "portion_g": 280,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "三层",
+      "二层"
+    ]
   },
   {
     "name": "水煮肉片",
@@ -624,458 +1601,1390 @@
     "features": "麻辣鲜香，猪肉片嫩滑，搭配豆芽、青菜，口感丰富，脂肪含量较高，适合重口味人群",
     "total_kcal": 569,
     "portion_g": 280,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "水煮肉片",
+    "kcal": 203,
+    "carb_pct": 10.0,
+    "protein_pct": 30.0,
+    "fat_pct": 60.0,
+    "features": "麻辣鲜香，猪肉片嫩滑，搭配豆芽、青菜，口感丰富，脂肪含量较高，适合重口味人群",
+    "total_kcal": 569,
+    "portion_g": 280,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层",
+      "二层"
+    ]
   },
   {
     "name": "水煮鱼",
-    "kcal": 120,
+    "kcal": 194,
     "carb_pct": 10.0,
     "protein_pct": 40.0,
     "fat_pct": 50.0,
     "features": "麻辣鲜香，鱼肉嫩滑，无肌间刺，优质蛋白丰富，搭配豆芽等素菜，口感清爽",
     "total_kcal": 583,
     "portion_g": 300,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "水煮鱼",
+    "kcal": 194,
+    "carb_pct": 10.0,
+    "protein_pct": 40.0,
+    "fat_pct": 50.0,
+    "features": "麻辣鲜香，鱼肉嫩滑，无肌间刺，优质蛋白丰富，搭配豆芽等素菜，口感清爽",
+    "total_kcal": 583,
+    "portion_g": 300,
+    "category": "肉类-水产",
+    "floors": [
+      "三层",
+      "二层"
+    ]
   },
   {
     "name": "沂蒙山炒鸡",
-    "kcal": 190,
+    "kcal": 252,
     "carb_pct": 10.0,
     "protein_pct": 35.0,
     "fat_pct": 55.0,
     "features": "山东特色，鸡肉紧实，酱香浓郁，口感醇厚，优质蛋白含量高，脂肪含量适中",
     "total_kcal": 454,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "浇汁茄子",
-    "kcal": 90,
-    "carb_pct": 50.0,
-    "protein_pct": 20.0,
-    "fat_pct": 30.0,
-    "features": "酸甜开胃，茄子软烂，口感绵密，碳水含量较高，热量低，适合下饭",
-    "total_kcal": 374,
+    "name": "油条",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "油泼豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "油饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "泡椒仔鸡",
+    "kcal": 180,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 360,
     "portion_g": 200,
-    "category": "蔬菜类"
+    "category": "肉类-综合",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "海米青笋丝",
-    "kcal": 40,
-    "carb_pct": 50.0,
-    "protein_pct": 30.0,
-    "fat_pct": 20.0,
-    "features": "清淡爽口，青笋丝脆嫩，海米提鲜，口感丰富，热量极低，适合减脂期食用",
-    "total_kcal": 150,
-    "portion_g": 170,
-    "category": "蔬菜类"
+    "name": "海盐芝士面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "海鲜鸡排饭",
+    "kcal": 202,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 770,
+    "portion_g": 380,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "淄博小烧烤",
-    "kcal": 250,
+    "kcal": 258,
     "carb_pct": 20.0,
     "protein_pct": 30.0,
     "fat_pct": 50.0,
     "features": "山东特色，食材丰富，口感醇厚，脂肪含量较高，适合多人聚餐",
     "total_kcal": 645,
     "portion_g": 250,
-    "category": "肉类-烧烤"
+    "category": "肉类-烧烤",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "混沌",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "清炒小白菜",
-    "kcal": 25,
+    "kcal": 76,
     "carb_pct": 50.0,
     "protein_pct": 30.0,
     "fat_pct": 20.0,
     "features": "清淡爽口，小白菜脆嫩，口感清爽，热量极低，富含维生素和膳食纤维，适合日常食用",
     "total_kcal": 137,
     "portion_g": 180,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "一层",
+      "二层"
+    ]
   },
   {
-    "name": "清炒盖菜",
-    "kcal": 30,
-    "carb_pct": 45.0,
-    "protein_pct": 30.0,
-    "fat_pct": 25.0,
-    "features": "清淡爽口，盖菜脆嫩，口感清爽，热量极低，富含维生素和膳食纤维，适合日常食用",
-    "total_kcal": 140,
+    "name": "清炒油菜",
+    "kcal": 83,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 149,
     "portion_g": 180,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "清炒油麦菜",
+    "kcal": 76,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 137,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "清炒虾仁",
-    "kcal": 80,
+    "kcal": 140,
     "carb_pct": 10.0,
     "protein_pct": 60.0,
     "fat_pct": 30.0,
     "features": "清淡鲜美，虾仁Q弹嫩滑，优质蛋白含量极高，脂肪含量低，适合减脂期补充蛋白",
     "total_kcal": 253,
     "portion_g": 180,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "清炒西兰花",
-    "kcal": 40,
+    "kcal": 90,
     "carb_pct": 40.0,
     "protein_pct": 35.0,
     "fat_pct": 25.0,
     "features": "清淡爽口，西兰花脆嫩，口感清爽，热量极低，富含维生素C和膳食纤维，适合减脂期食用",
     "total_kcal": 179,
     "portion_g": 200,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "一层",
+      "二层"
+    ]
+  },
+  {
+    "name": "清蒸鱼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "湘味炒仔鸡",
-    "kcal": 190,
+    "kcal": 182,
     "carb_pct": 10.0,
     "protein_pct": 35.0,
     "fat_pct": 55.0,
     "features": "湖南特色，鸡肉紧实，香辣入味，口感醇厚，优质蛋白含量高，脂肪含量适中",
     "total_kcal": 420,
     "portion_g": 230,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "滑蛋火腿",
-    "kcal": 150,
+    "kcal": 218,
     "carb_pct": 20.0,
     "protein_pct": 40.0,
     "fat_pct": 40.0,
     "features": "清淡爽口，鸡蛋嫩滑，火腿咸香，口感丰富，优质蛋白含量高，热量适中",
     "total_kcal": 392,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "滑蛋蟹柳",
-    "kcal": 100,
+    "kcal": 172,
     "carb_pct": 20.0,
     "protein_pct": 50.0,
     "fat_pct": 30.0,
     "features": "清淡爽口，鸡蛋嫩滑，蟹柳鲜甜，口感丰富，优质蛋白含量高，热量低",
     "total_kcal": 310,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "火腿丝炒笋丝",
+    "kcal": 164,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 328,
+    "portion_g": 200,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "火腿丝瓜",
-    "kcal": 80,
+    "kcal": 165,
     "carb_pct": 30.0,
     "protein_pct": 30.0,
     "fat_pct": 40.0,
     "features": "清淡爽口，丝瓜清甜，火腿咸香，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 330,
     "portion_g": 200,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "火腿冬瓜",
-    "kcal": 70,
+    "kcal": 161,
     "carb_pct": 30.0,
     "protein_pct": 30.0,
     "fat_pct": 40.0,
     "features": "清淡爽口，冬瓜清甜，火腿咸香，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 322,
     "portion_g": 200,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "炒合菜",
-    "kcal": 100,
-    "carb_pct": 50.0,
-    "protein_pct": 20.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，多种蔬菜搭配，口感丰富，碳水含量高，能快速补充能量，热量适中",
-    "total_kcal": 159,
+    "name": "火腿烧饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "火腿煎蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "炒烤鱼豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "炒烤鸭丁",
+    "kcal": 175,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 316,
     "portion_g": 180,
-    "category": "蔬菜类-综合"
+    "category": "肉类-鸭肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "炒饼",
+    "kcal": 194,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 620,
+    "portion_g": 320,
+    "category": "主食-面食",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "炝炒土豆丝",
+    "kcal": 137,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 274,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "炝炒绿豆芽",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "炝炒西兰花",
-    "kcal": 45,
+    "kcal": 93,
     "carb_pct": 40.0,
     "protein_pct": 35.0,
     "fat_pct": 25.0,
     "features": "香辣入味，西兰花脆嫩，口感丰富，热量极低，富含膳食纤维，适合下饭",
     "total_kcal": 185,
     "portion_g": 200,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "炸烹蟹柳",
-    "kcal": 150,
+    "kcal": 300,
     "carb_pct": 20.0,
     "protein_pct": 40.0,
     "fat_pct": 40.0,
     "features": "外酥里嫩，蟹柳鲜甜，口感丰富，优质蛋白含量高，脂肪含量适中，适合解馋",
     "total_kcal": 360,
     "portion_g": 120,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "炸薯条",
+    "kcal": 317,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 317,
+    "portion_g": 100,
+    "category": "小吃",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "炸薯饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "炸酱拉面",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "炸酱面",
+    "kcal": 218,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 874,
+    "portion_g": 400,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "炸鱼排",
+    "kcal": 337,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 505,
+    "portion_g": 150,
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "烤翅中",
-    "kcal": 200,
+    "kcal": 219,
     "carb_pct": 10.0,
     "protein_pct": 30.0,
     "fat_pct": 60.0,
     "features": "外焦里嫩，鸡翅中入味，口感丰富，脂肪含量较高，适合下酒佐餐",
     "total_kcal": 329,
     "portion_g": 150,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "烤肠",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "烤蛋挞",
+    "kcal": 689,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 551,
+    "portion_g": 80,
+    "category": "甜品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "烤鸡腿",
+    "kcal": 205,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 369,
+    "portion_g": 180,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "烤鸡腿肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "烧椒豆花牛肉",
-    "kcal": 150,
+    "kcal": 164,
     "carb_pct": 20.0,
     "protein_pct": 40.0,
     "fat_pct": 40.0,
     "features": "麻辣鲜香，牛肉嫩滑，豆花软嫩，口感层次丰富，优质蛋白含量高，适合重口味人群",
     "total_kcal": 410,
     "portion_g": 250,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "热拌豆腐",
-    "kcal": 90,
+    "kcal": 138,
     "carb_pct": 30.0,
     "protein_pct": 50.0,
     "fat_pct": 20.0,
     "features": "清淡爽口，豆腐嫩滑，口感清爽，植物蛋白含量高，热量低，适合减脂期食用",
     "total_kcal": 346,
     "portion_g": 250,
-    "category": "豆制品"
+    "category": "豆制品",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "牛肉土豆",
-    "kcal": 120,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "家常炖菜，牛肉软烂，土豆绵密，口感醇厚，营养均衡，能补充优质蛋白和碳水",
-    "total_kcal": 376,
+    "name": "热狗面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "焗什锦",
+    "kcal": 134,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 374,
     "portion_g": 280,
-    "category": "肉类-牛肉"
+    "category": "西餐",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "焦糖奶酪烧",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "煎鸡蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "照烧汁炒饭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "照烧肉酱炒饭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "牛肉面",
+    "kcal": 134,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 601,
+    "portion_g": 450,
+    "category": "主食-面食",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "牛肉饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "牛肉香葱披萨",
+    "kcal": 241,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 674,
+    "portion_g": 280,
+    "category": "主食-披萨",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "狼牙土豆条",
-    "kcal": 150,
+    "kcal": 145,
     "carb_pct": 70.0,
     "protein_pct": 10.0,
     "fat_pct": 20.0,
     "features": "香辣入味，土豆条外脆里绵，口感丰富，碳水含量极高，能快速补充能量，适合解馋",
     "total_kcal": 261,
     "portion_g": 180,
-    "category": "小吃"
+    "category": "小吃",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "玉米排骨",
-    "kcal": 180,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "家常烧菜，排骨软烂，玉米清甜，口感绵密，营养均衡，能补充优质蛋白和碳水",
-    "total_kcal": 504,
-    "portion_g": 260,
-    "category": "肉类-猪肉"
+    "name": "猪肉白菜水饺",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "猪肉荠菜馄饨",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "玉米",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "玉米鸡块",
-    "kcal": 150,
+    "kcal": 284,
     "carb_pct": 40.0,
     "protein_pct": 30.0,
     "fat_pct": 30.0,
     "features": "家常小炒，玉米清甜，鸡块嫩滑，口感丰富，营养均衡，能补充优质蛋白和碳水",
     "total_kcal": 596,
     "portion_g": 210,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "番茄焗饭",
+    "kcal": 149,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 596,
+    "portion_g": 400,
+    "category": "主食-焗饭",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "番茄米线",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "番茄肉酱意大利面",
+    "kcal": 218,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 611,
+    "portion_g": 280,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "番茄虫草牛腩盅",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "番茄通心粉",
+    "kcal": 208,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 582,
+    "portion_g": 280,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "番茄鸡条",
-    "kcal": 100,
+    "kcal": 390,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "酸甜开胃，鸡条嫩滑，番茄软烂，口感清爽，优质蛋白含量高，热量低",
     "total_kcal": 584,
     "portion_g": 150,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "番茄鸡球",
-    "kcal": 100,
+    "kcal": 390,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "酸甜开胃，鸡球嫩滑，番茄软烂，口感清爽，优质蛋白含量高，热量低",
     "total_kcal": 584,
     "portion_g": 150,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "白灼广东菜心",
-    "kcal": 30,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，菜心脆嫩，原汁原味，热量极低，富含膳食纤维，适合减脂期食用",
-    "total_kcal": 141,
-    "portion_g": 180,
-    "category": "蔬菜类"
+    "name": "疙瘩汤",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
-    "name": "白灼生菜",
-    "kcal": 30,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，生菜脆嫩，原汁原味，热量极低，富含膳食纤维，适合减脂期食用",
-    "total_kcal": 121,
-    "portion_g": 180,
-    "category": "蔬菜类"
+    "name": "白灼罗马生菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "白菜汆丸子",
-    "kcal": 70,
+    "kcal": 173,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "清淡爽口，丸子鲜嫩，白菜清甜，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 484,
     "portion_g": 280,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "三层",
+      "二层"
+    ]
   },
   {
     "name": "白菜豆腐丸子",
-    "kcal": 80,
+    "kcal": 173,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "清淡爽口，丸子鲜嫩，豆腐和白菜搭配，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 484,
     "portion_g": 280,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "盐水鸭",
-    "kcal": 280,
-    "carb_pct": 5.0,
-    "protein_pct": 25.0,
-    "fat_pct": 70.0,
-    "features": "南京特色，咸香入味，鸭肉紧实，脂肪含量较高，口感醇厚，适合佐餐",
-    "total_kcal": 293,
-    "portion_g": 120,
-    "category": "肉类-鸭肉"
+    "name": "皮蒜薄荷鸡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "盐水鸭腿",
-    "kcal": 240,
+    "kcal": 225,
     "carb_pct": 5.0,
     "protein_pct": 30.0,
     "fat_pct": 65.0,
     "features": "咸香入味，鸭腿紧实，口感醇厚，脂肪含量较高，适合佐餐",
     "total_kcal": 293,
     "portion_g": 130,
-    "category": "肉类-鸭肉"
+    "category": "肉类-鸭肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "章鱼丸子",
-    "kcal": 150,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "Q弹爽滑，章鱼味浓郁，口感丰富，碳水和蛋白均衡，适合解馋",
-    "total_kcal": 499,
-    "portion_g": 200,
-    "category": "小吃"
-  },
-  {
-    "name": "米粉肉",
-    "kcal": 300,
-    "carb_pct": 30.0,
-    "protein_pct": 20.0,
-    "fat_pct": 50.0,
-    "features": "经典家常菜，猪肉软烂，米粉软糯，口感醇厚，脂肪和碳水含量较高，适合下饭",
-    "total_kcal": 753,
-    "portion_g": 250,
-    "category": "肉类-猪肉"
+    "name": "砂锅豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "粉蒸肉",
-    "kcal": 300,
+    "kcal": 301,
     "carb_pct": 30.0,
     "protein_pct": 20.0,
     "fat_pct": 50.0,
     "features": "经典家常菜，猪肉软烂，米粉软糯，口感醇厚，脂肪和碳水含量较高，适合下饭",
     "total_kcal": 753,
     "portion_g": 250,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "糯米排骨",
-    "kcal": 200,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "软糯鲜香，糯米吸收了排骨的油脂，口感绵密，排骨软烂，碳水和蛋白均衡",
+    "name": "糖火烧",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "糟辣子肉末炒饭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "糯米烧麦",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "糯米羊排",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "糯米蒸排骨",
+    "kcal": 256,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
     "total_kcal": 589,
     "portion_g": 230,
-    "category": "肉类-猪肉"
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "糯米蒸鸡",
-    "kcal": 210,
-    "carb_pct": 45.0,
-    "protein_pct": 25.0,
-    "fat_pct": 30.0,
-    "features": "软糯鲜香，糯米吸收了鸡肉的油脂，口感绵密，鸡肉嫩滑，碳水和蛋白均衡",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
+    "name": "素包子",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "素炒什锦",
+    "kcal": 95,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 171,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "素炒口蘑毛豆",
-    "kcal": 80,
+    "kcal": 199,
     "carb_pct": 50.0,
     "protein_pct": 30.0,
     "fat_pct": 20.0,
     "features": "清淡爽口，口蘑鲜香，毛豆清甜，口感丰富，热量极低，适合减脂期食用",
     "total_kcal": 358,
     "portion_g": 180,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "素炸丸子",
-    "kcal": 200,
-    "carb_pct": 60.0,
-    "protein_pct": 20.0,
-    "fat_pct": 20.0,
-    "features": "外酥里嫩，口感鲜香，碳水含量高，能快速补充能量，适合解馋",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
+    "name": "素炒圆白菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层",
+      "主食早餐"
+    ]
   },
   {
-    "name": "素烧萝卜",
-    "kcal": 40,
-    "carb_pct": 80.0,
-    "protein_pct": 10.0,
-    "fat_pct": 10.0,
-    "features": "清淡爽口，萝卜软烂，口感绵密，碳水含量高，热量极低，适合减脂期食用",
-    "total_kcal": 159,
+    "name": "素炒土豆丝",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "素炒小白菜",
+    "kcal": 76,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 137,
     "portion_g": 180,
-    "category": "蔬菜类-综合"
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "红烧狮子头",
-    "kcal": 300,
+    "name": "素炒快菜",
+    "kcal": 76,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 137,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "一层",
+      "二层"
+    ]
+  },
+  {
+    "name": "素炒方便面",
+    "kcal": 262,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 732,
+    "portion_g": 280,
+    "category": "主食-面食",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "素炒油菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层",
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "素炒笋丝",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "素炒菠菜",
+    "kcal": 87,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 156,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "素炒西兰花",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "素烧茄条粉丝",
+    "kcal": 212,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 508,
+    "portion_g": 240,
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "红枣南瓜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "红烧排骨",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "红烧日本豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "红烧牛肉刀削面",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "红烧肉套餐",
+    "kcal": 203,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 771,
+    "portion_g": 380,
+    "category": "主食-套餐",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "红烧肉炖粉条",
+    "kcal": 240,
     "carb_pct": 20.0,
-    "protein_pct": 30.0,
-    "fat_pct": 50.0,
-    "features": "经典家常菜，狮子头软烂，口感醇厚，脂肪含量较高，适合佐餐",
-    "total_kcal": 796,
-    "portion_g": 220,
-    "category": "肉类-猪肉"
+    "protein_pct": 15.0,
+    "fat_pct": 65.0,
+    "features": "东北经典，猪肉软烂，粉条爽滑，口感醇厚，脂肪和碳水含量较高，适合下饭",
+    "total_kcal": 673,
+    "portion_g": 280,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "红烧肉",
@@ -1086,909 +2995,347 @@
     "features": "经典家常菜，肉质软烂，肥而不腻，口感醇厚，脂肪含量较高，能提供充足能量",
     "total_kcal": null,
     "portion_g": null,
-    "category": null
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
-    "name": "红烧肉炖粉条",
-    "kcal": 350,
-    "carb_pct": 20.0,
-    "protein_pct": 15.0,
-    "fat_pct": 65.0,
-    "features": "东北经典，猪肉软烂，粉条爽滑，口感醇厚，脂肪和碳水含量较高，适合下饭",
-    "total_kcal": 673,
-    "portion_g": 280,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "红烧豆腐",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "咸香入味，豆腐嫩滑，口感醇厚，植物蛋白含量高，热量适中，适合素食者",
-    "total_kcal": 405,
-    "portion_g": 280,
-    "category": "豆制品"
+    "name": "红烧肉",
+    "kcal": 400,
+    "carb_pct": 8.0,
+    "protein_pct": 12.0,
+    "fat_pct": 80.0,
+    "features": "经典家常菜，肉质软烂，肥而不腻，口感醇厚，脂肪含量较高，能提供充足能量",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "红烧鳕鱼",
-    "kcal": 150,
+    "kcal": 168,
     "carb_pct": 10.0,
     "protein_pct": 40.0,
     "fat_pct": 50.0,
     "features": "咸香入味，鳕鱼嫩滑，无肌间刺，优质蛋白含量高，脂肪含量低，适合所有人群",
     "total_kcal": 270,
     "portion_g": 160,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "红烩牛腩",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "红酒牛肉",
-    "kcal": 200,
+    "kcal": 175,
     "carb_pct": 10.0,
     "protein_pct": 40.0,
     "fat_pct": 50.0,
     "features": "红酒香气浓郁，牛肉软烂，口感醇厚，优质蛋白含量高，脂肪含量适中，适合佐餐",
     "total_kcal": 456,
     "portion_g": 260,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "三层",
+      "二层"
+    ]
   },
   {
     "name": "红酒牛腩",
-    "kcal": 250,
+    "kcal": 175,
     "carb_pct": 10.0,
     "protein_pct": 30.0,
     "fat_pct": 60.0,
     "features": "红酒香气浓郁，牛腩软烂，口感醇厚，脂肪含量较高，适合佐餐",
     "total_kcal": 456,
     "portion_g": 260,
-    "category": "肉类-牛肉"
-  },
-  {
-    "name": "红酒闷牛腩",
-    "kcal": 250,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "红酒香气浓郁，牛腩软烂，口感醇厚，脂肪含量较高，适合佐餐",
-    "total_kcal": 456,
-    "portion_g": 260,
-    "category": "肉类-牛肉"
+    "category": "肉类-牛肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "经典杭帮酱鸭",
-    "kcal": 280,
+    "kcal": 242,
     "carb_pct": 10.0,
     "protein_pct": 25.0,
     "fat_pct": 65.0,
     "features": "杭州特色，鸭肉紧实，酱香浓郁，口感醇厚，脂肪含量较高，适合佐餐",
     "total_kcal": 435,
     "portion_g": 180,
-    "category": "肉类-鸭肉"
+    "category": "肉类-鸭肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "绝味神仙鸡",
-    "kcal": 180,
+    "kcal": 205,
     "carb_pct": 10.0,
     "protein_pct": 40.0,
     "fat_pct": 50.0,
     "features": "鸡肉软烂，酱香浓郁，口感醇厚，优质蛋白含量高，脂肪含量适中，适合佐餐",
     "total_kcal": 369,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "羊肉冬瓜",
-    "kcal": 100,
-    "carb_pct": 20.0,
-    "protein_pct": 40.0,
-    "fat_pct": 40.0,
-    "features": "家常炖菜，羊肉软烂，冬瓜清甜，口感温润，能补充优质蛋白，适合秋冬食用",
-    "total_kcal": 247,
-    "portion_g": 250,
-    "category": "肉类-羊肉"
+    "name": "绿豆粥",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "羊肉包菜炒粉条",
+    "kcal": 145,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 392,
+    "portion_g": 270,
+    "category": "肉类-羊肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "羊肉炒娃娃菜",
-    "kcal": 100,
+    "kcal": 109,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "家常小炒，羊肉鲜嫩，娃娃菜清甜，口感清爽，优质蛋白含量高，热量低",
     "total_kcal": 250,
     "portion_g": 230,
-    "category": "肉类-羊肉"
+    "category": "肉类-羊肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "羊肉炒油菜",
-    "kcal": 100,
+    "kcal": 112,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "家常小炒，羊肉鲜嫩，油菜脆嫩，口感清爽，优质蛋白含量高，热量低",
     "total_kcal": 258,
     "portion_g": 230,
-    "category": "肉类-羊肉"
+    "category": "肉类-羊肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "美极掌中宝",
-    "kcal": 200,
+    "kcal": 286,
     "carb_pct": 10.0,
     "protein_pct": 30.0,
     "fat_pct": 60.0,
     "features": "咸香入味，掌中宝脆嫩，口感Q弹，脂肪含量较高，适合下酒佐餐",
     "total_kcal": 514,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
   },
   {
-    "name": "肉沫娃娃菜",
-    "kcal": 80,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，娃娃菜清甜，肉沫鲜香，口感丰富，热量极低，适合减脂期食用",
+    "name": "肉丝韭菜香干",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
     "total_kcal": null,
     "portion_g": null,
-    "category": null
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "肉包子",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "肉末炒白菜豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉末白菜鱼豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉末粉丝",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉末粉丝圆白菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "肉松卷",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "肉松土司片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "肉松蛋糕卷",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "肉炒土豆片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "肉炒散花",
-    "kcal": 100,
+    "kcal": 127,
     "carb_pct": 30.0,
     "protein_pct": 30.0,
     "fat_pct": 40.0,
     "features": "家常小炒，散花菜脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
     "total_kcal": 293,
     "portion_g": 230,
-    "category": "蔬菜-肉炒"
+    "category": "蔬菜-肉炒",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "肉炒有机菜花",
-    "kcal": 100,
+    "kcal": 127,
     "carb_pct": 30.0,
     "protein_pct": 30.0,
     "fat_pct": 40.0,
     "features": "清淡爽口，菜花脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
     "total_kcal": 293,
     "portion_g": 230,
-    "category": "蔬菜-肉炒"
-  },
-  {
-    "name": "肉炒菜花",
-    "kcal": 100,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，菜花脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
-    "total_kcal": 293,
-    "portion_g": 230,
-    "category": "蔬菜-肉炒"
-  },
-  {
-    "name": "肉炖宽粉",
-    "kcal": 200,
-    "carb_pct": 50.0,
-    "protein_pct": 20.0,
-    "fat_pct": 30.0,
-    "features": "家常炖菜，猪肉软烂，宽粉爽滑，口感醇厚，碳水含量高，能快速补充能量",
-    "total_kcal": 673,
-    "portion_g": 280,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "肉片菜花",
-    "kcal": 100,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，菜花脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
-    "total_kcal": 293,
-    "portion_g": 230,
-    "category": "蔬菜-肉炒"
-  },
-  {
-    "name": "肉片西葫芦",
-    "kcal": 100,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，西葫芦清甜，猪肉嫩滑，口感清爽，热量较低，适合日常食用",
-    "total_kcal": null,
-    "portion_g": null,
-    "category": null
-  },
-  {
-    "name": "肥羊冬瓜",
-    "kcal": 100,
-    "carb_pct": 20.0,
-    "protein_pct": 40.0,
-    "fat_pct": 40.0,
-    "features": "家常炖菜，肥羊鲜嫩，冬瓜清甜，口感温润，能补充优质蛋白，适合秋冬食用",
-    "total_kcal": 297,
-    "portion_g": 250,
-    "category": "肉类-羊肉"
-  },
-  {
-    "name": "肥羊金针菇汤",
-    "kcal": 80,
-    "carb_pct": 20.0,
-    "protein_pct": 40.0,
-    "fat_pct": 40.0,
-    "features": "清淡爽口，肥羊鲜嫩，金针菇Q弹，口感清爽，优质蛋白含量高，热量低",
-    "total_kcal": 300,
-    "portion_g": 250,
-    "category": "肉类-羊肉"
-  },
-  {
-    "name": "腐竹三鲜煲",
-    "kcal": 120,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "咸香入味，腐竹软嫩，搭配菌菇、蔬菜，口感丰富，植物蛋白含量高，热量适中",
-    "total_kcal": 517,
-    "portion_g": 250,
-    "category": "豆制品"
-  },
-  {
-    "name": "腐竹炒香芹",
-    "kcal": 100,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，腐竹软嫩，香芹脆嫩，口感丰富，植物蛋白含量高，热量低，适合减脂期食用",
-    "total_kcal": 429,
-    "portion_g": 200,
-    "category": "豆制品"
-  },
-  {
-    "name": "芹菜香干肉丝",
-    "kcal": 120,
-    "carb_pct": 20.0,
-    "protein_pct": 30.0,
-    "fat_pct": 50.0,
-    "features": "家常小炒，芹菜脆嫩，香干鲜香，搭配肉丝，口感丰富，热量适中，适合日常食用",
-    "total_kcal": 317,
-    "portion_g": 240,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "菌香肉丁",
-    "kcal": 150,
-    "carb_pct": 20.0,
-    "protein_pct": 30.0,
-    "fat_pct": 50.0,
-    "features": "菌香浓郁，肉丁嫩滑，搭配菌菇，口感丰富，营养均衡，能补充优质蛋白",
-    "total_kcal": 325,
-    "portion_g": 220,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "菜花炒肉",
-    "kcal": 100,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，菜花脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
-    "total_kcal": 293,
-    "portion_g": 230,
-    "category": "蔬菜-肉炒"
-  },
-  {
-    "name": "菠萝咕咾肉",
-    "kcal": 260,
-    "carb_pct": 40.0,
-    "protein_pct": 15.0,
-    "fat_pct": 45.0,
-    "features": "酸甜开胃，猪肉外酥里嫩，搭配菠萝，口感清爽，碳水和脂肪含量较高，适合下饭",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
-  },
-  {
-    "name": "菠萝咕老肉",
-    "kcal": 260,
-    "carb_pct": 40.0,
-    "protein_pct": 15.0,
-    "fat_pct": 45.0,
-    "features": "酸甜开胃，猪肉外酥里嫩，搭配菠萝，口感清爽，碳水和脂肪含量较高，适合下饭",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
-  },
-  {
-    "name": "菠萝鸡米花",
-    "kcal": 200,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "酸甜开胃，鸡米花外酥里嫩，搭配菠萝，口感清爽，脂肪含量较高，适合解馋",
-    "total_kcal": 476,
-    "portion_g": 200,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "萝卜烧羊肉",
-    "kcal": 130,
-    "carb_pct": 20.0,
-    "protein_pct": 40.0,
-    "fat_pct": 40.0,
-    "features": "家常炖菜，羊肉软烂，萝卜清甜，口感温润，能补充优质蛋白，适合秋冬食用",
-    "total_kcal": 413,
-    "portion_g": 280,
-    "category": "肉类-羊肉"
-  },
-  {
-    "name": "营养排骨",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 35.0,
-    "fat_pct": 55.0,
-    "features": "家常烧菜，排骨软烂，口感醇厚，优质蛋白含量高，脂肪含量适中，适合补充营养",
-    "total_kcal": 415,
-    "portion_g": 180,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "葱油鸡腿",
-    "kcal": 180,
-    "carb_pct": 5.0,
-    "protein_pct": 40.0,
-    "fat_pct": 55.0,
-    "features": "葱香浓郁，鸡腿紧实，口感醇厚，优质蛋白含量高，脂肪含量适中，适合佐餐",
-    "total_kcal": 346,
-    "portion_g": 160,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "葱烧木耳",
-    "kcal": 70,
-    "carb_pct": 40.0,
-    "protein_pct": 20.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，木耳脆嫩，葱香浓郁，口感清爽，热量极低，适合减脂期食用",
-    "total_kcal": 234,
-    "portion_g": 150,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "葱烧鱼豆腐",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，鱼豆腐Q弹，葱香浓郁，口感丰富，热量适中，适合下饭",
-    "total_kcal": null,
-    "portion_g": null,
-    "category": null
-  },
-  {
-    "name": "蒜烧鸭血",
-    "kcal": 100,
-    "carb_pct": 10.0,
-    "protein_pct": 60.0,
-    "fat_pct": 30.0,
-    "features": "咸香入味，鸭血嫩滑，蒜香浓郁，优质蛋白含量高，脂肪含量低，适合补充营养",
-    "total_kcal": 247,
-    "portion_g": 230,
-    "category": "肉类-杂碎"
-  },
-  {
-    "name": "蒜蓉罗马生菜",
-    "kcal": 30,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，生菜脆嫩，蒜蓉提香，热量极低，富含膳食纤维，适合减脂期食用",
-    "total_kcal": 140,
-    "portion_g": 180,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "蒜蓉西兰花",
-    "kcal": 42,
-    "carb_pct": 39.5,
-    "protein_pct": 33.0,
-    "fat_pct": 27.5,
-    "features": "清淡爽口，西兰花富含膳食纤维和维生素C，蒜蓉提香，热量极低，适合减脂期食用",
-    "total_kcal": 185,
-    "portion_g": 200,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "蒜香甜辣鸡翅",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "甜辣入味，鸡翅外酥里嫩，蒜香浓郁，口感丰富，脂肪含量较高，适合下酒",
-    "total_kcal": 373,
-    "portion_g": 150,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "蒜香鸡翅中",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "蒜香浓郁，鸡翅中外酥里嫩，口感丰富，脂肪含量较高，适合下酒佐餐",
-    "total_kcal": 348,
-    "portion_g": 150,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "蒸水蛋",
-    "kcal": 60,
-    "carb_pct": 20.0,
-    "protein_pct": 60.0,
-    "fat_pct": 20.0,
-    "features": "清淡爽口，水蛋嫩滑，口感细腻，优质蛋白含量高，热量极低，适合所有人群",
-    "total_kcal": 191,
-    "portion_g": 150,
-    "category": "蛋类"
-  },
-  {
-    "name": "虎皮凤爪",
-    "kcal": 250,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "广东特色，凤爪软烂，酱香浓郁，口感Q弹，脂肪含量较高，适合佐餐",
-    "total_kcal": 372,
-    "portion_g": 130,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "虎皮尖椒",
-    "kcal": 30,
-    "carb_pct": 60.0,
-    "protein_pct": 15.0,
-    "fat_pct": 25.0,
-    "features": "香辣入味，尖椒软烂，口感绵密，碳水含量高，热量极低，适合下饭",
-    "total_kcal": 246,
-    "portion_g": 180,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "蚝油牛柳",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 50.0,
-    "fat_pct": 40.0,
-    "features": "咸香入味，牛柳嫩滑，蚝油提鲜，优质蛋白含量高，脂肪含量适中，适合补充营养",
-    "total_kcal": 377,
-    "portion_g": 200,
-    "category": "肉类-牛肉"
-  },
-  {
-    "name": "蚝油生菜",
-    "kcal": 35,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，生菜脆嫩，蚝油提鲜，热量极低，富含膳食纤维，适合减脂期食用",
-    "total_kcal": 142,
-    "portion_g": 180,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "蚝油鸡丁",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "咸香入味，鸡丁嫩滑，蚝油提鲜，优质蛋白含量高，脂肪含量适中，适合下饭",
-    "total_kcal": 338,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "西红柿炖牛肉",
-    "kcal": 120,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常炖菜，牛肉软烂，西红柿酸甜，口感醇厚，营养均衡，能补充优质蛋白",
-    "total_kcal": 318,
-    "portion_g": 280,
-    "category": "肉类-牛肉"
-  },
-  {
-    "name": "西红柿鸡蛋",
-    "kcal": 80,
-    "carb_pct": 40.0,
-    "protein_pct": 40.0,
-    "fat_pct": 20.0,
-    "features": "经典家常菜，酸甜开胃，鸡蛋嫩滑，西红柿软烂，营养均衡，热量极低，适合所有人群",
-    "total_kcal": 315,
-    "portion_g": 200,
-    "category": "蛋类"
-  },
-  {
-    "name": "西芹肥牛",
-    "kcal": 150,
-    "carb_pct": 20.0,
-    "protein_pct": 40.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，肥牛鲜嫩，西芹脆嫩，口感丰富，优质蛋白含量高，热量适中",
-    "total_kcal": 332,
-    "portion_g": 200,
-    "category": "肉类-牛肉"
-  },
-  {
-    "name": "豆豉蒸排骨",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 35.0,
-    "fat_pct": 55.0,
-    "features": "豉香浓郁，排骨软烂入味，蛋白质含量高，脂肪含量适中，适合补充营养",
-    "total_kcal": 418,
-    "portion_g": 180,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "豉油生菜",
-    "kcal": 30,
-    "carb_pct": 40.0,
-    "protein_pct": 30.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，生菜脆嫩，豉油提鲜，热量极低，富含膳食纤维，适合减脂期食用",
-    "total_kcal": 114,
-    "portion_g": 180,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "贵州酸汤鱼",
-    "kcal": 120,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "酸辣开胃，鱼肉嫩滑，无肌间刺，优质蛋白丰富，搭配豆芽等素菜，口感清爽",
-    "total_kcal": 347,
-    "portion_g": 300,
-    "category": "肉类-水产"
-  },
-  {
-    "name": "辣爆鱼仁",
-    "kcal": 120,
-    "carb_pct": 10.0,
-    "protein_pct": 50.0,
-    "fat_pct": 40.0,
-    "features": "麻辣鲜香，鱼仁嫩滑，口感丰富，优质蛋白含量高，脂肪含量适中，适合重口味人群",
-    "total_kcal": 492,
-    "portion_g": 180,
-    "category": "肉类-水产"
-  },
-  {
-    "name": "酱猪蹄",
-    "kcal": 260,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "酱香浓郁，猪蹄软烂Q弹，口感醇厚，脂肪含量较高，富含胶原蛋白，适合佐餐",
-    "total_kcal": 484,
-    "portion_g": 180,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "酸汤肥牛",
-    "kcal": 180,
-    "carb_pct": 15.0,
-    "protein_pct": 35.0,
-    "fat_pct": 50.0,
-    "features": "酸辣开胃，肥牛卷鲜嫩，搭配金针菇、酸菜，口感层次丰富，优质蛋白含量高",
-    "total_kcal": 346,
-    "portion_g": 280,
-    "category": "肉类-牛肉"
-  },
-  {
-    "name": "酸菜白肉",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 20.0,
-    "fat_pct": 70.0,
-    "features": "东北经典，猪肉软烂，酸菜酸爽，口感醇厚，脂肪含量较高，适合下饭",
-    "total_kcal": 520,
-    "portion_g": 300,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "酸菜羊肉卷",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "酸菜酸爽，羊肉卷鲜嫩，口感丰富，优质蛋白含量高，脂肪含量适中，适合下饭",
-    "total_kcal": 265,
-    "portion_g": 250,
-    "category": "肉类-羊肉"
-  },
-  {
-    "name": "重庆辣子鸡",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "经典川菜，麻辣鲜香，鸡肉外酥里嫩，口感丰富，脂肪含量较高，适合下酒",
-    "total_kcal": 668,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "铁锅炖大鹅",
-    "kcal": 250,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "东北特色，鹅肉软烂，汤汁浓郁，口感醇厚，脂肪含量较高，适合多人聚餐",
-    "total_kcal": 285,
-    "portion_g": 200,
-    "category": "其他"
-  },
-  {
-    "name": "银耳素烩",
-    "kcal": 50,
-    "carb_pct": 60.0,
-    "protein_pct": 20.0,
-    "fat_pct": 20.0,
-    "features": "清淡爽口，银耳软糯，口感细腻，热量极低，富含膳食纤维，适合减脂期食用",
-    "total_kcal": 243,
-    "portion_g": 200,
-    "category": "甜品"
-  },
-  {
-    "name": "锅包肉",
-    "kcal": 300,
-    "carb_pct": 30.0,
-    "protein_pct": 20.0,
-    "fat_pct": 50.0,
-    "features": "东北特色，外酥里嫩，酸甜开胃，猪肉搭配糖醋汁，口感丰富，脂肪和碳水含量较高",
-    "total_kcal": 781,
-    "portion_g": 200,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "雪菜毛豆仁",
-    "kcal": 80,
-    "carb_pct": 50.0,
-    "protein_pct": 30.0,
-    "fat_pct": 20.0,
-    "features": "清淡爽口，雪菜鲜香，毛豆清甜，口感丰富，热量极低，适合减脂期食用",
-    "total_kcal": 226,
-    "portion_g": 160,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "青椒牛肉",
-    "kcal": 120,
-    "carb_pct": 10.0,
-    "protein_pct": 60.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，牛肉嫩滑，青椒提味，口感脆嫩，优质蛋白含量极高，脂肪含量低，适合补充蛋白",
-    "total_kcal": 319,
-    "portion_g": 200,
-    "category": "肉类-牛肉"
-  },
-  {
-    "name": "青花椒炒鸡",
-    "kcal": 190,
-    "carb_pct": 10.0,
-    "protein_pct": 35.0,
-    "fat_pct": 55.0,
-    "features": "麻辣鲜香，鸡肉嫩滑，青花椒的麻味浓郁，口感层次丰富，优质蛋白含量高",
-    "total_kcal": 394,
-    "portion_g": 230,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "青蒜炒鱼豆腐",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，鱼豆腐Q弹，青蒜提味，口感丰富，热量适中，适合下饭",
-    "total_kcal": 286,
-    "portion_g": 160,
-    "category": "肉类-水产"
-  },
-  {
-    "name": "青豆烧仔鸡",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常烧菜，仔鸡嫩滑，青豆清甜，口感丰富，优质蛋白含量高，热量适中",
-    "total_kcal": 394,
-    "portion_g": 230,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "韭菜鸡蛋",
-    "kcal": 120,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，韭菜鲜香，鸡蛋嫩滑，口感清爽，营养均衡，能补充优质蛋白",
-    "total_kcal": 322,
-    "portion_g": 200,
-    "category": "蛋类"
-  },
-  {
-    "name": "风味茄子",
-    "kcal": 90,
-    "carb_pct": 50.0,
-    "protein_pct": 20.0,
-    "fat_pct": 30.0,
-    "features": "酸甜开胃，茄子软烂，口感绵密，碳水含量较高，热量低，适合下饭",
-    "total_kcal": 488,
-    "portion_g": 200,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "香干回锅肉",
-    "kcal": 300,
-    "carb_pct": 10.0,
-    "protein_pct": 20.0,
-    "fat_pct": 70.0,
-    "features": "经典川菜，猪肉咸香，香干软嫩，口感丰富，脂肪含量极高，适合下饭",
-    "total_kcal": 675,
-    "portion_g": 270,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "香干芹菜肉丝",
-    "kcal": 120,
-    "carb_pct": 20.0,
-    "protein_pct": 30.0,
-    "fat_pct": 50.0,
-    "features": "家常小炒，芹菜脆嫩，香干软嫩，搭配肉丝，口感丰富，热量适中，适合日常食用",
-    "total_kcal": 317,
-    "portion_g": 240,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "香椿鸡蛋",
-    "kcal": 120,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "家常小炒，香椿鲜香，鸡蛋嫩滑，口感清爽，营养均衡，能补充优质蛋白",
-    "total_kcal": 324,
-    "portion_g": 200,
-    "category": "蛋类"
-  },
-  {
-    "name": "香汁鸡柳",
-    "kcal": 150,
-    "carb_pct": 20.0,
-    "protein_pct": 40.0,
-    "fat_pct": 40.0,
-    "features": "咸香入味，鸡柳嫩滑，口感丰富，优质蛋白含量高，脂肪含量适中，适合下饭",
-    "total_kcal": 433,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "香煎豆腐",
-    "kcal": 120,
-    "carb_pct": 25.0,
-    "protein_pct": 45.0,
-    "fat_pct": 30.0,
-    "features": "外焦里嫩，豆腐鲜香，口感丰富，植物蛋白含量高，热量低，适合减脂期食用",
-    "total_kcal": 478,
-    "portion_g": 220,
-    "category": "豆制品"
-  },
-  {
-    "name": "香菇烧鸡",
-    "kcal": 180,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "菌香浓郁，鸡肉嫩滑，香菇吸收了鸡肉的油脂，口感丰富，优质蛋白含量高",
-    "total_kcal": 360,
-    "portion_g": 200,
-    "category": "肉类-综合"
-  },
-  {
-    "name": "香菇烧鸭翅中",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "菌香浓郁，鸭翅中软烂，口感醇厚，脂肪含量较高，适合佐餐",
-    "total_kcal": 271,
-    "portion_g": 150,
-    "category": "肉类-鸭肉"
-  },
-  {
-    "name": "香菇蒸滑鸡",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "菌香浓郁，鸡肉嫩滑，口感醇厚，优质蛋白含量高，脂肪含量适中，适合佐餐",
-    "total_kcal": 287,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
-  },
-  {
-    "name": "香菜氽丸子",
-    "kcal": 70,
-    "carb_pct": 30.0,
-    "protein_pct": 40.0,
-    "fat_pct": 30.0,
-    "features": "清淡爽口，丸子鲜嫩，香菜提香，口感清爽，热量极低，适合减脂期食用",
-    "total_kcal": 254,
-    "portion_g": 250,
-    "category": "汤类"
-  },
-  {
-    "name": "香辣鱼豆腐",
-    "kcal": 150,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "香辣入味，鱼豆腐Q弹，口感丰富，热量适中，适合下饭",
-    "total_kcal": 246,
-    "portion_g": 160,
-    "category": "肉类-水产"
-  },
-  {
-    "name": "香酥鸭",
-    "kcal": 300,
-    "carb_pct": 10.0,
-    "protein_pct": 25.0,
-    "fat_pct": 65.0,
-    "features": "外酥里嫩，鸭肉紧实，口感醇厚，脂肪含量较高，适合佐餐",
-    "total_kcal": 386,
-    "portion_g": 180,
-    "category": "肉类-鸭肉"
-  },
-  {
-    "name": "鱼香肉丝",
-    "kcal": 140,
-    "carb_pct": 60.0,
-    "protein_pct": 24.0,
-    "fat_pct": 16.0,
-    "features": "酸甜开胃，木耳、笋丝搭配猪肉，口感脆嫩，碳水含量较高，能快速补充能量",
-    "total_kcal": 432,
-    "portion_g": 230,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "鱼香茄子",
-    "kcal": 80,
-    "carb_pct": 60.0,
-    "protein_pct": 15.0,
-    "fat_pct": 25.0,
-    "features": "酸甜开胃，茄子软烂，口感绵密，碳水含量较高，能快速补充能量，热量低",
-    "total_kcal": 374,
-    "portion_g": 200,
-    "category": "蔬菜类"
-  },
-  {
-    "name": "鲜椒肉片",
-    "kcal": 120,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "香辣入味，猪肉嫩滑，搭配鲜椒，口感脆嫩，优质蛋白含量高，脂肪含量适中",
-    "total_kcal": 360,
-    "portion_g": 230,
-    "category": "肉类-猪肉"
-  },
-  {
-    "name": "鲜笋炒肉",
-    "kcal": 120,
-    "carb_pct": 30.0,
-    "protein_pct": 30.0,
-    "fat_pct": 40.0,
-    "features": "家常小炒，鲜笋脆嫩，猪肉嫩滑，口感丰富，热量适中，适合日常食用",
-    "total_kcal": 251,
-    "portion_g": 190,
-    "category": "肉类-猪肉"
+    "category": "蔬菜-肉炒",
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "鲜肉炒腐竹",
@@ -1999,138 +3346,2370 @@
     "features": "家常小炒，腐竹软嫩，猪肉嫩滑，口感丰富，植物蛋白和动物蛋白均衡，热量适中",
     "total_kcal": null,
     "portion_g": null,
-    "category": null
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉炒芹菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉炒菜花",
+    "kcal": 127,
+    "carb_pct": 30.0,
+    "protein_pct": 30.0,
+    "fat_pct": 40.0,
+    "features": "家常小炒，菜花脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
+    "total_kcal": 293,
+    "portion_g": 230,
+    "category": "蔬菜-肉炒",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉炒蒜黄",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉炒青椒",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉炖腐竹",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉片木耳",
+    "kcal": 142,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 241,
+    "portion_g": 170,
+    "category": "肉类-猪肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "肉片溜玉兰片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "肉片西葫芦",
+    "kcal": 128,
+    "carb_pct": 40.0,
+    "protein_pct": 30.0,
+    "fat_pct": 30.0,
+    "features": "家常小炒，西葫芦清甜，猪肉嫩滑，口感清爽，热量较低，适合日常食用",
+    "total_kcal": 243,
+    "portion_g": 190,
+    "category": "肉类-猪肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "肉笼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "肉西葫芦",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肉饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "肥牛米线米线",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肥羊冬瓜",
+    "kcal": 119,
+    "carb_pct": 20.0,
+    "protein_pct": 40.0,
+    "fat_pct": 40.0,
+    "features": "家常炖菜，肥羊鲜嫩，冬瓜清甜，口感温润，能补充优质蛋白，适合秋冬食用",
+    "total_kcal": 297,
+    "portion_g": 250,
+    "category": "肉类-羊肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肥羊冬瓜",
+    "kcal": 119,
+    "carb_pct": 20.0,
+    "protein_pct": 40.0,
+    "fat_pct": 40.0,
+    "features": "家常炖菜，肥羊鲜嫩，冬瓜清甜，口感温润，能补充优质蛋白，适合秋冬食用",
+    "total_kcal": 297,
+    "portion_g": 250,
+    "category": "肉类-羊肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "肥羊金针菇汤",
+    "kcal": 120,
+    "carb_pct": 20.0,
+    "protein_pct": 40.0,
+    "fat_pct": 40.0,
+    "features": "清淡爽口，肥羊鲜嫩，金针菇Q弹，口感清爽，优质蛋白含量高，热量低",
+    "total_kcal": 300,
+    "portion_g": 250,
+    "category": "肉类-羊肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "腐竹三鲜煲",
+    "kcal": 207,
+    "carb_pct": 30.0,
+    "protein_pct": 40.0,
+    "fat_pct": 30.0,
+    "features": "咸香入味，腐竹软嫩，搭配菌菇、蔬菜，口感丰富，植物蛋白含量高，热量适中",
+    "total_kcal": 517,
+    "portion_g": 250,
+    "category": "豆制品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "腐竹炒香芹",
+    "kcal": 215,
+    "carb_pct": 30.0,
+    "protein_pct": 40.0,
+    "fat_pct": 30.0,
+    "features": "家常小炒，腐竹软嫩，香芹脆嫩，口感丰富，植物蛋白含量高，热量低，适合减脂期食用",
+    "total_kcal": 429,
+    "portion_g": 200,
+    "category": "豆制品",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "芝士焗玉米",
+    "kcal": 195,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 351,
+    "portion_g": 180,
+    "category": "西餐",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "芸豆排骨白汁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "芹菜火腿饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "芹菜炒肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "芽菜扣肉",
+    "kcal": 295,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 590,
+    "portion_g": 200,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "草莓蛋糕",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "荷包蛋小炒肉",
+    "kcal": 154,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 432,
+    "portion_g": 280,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "莲藕排骨",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "菜花炒肉",
+    "kcal": 127,
+    "carb_pct": 30.0,
+    "protein_pct": 30.0,
+    "fat_pct": 40.0,
+    "features": "家常小炒，菜花脆嫩，搭配猪肉，口感丰富，热量较低，适合日常食用",
+    "total_kcal": 293,
+    "portion_g": 230,
+    "category": "蔬菜-肉炒",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "萝卜汆肥牛",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "营养排骨",
+    "kcal": 230,
+    "carb_pct": 10.0,
+    "protein_pct": 35.0,
+    "fat_pct": 55.0,
+    "features": "家常烧菜，排骨软烂，口感醇厚，优质蛋白含量高，脂肪含量适中，适合补充营养",
+    "total_kcal": 415,
+    "portion_g": 180,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "葡式烤蛋挞",
+    "kcal": 689,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 551,
+    "portion_g": 80,
+    "category": "甜品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "葡式蛋挞",
+    "kcal": 689,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 551,
+    "portion_g": 80,
+    "category": "甜品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "葱油鸡腿",
+    "kcal": 216,
+    "carb_pct": 5.0,
+    "protein_pct": 40.0,
+    "fat_pct": 55.0,
+    "features": "葱香浓郁，鸡腿紧实，口感醇厚，优质蛋白含量高，脂肪含量适中，适合佐餐",
+    "total_kcal": 346,
+    "portion_g": 160,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "葱爆羊肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "蒜蓉娃娃菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蒜蓉快菜",
+    "kcal": 79,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 143,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "三层",
+      "二层"
+    ]
+  },
+  {
+    "name": "蒜蓉芥兰",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蒜蓉菜心",
+    "kcal": 89,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 160,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "蒜香烤翅",
+    "kcal": 229,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 343,
+    "portion_g": 150,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蒜香甜辣鸡翅",
+    "kcal": 249,
+    "carb_pct": 10.0,
+    "protein_pct": 30.0,
+    "fat_pct": 60.0,
+    "features": "甜辣入味，鸡翅外酥里嫩，蒜香浓郁，口感丰富，脂肪含量较高，适合下酒",
+    "total_kcal": 373,
+    "portion_g": 150,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蒜香翅中",
+    "kcal": 232,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 348,
+    "portion_g": 150,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "蒜香脆鲍菇",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蒸糯米鸡腿",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "蓝莓果酱面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "蔓越莓饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "藤椒鸡肉套餐",
+    "kcal": 148,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 563,
+    "portion_g": 380,
+    "category": "主食-套餐",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蘑菇肉酱意大利面",
+    "kcal": 213,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 619,
+    "portion_g": 290,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "虎皮凤爪",
+    "kcal": 286,
+    "carb_pct": 10.0,
+    "protein_pct": 30.0,
+    "fat_pct": 60.0,
+    "features": "广东特色，凤爪软烂，酱香浓郁，口感Q弹，脂肪含量较高，适合佐餐",
+    "total_kcal": 372,
+    "portion_g": 130,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "虎皮尖椒",
+    "kcal": 136,
+    "carb_pct": 60.0,
+    "protein_pct": 15.0,
+    "fat_pct": 25.0,
+    "features": "香辣入味，尖椒软烂，口感绵密，碳水含量高，热量极低，适合下饭",
+    "total_kcal": 246,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "一层",
+      "三层"
+    ]
+  },
+  {
+    "name": "虾仁蒸鸡蛋",
+    "kcal": 159,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 287,
+    "portion_g": 180,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蚝油牛肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "蚝油生菜",
+    "kcal": 79,
+    "carb_pct": 40.0,
+    "protein_pct": 30.0,
+    "fat_pct": 30.0,
+    "features": "清淡爽口，生菜脆嫩，蚝油提鲜，热量极低，富含膳食纤维，适合减脂期食用",
+    "total_kcal": 142,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "蛋挞",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "蜂蜜蛋糕杯",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "蜜制鸭翅根",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "西红柿炒鸡蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层",
+      "三层"
+    ]
+  },
+  {
+    "name": "西红柿炖牛肉",
+    "kcal": 114,
+    "carb_pct": 30.0,
+    "protein_pct": 40.0,
+    "fat_pct": 30.0,
+    "features": "家常炖菜，牛肉软烂，西红柿酸甜，口感醇厚，营养均衡，能补充优质蛋白",
+    "total_kcal": 318,
+    "portion_g": 280,
+    "category": "肉类-牛肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "西红柿牛肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "西红柿鸡蛋",
+    "kcal": 157,
+    "carb_pct": 40.0,
+    "protein_pct": 40.0,
+    "fat_pct": 20.0,
+    "features": "经典家常菜，酸甜开胃，鸡蛋嫩滑，西红柿软烂，营养均衡，热量极低，适合所有人群",
+    "total_kcal": 315,
+    "portion_g": 200,
+    "category": "蛋类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "西芹肥牛",
+    "kcal": 166,
+    "carb_pct": 20.0,
+    "protein_pct": 40.0,
+    "fat_pct": 40.0,
+    "features": "家常小炒，肥牛鲜嫩，西芹脆嫩，口感丰富，优质蛋白含量高，热量适中",
+    "total_kcal": 332,
+    "portion_g": 200,
+    "category": "肉类-牛肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "西芹虾仁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "西芹银杏虾仁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "豆沙酥",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "豆沙饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "豆浆",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "豆腐脑",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "豆豉蒸排骨",
+    "kcal": 232,
+    "carb_pct": 10.0,
+    "protein_pct": 35.0,
+    "fat_pct": 55.0,
+    "features": "豉香浓郁，排骨软烂入味，蛋白质含量高，脂肪含量适中，适合补充营养",
+    "total_kcal": 418,
+    "portion_g": 180,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "豆豉鲮鱼油麦菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "豉椒牛肉炒饭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "豉油生菜",
+    "kcal": 64,
+    "carb_pct": 40.0,
+    "protein_pct": 30.0,
+    "fat_pct": 30.0,
+    "features": "清淡爽口，生菜脆嫩，豉油提鲜，热量极低，富含膳食纤维，适合减脂期食用",
+    "total_kcal": 114,
+    "portion_g": 180,
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "贵州酸汤鱼",
+    "kcal": 116,
+    "carb_pct": 10.0,
+    "protein_pct": 40.0,
+    "fat_pct": 50.0,
+    "features": "酸辣开胃，鱼肉嫩滑，无肌间刺，优质蛋白丰富，搭配豆芽等素菜，口感清爽",
+    "total_kcal": 347,
+    "portion_g": 300,
+    "category": "肉类-水产",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "赛螃蟹",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "酱油炒饭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "酱烧棒骨",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "酱爆果仁鸡丁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "酱爆鸡丁",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "酱猪蹄",
+    "kcal": 269,
+    "carb_pct": 10.0,
+    "protein_pct": 30.0,
+    "fat_pct": 60.0,
+    "features": "酱香浓郁，猪蹄软烂Q弹，口感醇厚，脂肪含量较高，富含胶原蛋白，适合佐餐",
+    "total_kcal": 484,
+    "portion_g": 180,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "酱肘块",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "酱香鸭腿",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "酸奶岩烧面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "酸菜白肉",
+    "kcal": 173,
+    "carb_pct": 10.0,
+    "protein_pct": 20.0,
+    "fat_pct": 70.0,
+    "features": "东北经典，猪肉软烂，酸菜酸爽，口感醇厚，脂肪含量较高，适合下饭",
+    "total_kcal": 520,
+    "portion_g": 300,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层",
+      "三层"
+    ]
+  },
+  {
+    "name": "酸菜羊肉卷",
+    "kcal": 106,
+    "carb_pct": 10.0,
+    "protein_pct": 40.0,
+    "fat_pct": 50.0,
+    "features": "酸菜酸爽，羊肉卷鲜嫩，口感丰富，优质蛋白含量高，脂肪含量适中，适合下饭",
+    "total_kcal": 265,
+    "portion_g": 250,
+    "category": "肉类-羊肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "酸菜蒸五花肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "酸菜鱼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "醋溜土豆丝",
+    "kcal": 134,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 268,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "醋溜木须",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "醋溜白菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "醋烹豆芽",
+    "kcal": 72,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 144,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "重庆小面",
+    "kcal": 170,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 681,
+    "portion_g": 400,
+    "category": "主食-面食",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "重庆辣子鸡",
+    "kcal": 371,
+    "carb_pct": 10.0,
+    "protein_pct": 30.0,
+    "fat_pct": 60.0,
+    "features": "经典川菜，麻辣鲜香，鸡肉外酥里嫩，口感丰富，脂肪含量较高，适合下酒",
+    "total_kcal": 668,
+    "portion_g": 180,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "陕西三合一拌面",
+    "kcal": 186,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 706,
+    "portion_g": 380,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "青椒土豆片",
+    "kcal": 121,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 241,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "青椒肥牛",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "青瓜鱼片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "青笋炒肉",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "青笋炒鸡蛋",
+    "kcal": 155,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 310,
+    "portion_g": 200,
+    "category": "蛋类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "青红椒丁炒鱼豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "回锅肉",
+    "kcal": 272,
+    "carb_pct": 10.0,
+    "protein_pct": 20.0,
+    "fat_pct": 70.0,
+    "features": "经典川菜，猪肉咸香，搭配青椒，口感丰富，脂肪含量极高，适合下饭",
+    "total_kcal": 599,
+    "portion_g": 220,
+    "category": "肉类-猪肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "青豆烧仔鸡",
+    "kcal": 171,
+    "carb_pct": 30.0,
+    "protein_pct": 40.0,
+    "fat_pct": 30.0,
+    "features": "家常烧菜，仔鸡嫩滑，青豆清甜，口感丰富，优质蛋白含量高，热量适中",
+    "total_kcal": 394,
+    "portion_g": 230,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "面条",
+    "kcal": 136,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 474,
+    "portion_g": 350,
+    "category": "主食-面食",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "风味茄子",
+    "kcal": 244,
+    "carb_pct": 50.0,
+    "protein_pct": 20.0,
+    "fat_pct": 30.0,
+    "features": "酸甜开胃，茄子软烂，口感绵密，碳水含量较高，热量低，适合下饭",
+    "total_kcal": 488,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "馄饨",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层",
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "馅饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "香汁鸡柳",
+    "kcal": 240,
+    "carb_pct": 20.0,
+    "protein_pct": 40.0,
+    "fat_pct": 40.0,
+    "features": "咸香入味，鸡柳嫩滑，口感丰富，优质蛋白含量高，脂肪含量适中，适合下饭",
+    "total_kcal": 433,
+    "portion_g": 180,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "香煎三黄鸡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "香肠芝士面包",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "香脆薯饼",
+    "kcal": 251,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 326,
+    "portion_g": 130,
+    "category": "小吃",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香芋地瓜丸",
+    "kcal": 270,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 405,
+    "portion_g": 150,
+    "category": "甜品",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香菇烧千叶豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "香菇烧豆腐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "香菇肉酱意大利面",
+    "kcal": 213,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 619,
+    "portion_g": 290,
+    "category": "主食-面食",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香菇芥蓝牛肉片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "香葱牛肉披萨",
+    "kcal": 241,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 674,
+    "portion_g": 280,
+    "category": "主食-披萨",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香辣排骨",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "香酥鸡肉套餐",
+    "kcal": 202,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 770,
+    "portion_g": 380,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香酥鸡腿肉套餐",
+    "kcal": 202,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 770,
+    "portion_g": 380,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香酥鸭",
+    "kcal": 214,
+    "carb_pct": 10.0,
+    "protein_pct": 25.0,
+    "fat_pct": 65.0,
+    "features": "外酥里嫩，鸭肉紧实，口感醇厚，脂肪含量较高，适合佐餐",
+    "total_kcal": 386,
+    "portion_g": 180,
+    "category": "肉类-鸭肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "香酥鸭",
+    "kcal": 214,
+    "carb_pct": 10.0,
+    "protein_pct": 25.0,
+    "fat_pct": 65.0,
+    "features": "外酥里嫩，鸭肉紧实，口感醇厚，脂肪含量较高，适合佐餐",
+    "total_kcal": 386,
+    "portion_g": 180,
+    "category": "肉类-鸭肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "魔芋烧鸭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鱼丁鸡蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鱼香肉丝",
+    "kcal": 188,
+    "carb_pct": 60.0,
+    "protein_pct": 24.0,
+    "fat_pct": 16.0,
+    "features": "酸甜开胃，木耳、笋丝搭配猪肉，口感脆嫩，碳水含量较高，能快速补充能量",
+    "total_kcal": 432,
+    "portion_g": 230,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鱼香茄子",
+    "kcal": 187,
+    "carb_pct": 60.0,
+    "protein_pct": 15.0,
+    "fat_pct": 25.0,
+    "features": "酸甜开胃，茄子软烂，口感绵密，碳水含量较高，能快速补充能量，热量低",
+    "total_kcal": 374,
+    "portion_g": 200,
+    "category": "蔬菜类",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鲜椒肉片",
+    "kcal": 156,
+    "carb_pct": 10.0,
+    "protein_pct": 40.0,
+    "fat_pct": 50.0,
+    "features": "香辣入味，猪肉嫩滑，搭配鲜椒，口感脆嫩，优质蛋白含量高，脂肪含量适中",
+    "total_kcal": 360,
+    "portion_g": 230,
+    "category": "肉类-猪肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鲜椒肥牛",
+    "kcal": 167,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 333,
+    "portion_g": 200,
+    "category": "肉类-牛肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鸡汤米线",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "鸡肉汉堡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鸡肉蘑菇披萨",
+    "kcal": 230,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 667,
+    "portion_g": 290,
+    "category": "主食-披萨",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鸡腿堡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鸡腿肉汉堡",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "鸡腿面",
+    "kcal": 140,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 629,
+    "portion_g": 450,
+    "category": "主食-面食",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "鸡蛋",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "圆白菜炒粉条",
+    "kcal": 152,
+    "carb_pct": 60.0,
+    "protein_pct": 15.0,
+    "fat_pct": 25.0,
+    "features": "家常小炒，圆白菜脆嫩，粉条爽滑，口感丰富，碳水含量高，能快速补充能量",
+    "total_kcal": 335,
+    "portion_g": 220,
+    "category": "蔬菜类",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "鸡蛋汤",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "鸡蛋油菜",
-    "kcal": 70,
+    "kcal": 83,
     "carb_pct": 40.0,
     "protein_pct": 40.0,
     "fat_pct": 20.0,
     "features": "家常小炒，油菜脆嫩，鸡蛋嫩滑，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 149,
     "portion_g": 180,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鸡蛋炒米线",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鸡蛋炒芹菜",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鸡蛋炒西葫芦",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鸡蛋烧饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "鸡蛋笋片",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "鸡蛋芹菜",
-    "kcal": 80,
+    "kcal": 155,
     "carb_pct": 40.0,
     "protein_pct": 40.0,
     "fat_pct": 20.0,
     "features": "家常小炒，芹菜脆嫩，鸡蛋嫩滑，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 310,
     "portion_g": 200,
-    "category": "蛋类"
+    "category": "蛋类",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鸡蛋西红柿",
+    "kcal": 148,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 592,
+    "portion_g": 400,
+    "category": "肉类-综合",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "鸡蛋西红柿盖饭",
+    "kcal": 148,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 592,
+    "portion_g": 400,
+    "category": "肉类-综合",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "鸡蛋西葫芦条",
-    "kcal": 80,
+    "kcal": 157,
     "carb_pct": 40.0,
     "protein_pct": 40.0,
     "fat_pct": 20.0,
     "features": "家常小炒，西葫芦清甜，鸡蛋嫩滑，口感清爽，热量极低，适合减脂期食用",
     "total_kcal": 315,
     "portion_g": 200,
-    "category": "蛋类"
+    "category": "蛋类",
+    "floors": [
+      "一层"
+    ]
   },
   {
-    "name": "鸡里蹦",
-    "kcal": 150,
-    "carb_pct": 10.0,
-    "protein_pct": 40.0,
-    "fat_pct": 50.0,
-    "features": "经典鲁菜，鸡肉外酥里嫩，酸甜开胃，口感丰富，优质蛋白含量高，脂肪含量适中",
-    "total_kcal": 371,
-    "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "name": "鸡蛋软饼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "鸡蛋韭菜水饺",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "鸭血粉丝",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "麻婆豆腐",
-    "kcal": 80,
+    "kcal": 160,
     "carb_pct": 30.0,
     "protein_pct": 40.0,
     "fat_pct": 30.0,
     "features": "经典川菜，麻辣鲜香，豆腐嫩滑，口感醇厚，植物蛋白含量高，热量低，适合下饭",
     "total_kcal": 449,
     "portion_g": 280,
-    "category": "豆制品"
+    "category": "豆制品",
+    "floors": [
+      "一层",
+      "三层",
+      "二层"
+    ]
+  },
+  {
+    "name": "麻薯",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "麻薯鲜奶棉花杯",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "麻辣一锅鲜",
-    "kcal": 200,
+    "kcal": 174,
     "carb_pct": 10.0,
     "protein_pct": 30.0,
     "fat_pct": 60.0,
     "features": "麻辣鲜香，食材丰富，口感层次多，脂肪含量较高，适合多人聚餐",
     "total_kcal": 522,
     "portion_g": 300,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "麻辣半块鸭",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "麻辣烫",
+    "kcal": 152,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 610,
+    "portion_g": 400,
+    "category": "小吃",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "麻辣香锅",
-    "kcal": 300,
+    "kcal": 174,
     "carb_pct": 20.0,
     "protein_pct": 20.0,
     "fat_pct": 60.0,
     "features": "麻辣鲜香，食材丰富，口感层次多，脂肪含量较高，适合多人聚餐，下饭神器",
     "total_kcal": 661,
     "portion_g": 380,
-    "category": "肉类-混合"
+    "category": "肉类-混合",
+    "floors": [
+      "一层",
+      "二层"
+    ]
   },
   {
-    "name": "麻辣鸭柳",
-    "kcal": 200,
-    "carb_pct": 10.0,
-    "protein_pct": 30.0,
-    "fat_pct": 60.0,
-    "features": "麻辣鲜香，鸭柳紧实，口感丰富，优质蛋白含量高，脂肪含量较高，适合下酒",
-    "total_kcal": 419,
-    "portion_g": 160,
-    "category": "肉类-鸭肉"
+    "name": "黄油年糕",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "黄油曲多多",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
   },
   {
     "name": "黄豆芥兰丁",
-    "kcal": 40,
+    "kcal": 139,
     "carb_pct": 60.0,
     "protein_pct": 25.0,
     "fat_pct": 15.0,
     "features": "清淡爽口，芥兰脆嫩，黄豆鲜香，口感丰富，热量极低，适合减脂期食用",
     "total_kcal": 251,
     "portion_g": 180,
-    "category": "蔬菜类"
+    "category": "蔬菜类",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "黄金鸡柳",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
   },
   {
     "name": "黑椒地道肠",
-    "kcal": 300,
+    "kcal": 265,
     "carb_pct": 20.0,
     "protein_pct": 20.0,
     "fat_pct": 60.0,
     "features": "黑椒味浓郁，肉肠紧实，口感醇厚，脂肪含量较高，适合佐餐",
     "total_kcal": 478,
     "portion_g": 180,
-    "category": "肉类-鸡肉"
+    "category": "肉类-鸡肉",
+    "floors": [
+      "一层"
+    ]
+  },
+  {
+    "name": "黑椒牛排",
+    "kcal": 148,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 562,
+    "portion_g": 380,
+    "category": "主食-盖饭",
+    "floors": [
+      "三层"
+    ]
+  },
+  {
+    "name": "黑椒牛肉饭",
+    "kcal": 148,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 562,
+    "portion_g": 380,
+    "category": "主食-盖饭",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "黑椒肥牛",
+    "kcal": 180,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 360,
+    "portion_g": 200,
+    "category": "肉类-综合",
+    "floors": [
+      "三层",
+      "二层"
+    ]
+  },
+  {
+    "name": "黑椒肥牛盖饭",
+    "kcal": 180,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 360,
+    "portion_g": 200,
+    "category": "肉类-综合",
+    "floors": [
+      "一层"
+    ]
   },
   {
     "name": "黑椒雪鱼",
-    "kcal": 120,
+    "kcal": 166,
     "carb_pct": 10.0,
     "protein_pct": 50.0,
     "fat_pct": 40.0,
     "features": "黑椒味浓郁，雪鱼嫩滑，无肌间刺，优质蛋白含量高，脂肪含量低，适合所有人群",
     "total_kcal": 266,
     "portion_g": 160,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "三层"
+    ]
   },
   {
     "name": "黑椒鳕鱼",
-    "kcal": 120,
+    "kcal": 166,
     "carb_pct": 10.0,
     "protein_pct": 50.0,
     "fat_pct": 40.0,
     "features": "黑椒味浓郁，鳕鱼嫩滑，无肌间刺，优质蛋白含量高，脂肪含量低，适合所有人群",
     "total_kcal": 266,
     "portion_g": 160,
-    "category": "肉类-水产"
+    "category": "肉类-水产",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "黑椒鸡块",
+    "kcal": 359,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": 539,
+    "portion_g": 150,
+    "category": "肉类-鸡肉",
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "黑椒鸡肉套餐",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "二层"
+    ]
+  },
+  {
+    "name": "黑米奶酩三明治",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "黑米奶酪三明治",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "黑米粥",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "主食早餐"
+    ]
+  },
+  {
+    "name": "黑胡椒雪鱼",
+    "kcal": 0,
+    "carb_pct": 0.0,
+    "protein_pct": 0.0,
+    "fat_pct": 0.0,
+    "features": "",
+    "total_kcal": null,
+    "portion_g": null,
+    "category": null,
+    "floors": [
+      "三层"
+    ]
   }
 ]

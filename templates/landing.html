@@ -9,6 +9,8 @@
 </head>
 <body class="landing-body">
     <main class="landing">
+        {% include "_account_bar.html" %}
+
         <div class="landing-card">
             <div class="badge">DietBalance · 智能饮食助手</div>
 
@@ -42,7 +44,7 @@
                     <span class="feat-icon" aria-hidden="true">🍱</span>
                     <div>
                         <strong>食堂菜品速查</strong>
-                        <span>194 道菜的热量、宏量素占比与菜品特点。</span>
+                        <span>一层 / 二层 / 三层 / 早餐菜单，共 {{ dish_count }} 道菜。</span>
                     </div>
                 </li>
                 <li>

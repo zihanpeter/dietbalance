@@ -1,12 +1,12 @@
 """菜品（食堂）数据加载与处理。
 
-数据源是仓库内 ``data/dishes.json``，由 ``scripts/build_dishes.py`` /
-``scripts/merge_portion_kcal.py`` 从 Excel 表生成。
+数据源是仓库内 ``data/dishes.json``，由楼层菜单构建脚本生成：
+``scripts/build_from_floor_menus.py``。
 """
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from functools import lru_cache
 from pathlib import Path
 
@@ -31,6 +31,11 @@ class Dish:
     total_kcal: int | None = None  # 一份/一碗总热量
     portion_g: int | None = None  # 出品重量（克）
     category: str | None = None  # 菜品类别，如「肉类-鸡肉」「蔬菜类」
+    floors: tuple[str, ...] = field(default_factory=tuple)  # 出现楼层
+
+    @property
+    def has_macros(self) -> bool:
+        return bool(self.carb_pct or self.protein_pct or self.fat_pct)
 
     @property
     def carb_g(self) -> float:
@@ -47,6 +52,8 @@ class Dish:
     @property
     def calorie_level(self) -> str:
         """根据每 100 g 热量划分等级，用于前端筛选。"""
+        if self.kcal <= 0:
+            return "unknown"
         if self.kcal < 100:
             return "low"
         if self.kcal < 200:
@@ -55,6 +62,8 @@ class Dish:
 
     def to_dict(self) -> dict[str, object]:
         data = asdict(self)
+        data["floors"] = list(self.floors)
+        data["has_macros"] = self.has_macros
         data["carb_g"] = self.carb_g
         data["protein_g"] = self.protein_g
         data["fat_g"] = self.fat_g
@@ -69,6 +78,14 @@ def _optional_int(value: object) -> int | None:
         return int(round(float(value)))
     except (TypeError, ValueError):
         return None
+
+
+def _parse_floors(value: object) -> tuple[str, ...]:
+    if not value:
+        return ()
+    if isinstance(value, (list, tuple)):
+        return tuple(str(x).strip() for x in value if str(x).strip())
+    return (str(value).strip(),)
 
 
 @lru_cache(maxsize=1)
@@ -88,6 +105,7 @@ def load_dishes() -> list[Dish]:
             total_kcal=_optional_int(item.get("total_kcal")),
             portion_g=_optional_int(item.get("portion_g")),
             category=(str(item["category"]).strip() if item.get("category") else None),
+            floors=_parse_floors(item.get("floors")),
         )
         for item in raw
         if item.get("name")
