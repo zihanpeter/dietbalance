@@ -17,6 +17,7 @@ from sources.planner import (
     build_plans,
     build_target,
 )
+from sources import visits
 
 app = Flask(__name__)
 app.config["PREFERRED_URL_SCHEME"] = os.environ.get("PREFERRED_URL_SCHEME", "https")
@@ -38,6 +39,22 @@ def _inject_static_versioner():
         return f"{url}{sep}v={mtime}"
 
     return {"versioned_static": versioned_static}
+
+
+@app.before_request
+def _count_page_view() -> None:
+    """统计页面浏览量；健康检查与静态资源不计入。"""
+    if request.method != "GET":
+        return
+    endpoint = request.endpoint
+    if endpoint in (None, "static", "healthz"):
+        return
+    visits.increment(request.path)
+
+
+@app.context_processor
+def _inject_visit_count():
+    return {"visit_count": visits.total()}
 
 # 反向代理层数：默认 1（即直接由 Cloudflare / Nginx / PaaS 前代理）。
 # 若链路是 Cloudflare → Nginx → app，则设为 2，以此类推。

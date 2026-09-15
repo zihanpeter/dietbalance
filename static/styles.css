@@ -614,6 +614,12 @@ h1 {
     gap: 6px;
 }
 
+.visit-count {
+    font-variant-numeric: tabular-nums;
+    color: #9a3412;
+    font-weight: 600;
+}
+
 .dim {
     opacity: 0.7;
 }
