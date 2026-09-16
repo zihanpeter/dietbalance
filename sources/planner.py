@@ -5,6 +5,7 @@
 * BMR 采用 Mifflin-St Jeor 公式
 * TDEE = BMR × 活动系数
 * 目标热量与三大宏量素比例按减脂 / 保持 / 增肌三档调整
+* 配餐默认「荤 + 素 + 主食」，覆盖碳水需求
 """
 from __future__ import annotations
 
@@ -68,9 +69,29 @@ ACTIVITY_BY_KEY = {a.key: a for a in ACTIVITY_LEVELS}
 GOAL_BY_KEY = {g.key: g for g in GOALS}
 MEAL_BY_KEY = {m.key: m for m in MEALS}
 
-# 菜品在搭配中承担的角色
+# 菜品角色分类
 _VEGGIE_CATEGORIES = {"蔬菜类", "蔬菜类-综合", "蔬菜-肉炒", "菌菇类"}
 _EXTRA_PROTEIN_CATEGORIES = {"蛋类", "豆制品"}
+_STAPLE_CATEGORIES = {"主食-粥品", "主食-米饭"}
+_COMPLETE_MEAL_KEYWORDS = (
+    "套餐",
+    "盖饭",
+    "炒饭",
+    "披萨",
+    "汉堡",
+    "堡",
+    "焗饭",
+    "拌面",
+    "刀削面",
+    "拉面",
+    "米线",
+    "意大利",
+    "通心粉",
+    "方便面",
+    "卤面",
+    "炒饼",
+    "粉丝",
+)
 
 
 def calculate_bmr(gender: str, weight_kg: float, height_cm: float, age: int) -> float:
@@ -132,7 +153,6 @@ def build_target(
     carb_share = sum(goal.carb_share) / 2
     carb_g = target_kcal * carb_share / KCAL_PER_G_CARB
 
-    # 脂肪吃掉剩余热量，并保证不低于总热量的 20%（健康下限）
     remaining_kcal = target_kcal - protein_g * KCAL_PER_G_PROTEIN - carb_g * KCAL_PER_G_CARB
     fat_g = max(remaining_kcal, target_kcal * 0.20) / KCAL_PER_G_FAT
 
@@ -158,7 +178,7 @@ class PlanDish:
     kcal: int
     portion_g: int | None
     category: str
-    role: str  # "protein" | "veggie"
+    role: str  # "protein" | "veggie" | "carb"
     protein_g: float
     carb_g: float
     fat_g: float
@@ -180,29 +200,85 @@ def _to_plan_dish(dish: Dish, role: str) -> PlanDish:
     )
 
 
+def _is_complete_meal(name: str, category: str) -> bool:
+    if any(k in name for k in _COMPLETE_MEAL_KEYWORDS):
+        return True
+    return category.startswith("主食-") and category not in {
+        "主食-粥品",
+        "主食-米饭",
+        "主食-面食",
+    }
+
+
+def _is_staple_side(dish: Dish) -> bool:
+    """可与荤素搭配的「配菜主食」（非整餐套餐）。"""
+    category = dish.category or ""
+    name = dish.name
+    if _is_complete_meal(name, category):
+        return False
+    if category in _STAPLE_CATEGORIES:
+        return True
+    if category == "主食-面食" and dish.carb_pct >= 45:
+        return True
+    if category.startswith("主食") and dish.carb_pct >= 50 and dish.protein_pct <= 22:
+        return True
+    return False
+
+
+# 食堂常备基础主食（菜单未必单列）
+_BUILTIN_STAPLES: tuple[PlanDish, ...] = (
+    PlanDish(
+        name="米饭",
+        kcal=232,
+        portion_g=200,
+        category="主食-米饭",
+        role="carb",
+        protein_g=4.6,
+        carb_g=49.0,
+        fat_g=0.6,
+        features="白米饭一份约 200 g，碳水主来源，配菜必备主食",
+    ),
+    PlanDish(
+        name="馒头",
+        kcal=221,
+        portion_g=100,
+        category="主食-面食",
+        role="carb",
+        protein_g=7.0,
+        carb_g=47.0,
+        fat_g=1.1,
+        features="标准馒头约 100 g，方便携带的面食碳水",
+    ),
+)
+
+
 @lru_cache(maxsize=1)
-def _candidate_pools() -> tuple[list[PlanDish], list[PlanDish]]:
-    """返回 (荤菜池, 素菜池)，均按一份热量升序排列。"""
+def _candidate_pools() -> tuple[list[PlanDish], list[PlanDish], list[PlanDish]]:
+    """返回 (荤菜池, 素菜池, 主食池)，均按一份热量升序。"""
     proteins: list[PlanDish] = []
     veggies: list[PlanDish] = []
+    staples: list[PlanDish] = list(_BUILTIN_STAPLES)
 
     for dish in load_dishes():
         if not dish.total_kcal:
             continue
         category = dish.category or ""
-        if category in _VEGGIE_CATEGORIES:
+        if _is_staple_side(dish):
+            staples.append(_to_plan_dish(dish, "carb"))
+        elif category in _VEGGIE_CATEGORIES:
             veggies.append(_to_plan_dish(dish, "veggie"))
         elif category.startswith("肉类") or category in _EXTRA_PROTEIN_CATEGORIES:
             proteins.append(_to_plan_dish(dish, "protein"))
 
     proteins.sort(key=lambda d: d.kcal)
     veggies.sort(key=lambda d: d.kcal)
-    return proteins, veggies
+    staples.sort(key=lambda d: d.kcal)
+    return proteins, veggies, staples
 
 
 @dataclass
 class MealPlan:
-    """一套 2–3 道菜的搭配方案。"""
+    """一套搭配方案（通常含荤 / 素 / 主食）。"""
 
     dishes: list[PlanDish]
     score: float = 0.0
@@ -230,26 +306,28 @@ class MealPlan:
             "carb": round(self.carb_g * KCAL_PER_G_CARB / total * 100, 1),
             "fat": round(self.fat_g * KCAL_PER_G_FAT / total * 100, 1),
         }
+        # 展示顺序：荤 → 素 → 主食
+        order = {"protein": 0, "veggie": 1, "carb": 2}
+        self.dishes.sort(key=lambda d: order.get(d.role, 9))
         return self
 
 
-# 候选组合的中间表示：(热量, 蛋白 g, 脂肪 g)
-_Metrics = tuple[float, float, float]
-
-# 组合枚举时保留的候选数量，足够在去重后凑满方案
-_TOP_K = 400
+# (热量, 蛋白 g, 脂肪 g, 碳水 g)
+_Metrics = tuple[float, float, float, float]
+_TOP_K = 500
 
 
 @lru_cache(maxsize=1)
-def _pool_metrics() -> tuple[list[_Metrics], list[_Metrics]]:
-    proteins, veggies = _candidate_pools()
-    to_metrics = [(float(d.kcal), d.protein_g, d.fat_g) for d in proteins]
-    veg_metrics = [(float(d.kcal), d.protein_g, d.fat_g) for d in veggies]
-    return to_metrics, veg_metrics
+def _pool_metrics() -> tuple[list[_Metrics], list[_Metrics], list[_Metrics]]:
+    proteins, veggies, staples = _candidate_pools()
+    return (
+        [(float(d.kcal), d.protein_g, d.fat_g, d.carb_g) for d in proteins],
+        [(float(d.kcal), d.protein_g, d.fat_g, d.carb_g) for d in veggies],
+        [(float(d.kcal), d.protein_g, d.fat_g, d.carb_g) for d in staples],
+    )
 
 
 def _fat_penalty_threshold(goal_key: str) -> tuple[float, float]:
-    """返回 (脂肪供能比阈值, 惩罚权重)。"""
     if goal_key == "fat_loss":
         return 0.30, 0.8
     if goal_key == "muscle_gain":
@@ -260,31 +338,44 @@ def _fat_penalty_threshold(goal_key: str) -> tuple[float, float]:
 def _enumerate_combos(
     meal_kcal: float,
     meal_protein_g: float,
+    meal_carb_g: float,
     goal_key: str,
     kcal_cap: float,
 ) -> list[tuple[float, tuple[tuple[str, int], ...]]]:
-    """枚举搭配并返回得分最低（最贴合目标）的若干组合。
-
-    组合以 ``(池名, 下标)`` 表示，避免在热循环里构造对象。
-    """
-    protein_pool, veggie_pool = _pool_metrics()
+    """枚举搭配；组合以 ``(池名, 下标)`` 表示。"""
+    protein_pool, veggie_pool, staple_pool = _pool_metrics()
     fat_threshold, fat_weight = _fat_penalty_threshold(goal_key)
-    protein_weight = 0.6 if meal_protein_g > 0 else 0.0
+    protein_weight = 0.55 if meal_protein_g > 0 else 0.0
+    carb_weight = 0.55 if meal_carb_g > 0 else 0.0
 
-    # 以 (-score, seq, combo) 入堆，堆顶恒为当前最差候选，便于淘汰
     heap: list[tuple[float, int, tuple[tuple[str, int], ...]]] = []
     seq = 0
 
-    def consider(kcal: float, protein: float, fat: float, combo: tuple[tuple[str, int], ...]) -> None:
+    def consider(
+        kcal: float,
+        protein: float,
+        fat: float,
+        carb: float,
+        combo: tuple[tuple[str, int], ...],
+        *,
+        has_staple: bool,
+    ) -> None:
         nonlocal seq
         penalty = abs(kcal - meal_kcal) / meal_kcal
         if kcal > meal_kcal:
             penalty *= 1.3
         if protein_weight and protein < meal_protein_g:
             penalty += protein_weight * (meal_protein_g - protein) / meal_protein_g
+        if carb_weight and carb < meal_carb_g:
+            penalty += carb_weight * (meal_carb_g - carb) / meal_carb_g
+        # 碳水明显超标时（减脂）略微惩罚
+        if goal_key == "fat_loss" and meal_carb_g > 0 and carb > meal_carb_g * 1.25:
+            penalty += 0.25 * (carb - meal_carb_g) / meal_carb_g
         fat_share = fat * KCAL_PER_G_FAT / kcal if kcal else 0.0
         if fat_share > fat_threshold:
             penalty += fat_weight * (fat_share - fat_threshold)
+        if not has_staple:
+            penalty += 0.35  # 缺少主食的方案降权
 
         seq += 1
         item = (-penalty, seq, combo)
@@ -293,36 +384,87 @@ def _enumerate_combos(
         elif penalty < -heap[0][0]:
             heappushpop(heap, item)
 
-    for pi, (pk, pp, pf) in enumerate(protein_pool):
+    # 主路径：荤 + 素 + 主食
+    for pi, (pk, pp, pf, pc) in enumerate(protein_pool):
         if pk > kcal_cap:
             break
-        for vi, (v1k, v1p, v1f) in enumerate(veggie_pool):
+        for vi, (vk, vp, vf, vc) in enumerate(veggie_pool):
+            k2 = pk + vk
+            if k2 > kcal_cap:
+                break
+            for si, (sk, sp, sf, sc) in enumerate(staple_pool):
+                k3 = k2 + sk
+                if k3 > kcal_cap:
+                    break
+                consider(
+                    k3,
+                    pp + vp + sp,
+                    pf + vf + sf,
+                    pc + vc + sc,
+                    (("p", pi), ("v", vi), ("s", si)),
+                    has_staple=True,
+                )
+
+    # 荤 + 主食（素菜装不下时）
+    for pi, (pk, pp, pf, pc) in enumerate(protein_pool):
+        if pk > kcal_cap:
+            break
+        for si, (sk, sp, sf, sc) in enumerate(staple_pool):
+            k2 = pk + sk
+            if k2 > kcal_cap:
+                break
+            consider(
+                k2,
+                pp + sp,
+                pf + sf,
+                pc + sc,
+                (("p", pi), ("s", si)),
+                has_staple=True,
+            )
+
+    # 荤 + 素 + 素（无主食，仅作兜底）
+    for pi, (pk, pp, pf, pc) in enumerate(protein_pool):
+        if pk > kcal_cap:
+            break
+        for vi, (v1k, v1p, v1f, v1c) in enumerate(veggie_pool):
             k2 = pk + v1k
             if k2 > kcal_cap:
                 break
-            consider(k2, pp + v1p, pf + v1f, (("p", pi), ("v", vi)))
-            # 荤 + 素 + 素
             for vj in range(vi + 1, len(veggie_pool)):
-                v2k, v2p, v2f = veggie_pool[vj]
+                v2k, v2p, v2f, v2c = veggie_pool[vj]
                 k3 = k2 + v2k
                 if k3 > kcal_cap:
                     break
-                consider(k3, pp + v1p + v2p, pf + v1f + v2f, (("p", pi), ("v", vi), ("v", vj)))
+                consider(
+                    k3,
+                    pp + v1p + v2p,
+                    pf + v1f + v2f,
+                    pc + v1c + v2c,
+                    (("p", pi), ("v", vi), ("v", vj)),
+                    has_staple=False,
+                )
 
-    # 荤 + 荤 + 素（蛋白需求较高时更容易命中）
-    for pi, (p1k, p1p, p1f) in enumerate(protein_pool):
+    # 荤 + 荤 + 主食（高蛋白需求）
+    for pi, (p1k, p1p, p1f, p1c) in enumerate(protein_pool):
         if p1k > kcal_cap:
             break
         for pj in range(pi + 1, len(protein_pool)):
-            p2k, p2p, p2f = protein_pool[pj]
+            p2k, p2p, p2f, p2c = protein_pool[pj]
             k2 = p1k + p2k
             if k2 > kcal_cap:
                 break
-            for vi, (vk, vp, vf) in enumerate(veggie_pool):
-                k3 = k2 + vk
+            for si, (sk, sp, sf, sc) in enumerate(staple_pool):
+                k3 = k2 + sk
                 if k3 > kcal_cap:
                     break
-                consider(k3, p1p + p2p + vp, p1f + p2f + vf, (("p", pi), ("p", pj), ("v", vi)))
+                consider(
+                    k3,
+                    p1p + p2p + sp,
+                    p1f + p2f + sf,
+                    p1c + p2c + sc,
+                    (("p", pi), ("p", pj), ("s", si)),
+                    has_staple=True,
+                )
 
     return sorted(((-neg, combo) for neg, _, combo in heap), key=lambda item: item[0])
 
@@ -331,29 +473,37 @@ def build_plans(
     meal_kcal: float,
     meal_protein_g: float,
     goal_key: str,
+    meal_carb_g: float = 0.0,
     limit: int = 3,
 ) -> list[MealPlan]:
-    """挑选 ``limit`` 套互不重复用菜的搭配方案。"""
+    """挑选 ``limit`` 套互不重复用菜的搭配方案（默认含主食）。"""
     if meal_kcal <= 0:
         return []
 
-    scored = _enumerate_combos(meal_kcal, meal_protein_g, goal_key, meal_kcal * 1.35)
+    scored = _enumerate_combos(
+        meal_kcal, meal_protein_g, meal_carb_g, goal_key, meal_kcal * 1.35
+    )
     if len(scored) < limit:
-        # 目标热量很低时放宽上限，至少给出可选项
-        scored = _enumerate_combos(meal_kcal, meal_protein_g, goal_key, float("inf"))
+        scored = _enumerate_combos(
+            meal_kcal, meal_protein_g, meal_carb_g, goal_key, float("inf")
+        )
 
-    proteins, veggies = _candidate_pools()
-    pools = {"p": proteins, "v": veggies}
+    proteins, veggies, staples = _candidate_pools()
+    pools = {"p": proteins, "v": veggies, "s": staples}
 
     plans: list[MealPlan] = []
     used: set[str] = set()
     for score, combo in scored:
         dishes = [pools[pool][idx] for pool, idx in combo]
         names = {d.name for d in dishes}
-        if names & used:
+        # 内置主食可在多套方案中复用；其余菜不重复
+        unique_names = {n for n in names if n not in {"米饭", "馒头"}}
+        if unique_names & used:
             continue
-        plans.append(MealPlan(dishes=dishes, score=round(score, 4)).finalize(meal_kcal))
-        used |= names
+        plans.append(
+            MealPlan(dishes=dishes, score=round(score, 4)).finalize(meal_kcal)
+        )
+        used |= unique_names
         if len(plans) >= limit:
             break
 

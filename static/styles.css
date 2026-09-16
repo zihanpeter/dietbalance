@@ -927,6 +927,7 @@ h1 {
 
 .role-protein { background: linear-gradient(135deg, #f97316, #ef4444); }
 .role-veggie { background: linear-gradient(135deg, #16a34a, #22c55e); }
+.role-carb { background: linear-gradient(135deg, #d97706, #f59e0b); }
 
 .plan-dish-name {
     font-size: 14px;

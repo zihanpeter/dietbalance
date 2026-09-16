@@ -278,7 +278,7 @@ def plan() -> str:
     target = None
     plans: list = []
     meal = MEAL_BY_KEY.get(form["meal"], MEAL_BY_KEY["lunch"])
-    meal_kcal = meal_protein = 0.0
+    meal_kcal = meal_protein = meal_carb = 0.0
 
     if submitted:
         if form["gender"] not in {"male", "female"}:
@@ -307,7 +307,13 @@ def plan() -> str:
             )
             meal_kcal = target.target_kcal * meal.ratio
             meal_protein = target.protein_g * meal.ratio
-            plans = build_plans(meal_kcal, meal_protein, form["goal"])
+            meal_carb = target.carb_g * meal.ratio
+            plans = build_plans(
+                meal_kcal,
+                meal_protein,
+                form["goal"],
+                meal_carb_g=meal_carb,
+            )
 
     return render_template(
         "plan.html",
@@ -319,6 +325,7 @@ def plan() -> str:
         meal=meal,
         meal_kcal=meal_kcal,
         meal_protein=meal_protein,
+        meal_carb=meal_carb,
         activity_levels=ACTIVITY_LEVELS,
         goals=GOALS,
         meals=MEALS,

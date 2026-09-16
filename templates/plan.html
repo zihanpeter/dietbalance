@@ -163,7 +163,8 @@
             <div class="results-meta">
                 <strong>{{ meal.label }}</strong>预算约
                 <strong>{{ meal_kcal|round|int }}</strong> kcal，蛋白质约
-                <strong>{{ meal_protein|round|int }}</strong> g —— 以下 {{ plans|length }} 套搭配供选择
+                <strong>{{ meal_protein|round|int }}</strong> g，碳水约
+                <strong>{{ meal_carb|round|int }}</strong> g —— 以下 {{ plans|length }} 套搭配供选择
             </div>
 
             <section class="plan-grid">
@@ -191,7 +192,9 @@
                         <ul class="plan-dishes">
                             {% for d in p.dishes %}
                                 <li>
-                                    <span class="role-tag role-{{ d.role }}">{{ '荤' if d.role == 'protein' else '素' }}</span>
+                                    <span class="role-tag role-{{ d.role }}">
+                                        {% if d.role == 'protein' %}荤{% elif d.role == 'carb' %}主{% else %}素{% endif %}
+                                    </span>
                                     <span class="plan-dish-name">{{ d.name }}</span>
                                     <span class="plan-dish-kcal">{{ d.kcal }} kcal</span>
                                     {% if d.portion_g %}
@@ -232,7 +235,7 @@
             </section>
 
             <p class="muted plan-tip">
-                方案仅统计菜品本身，主食（米饭 / 面食）请按剩余碳水缺口自行增减；
+                每套方案默认包含主食（米饭 / 馒头 / 面点或粥类），用于覆盖该餐碳水目标；
                 数据为估算值，特殊健康状况请遵医嘱。
             </p>
         {% elif submitted and not errors %}
