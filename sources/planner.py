@@ -1,0 +1,666 @@
+"""膳食方案：BMR / TDEE / 宏量目标计算 + 食堂菜品搭配推荐。
+
+计算口径：
+
+* BMR 采用 Mifflin-St Jeor 公式
+* TDEE = BMR × 活动系数
+* 目标热量与三大宏量素比例按减脂 / 保持 / 增肌三档调整
+* 午餐、晚餐按「荤 + 素 + 主食」从楼层热菜里搭配
+* 早餐只用早餐窗口的粥点、蛋、饼和豆浆，不配午饭热菜配米饭
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from functools import lru_cache
+from heapq import heappush, heappushpop
+
+from sources.dishes import Dish, load_dishes
+
+KCAL_PER_G_PROTEIN = 4
+KCAL_PER_G_CARB = 4
+KCAL_PER_G_FAT = 9
+
+
+@dataclass(frozen=True)
+class ActivityLevel:
+    key: str
+    label: str
+    factor: float
+
+
+ACTIVITY_LEVELS: tuple[ActivityLevel, ...] = (
+    ActivityLevel("sedentary", "久坐 / 几乎不运动（考研、上课为主）", 1.2),
+    ActivityLevel("light", "轻度活动（每周运动 1–3 次 / 校园常步行）", 1.375),
+    ActivityLevel("moderate", "中度活动（每周运动 3–5 次）", 1.55),
+    ActivityLevel("intense", "高强度运动（每天训练 / 体育生）", 1.725),
+)
+
+
+@dataclass(frozen=True)
+class Goal:
+    key: str
+    label: str
+    kcal_factor: float
+    protein_per_kg: tuple[float, float]
+    carb_share: tuple[float, float]
+    note: str
+
+
+GOALS: tuple[Goal, ...] = (
+    Goal("fat_loss", "减脂", 0.8, (1.8, 2.0), (0.35, 0.40), "热量缺口 20%，高蛋白控碳水"),
+    Goal("maintain", "保持", 1.0, (1.2, 1.5), (0.45, 0.50), "维持当前体重，均衡饮食"),
+    Goal("muscle_gain", "增肌", 1.1, (1.6, 2.2), (0.50, 0.55), "热量盈余 10%，充足蛋白与碳水"),
+)
+
+
+@dataclass(frozen=True)
+class Meal:
+    key: str
+    label: str
+    ratio: float
+
+
+MEALS: tuple[Meal, ...] = (
+    Meal("breakfast", "早餐（约占全天 25%）", 0.25),
+    Meal("lunch", "午餐（约占全天 40%）", 0.40),
+    Meal("dinner", "晚餐（约占全天 35%）", 0.35),
+)
+
+ACTIVITY_BY_KEY = {a.key: a for a in ACTIVITY_LEVELS}
+GOAL_BY_KEY = {g.key: g for g in GOALS}
+MEAL_BY_KEY = {m.key: m for m in MEALS}
+
+# 菜品角色分类
+_VEGGIE_CATEGORIES = {"蔬菜类", "蔬菜类-综合", "蔬菜-肉炒", "菌菇类"}
+_EXTRA_PROTEIN_CATEGORIES = {"蛋类", "豆制品"}
+_STAPLE_CATEGORIES = {"主食-粥品", "主食-米饭"}
+_COMPLETE_MEAL_KEYWORDS = (
+    "套餐",
+    "盖饭",
+    "炒饭",
+    "披萨",
+    "汉堡",
+    "堡",
+    "焗饭",
+    "拌面",
+    "刀削面",
+    "拉面",
+    "米线",
+    "意大利",
+    "通心粉",
+    "方便面",
+    "卤面",
+    "炒饼",
+    "粉丝",
+)
+
+
+def calculate_bmr(gender: str, weight_kg: float, height_cm: float, age: int) -> float:
+    """Mifflin-St Jeor 基础代谢率（kcal/天）。"""
+    base = 10 * weight_kg + 6.25 * height_cm - 5 * age
+    return base + 5 if gender == "male" else base - 161
+
+
+@dataclass(frozen=True)
+class NutritionTarget:
+    """一天的热量与宏量素目标。"""
+
+    bmr: float
+    activity: ActivityLevel
+    tdee: float
+    goal: Goal
+    target_kcal: float
+    protein_g: float
+    protein_range: tuple[float, float]
+    carb_g: float
+    fat_g: float
+    bmr_is_manual: bool
+
+    @property
+    def protein_kcal(self) -> float:
+        return self.protein_g * KCAL_PER_G_PROTEIN
+
+    @property
+    def carb_kcal(self) -> float:
+        return self.carb_g * KCAL_PER_G_CARB
+
+    @property
+    def fat_kcal(self) -> float:
+        return self.fat_g * KCAL_PER_G_FAT
+
+
+def build_target(
+    *,
+    gender: str,
+    weight_kg: float,
+    height_cm: float,
+    age: int,
+    activity_key: str,
+    goal_key: str,
+    manual_bmr: float | None = None,
+) -> NutritionTarget:
+    """由用户身体数据推导全天热量与宏量素目标。"""
+    activity = ACTIVITY_BY_KEY[activity_key]
+    goal = GOAL_BY_KEY[goal_key]
+
+    bmr = manual_bmr if manual_bmr else calculate_bmr(gender, weight_kg, height_cm, age)
+    tdee = bmr * activity.factor
+    target_kcal = tdee * goal.kcal_factor
+
+    protein_low = weight_kg * goal.protein_per_kg[0]
+    protein_high = weight_kg * goal.protein_per_kg[1]
+    protein_g = (protein_low + protein_high) / 2
+
+    carb_share = sum(goal.carb_share) / 2
+    carb_g = target_kcal * carb_share / KCAL_PER_G_CARB
+
+    remaining_kcal = target_kcal - protein_g * KCAL_PER_G_PROTEIN - carb_g * KCAL_PER_G_CARB
+    fat_g = max(remaining_kcal, target_kcal * 0.20) / KCAL_PER_G_FAT
+
+    return NutritionTarget(
+        bmr=bmr,
+        activity=activity,
+        tdee=tdee,
+        goal=goal,
+        target_kcal=target_kcal,
+        protein_g=protein_g,
+        protein_range=(protein_low, protein_high),
+        carb_g=carb_g,
+        fat_g=fat_g,
+        bmr_is_manual=manual_bmr is not None,
+    )
+
+
+@dataclass(frozen=True)
+class PlanDish:
+    """搭配方案中的一道菜（按一份出品计）。"""
+
+    name: str
+    kcal: int
+    portion_g: int | None
+    category: str
+    role: str  # "protein" | "veggie" | "carb"
+    protein_g: float
+    carb_g: float
+    fat_g: float
+    features: str
+
+
+def _to_plan_dish(dish: Dish, role: str) -> PlanDish:
+    total = float(dish.total_kcal or 0)
+    return PlanDish(
+        name=dish.name,
+        kcal=int(dish.total_kcal or 0),
+        portion_g=dish.portion_g,
+        category=dish.category or "",
+        role=role,
+        protein_g=round(total * dish.protein_pct / 100 / KCAL_PER_G_PROTEIN, 1),
+        carb_g=round(total * dish.carb_pct / 100 / KCAL_PER_G_CARB, 1),
+        fat_g=round(total * dish.fat_pct / 100 / KCAL_PER_G_FAT, 1),
+        features=dish.features,
+    )
+
+
+def _is_complete_meal(name: str, category: str) -> bool:
+    if any(k in name for k in _COMPLETE_MEAL_KEYWORDS):
+        return True
+    return category.startswith("主食-") and category not in {
+        "主食-粥品",
+        "主食-米饭",
+        "主食-面食",
+    }
+
+
+_DRINK_KEYWORDS = ("豆浆", "牛奶", "酸奶", "豆腐脑")
+
+
+def _is_breakfast_dish(dish: Dish) -> bool:
+    return "主食早餐" in dish.floors
+
+
+def _is_day_dish(dish: Dish) -> bool:
+    """午晚餐热菜。只出现在早餐窗口的粥点、面包不进入午晚餐。"""
+    floors = set(dish.floors)
+    if not floors:
+        return True
+    return bool(floors - {"主食早餐"})
+
+
+def _breakfast_role(dish: Dish) -> str | None:
+    """早餐角色。甜品不参与搭配。"""
+    category = dish.category or ""
+    name = dish.name
+    if category == "甜品":
+        return None
+    if any(keyword in name for keyword in _DRINK_KEYWORDS):
+        return "drink"
+    if category == "蛋类" or category.startswith("肉类"):
+        return "protein"
+    if category in _VEGGIE_CATEGORIES:
+        return "veggie"
+    if category == "豆制品":
+        return "protein"
+    return "carb"
+
+
+def _is_staple_side(dish: Dish) -> bool:
+    """可与荤素搭配的「配菜主食」（非整餐套餐）。"""
+    category = dish.category or ""
+    name = dish.name
+    if _is_complete_meal(name, category):
+        return False
+    if category in _STAPLE_CATEGORIES:
+        return True
+    if category == "主食-面食" and dish.carb_pct >= 45:
+        return True
+    if category.startswith("主食") and dish.carb_pct >= 50 and dish.protein_pct <= 22:
+        return True
+    return False
+
+
+# 食堂常备基础主食（菜单未必单列）
+_BUILTIN_STAPLES: tuple[PlanDish, ...] = (
+    PlanDish(
+        name="米饭",
+        kcal=232,
+        portion_g=200,
+        category="主食-米饭",
+        role="carb",
+        protein_g=4.6,
+        carb_g=49.0,
+        fat_g=0.6,
+        features="白米饭一份约 200 g，碳水主来源，配菜必备主食",
+    ),
+    PlanDish(
+        name="馒头",
+        kcal=221,
+        portion_g=100,
+        category="主食-面食",
+        role="carb",
+        protein_g=7.0,
+        carb_g=47.0,
+        fat_g=1.1,
+        features="标准馒头约 100 g，方便携带的面食碳水",
+    ),
+)
+
+
+def _sort_pool(dishes: list[PlanDish]) -> list[PlanDish]:
+    dishes.sort(key=lambda d: d.kcal)
+    return dishes
+
+
+@lru_cache(maxsize=2)
+def _candidate_pools(meal_key: str) -> dict[str, tuple[PlanDish, ...]]:
+    """按餐次返回搭配池。键为 p / v / s / d，池内按一份热量升序。"""
+    proteins: list[PlanDish] = []
+    veggies: list[PlanDish] = []
+    staples: list[PlanDish] = []
+    drinks: list[PlanDish] = []
+
+    if meal_key == "breakfast":
+        for dish in load_dishes():
+            if not dish.total_kcal or not _is_breakfast_dish(dish):
+                continue
+            role = _breakfast_role(dish)
+            if role == "protein":
+                proteins.append(_to_plan_dish(dish, "protein"))
+            elif role == "veggie":
+                veggies.append(_to_plan_dish(dish, "veggie"))
+            elif role == "drink":
+                drinks.append(_to_plan_dish(dish, "drink"))
+            elif role == "carb":
+                staples.append(_to_plan_dish(dish, "carb"))
+    else:
+        staples.extend(_BUILTIN_STAPLES)
+        for dish in load_dishes():
+            if not dish.total_kcal or not _is_day_dish(dish):
+                continue
+            category = dish.category or ""
+            if category == "甜品":
+                continue
+            if _is_staple_side(dish):
+                staples.append(_to_plan_dish(dish, "carb"))
+            elif category in _VEGGIE_CATEGORIES:
+                veggies.append(_to_plan_dish(dish, "veggie"))
+            elif category.startswith("肉类") or category in _EXTRA_PROTEIN_CATEGORIES:
+                proteins.append(_to_plan_dish(dish, "protein"))
+
+    return {
+        "p": tuple(_sort_pool(proteins)),
+        "v": tuple(_sort_pool(veggies)),
+        "s": tuple(_sort_pool(staples)),
+        "d": tuple(_sort_pool(drinks)),
+    }
+
+
+@dataclass
+class MealPlan:
+    """一套搭配方案（通常含荤 / 素 / 主食）。"""
+
+    dishes: list[PlanDish]
+    score: float = 0.0
+    kcal: int = 0
+    protein_g: float = 0.0
+    carb_g: float = 0.0
+    fat_g: float = 0.0
+    kcal_diff: int = 0
+    macro_shares: dict[str, float] = field(default_factory=dict)
+
+    def finalize(self, meal_kcal: float, meal_key: str = "lunch") -> "MealPlan":
+        self.kcal = sum(d.kcal for d in self.dishes)
+        self.protein_g = round(sum(d.protein_g for d in self.dishes), 1)
+        self.carb_g = round(sum(d.carb_g for d in self.dishes), 1)
+        self.fat_g = round(sum(d.fat_g for d in self.dishes), 1)
+        self.kcal_diff = int(round(self.kcal - meal_kcal))
+
+        total = (
+            self.protein_g * KCAL_PER_G_PROTEIN
+            + self.carb_g * KCAL_PER_G_CARB
+            + self.fat_g * KCAL_PER_G_FAT
+        ) or 1
+        self.macro_shares = {
+            "protein": round(self.protein_g * KCAL_PER_G_PROTEIN / total * 100, 1),
+            "carb": round(self.carb_g * KCAL_PER_G_CARB / total * 100, 1),
+            "fat": round(self.fat_g * KCAL_PER_G_FAT / total * 100, 1),
+        }
+        if meal_key == "breakfast":
+            order = {"carb": 0, "protein": 1, "drink": 2, "veggie": 3}
+        else:
+            order = {"protein": 0, "veggie": 1, "carb": 2, "drink": 3}
+        self.dishes.sort(key=lambda d: order.get(d.role, 9))
+        return self
+
+
+# (热量, 蛋白 g, 脂肪 g, 碳水 g)
+_Metrics = tuple[float, float, float, float]
+_TOP_K = 500
+
+
+@lru_cache(maxsize=2)
+def _pool_metrics(meal_key: str) -> tuple[list[_Metrics], list[_Metrics], list[_Metrics]]:
+    pools = _candidate_pools("lunch" if meal_key != "breakfast" else "breakfast")
+    return (
+        [(float(d.kcal), d.protein_g, d.fat_g, d.carb_g) for d in pools["p"]],
+        [(float(d.kcal), d.protein_g, d.fat_g, d.carb_g) for d in pools["v"]],
+        [(float(d.kcal), d.protein_g, d.fat_g, d.carb_g) for d in pools["s"]],
+    )
+
+
+def _fat_penalty_threshold(goal_key: str) -> tuple[float, float]:
+    if goal_key == "fat_loss":
+        return 0.30, 0.8
+    if goal_key == "muscle_gain":
+        return 0.40, 0.3
+    return 0.35, 0.5
+
+
+def _enumerate_combos(
+    meal_kcal: float,
+    meal_protein_g: float,
+    meal_carb_g: float,
+    goal_key: str,
+    meal_key: str,
+    kcal_cap: float,
+) -> list[tuple[float, tuple[tuple[str, int], ...]]]:
+    """枚举午晚餐搭配；组合以 ``(池名, 下标)`` 表示。"""
+    protein_pool, veggie_pool, staple_pool = _pool_metrics(meal_key)
+    fat_threshold, fat_weight = _fat_penalty_threshold(goal_key)
+    if meal_key == "dinner":
+        fat_threshold = max(0.22, fat_threshold - 0.06)
+        fat_weight += 0.45
+    protein_weight = 0.55 if meal_protein_g > 0 else 0.0
+    carb_weight = 0.55 if meal_carb_g > 0 else 0.0
+
+    heap: list[tuple[float, int, tuple[tuple[str, int], ...]]] = []
+    seq = 0
+
+    def consider(
+        kcal: float,
+        protein: float,
+        fat: float,
+        carb: float,
+        combo: tuple[tuple[str, int], ...],
+        *,
+        has_staple: bool,
+    ) -> None:
+        nonlocal seq
+        penalty = abs(kcal - meal_kcal) / meal_kcal
+        if kcal > meal_kcal:
+            penalty *= 1.3
+        if protein_weight and protein < meal_protein_g:
+            penalty += protein_weight * (meal_protein_g - protein) / meal_protein_g
+        if carb_weight and carb < meal_carb_g:
+            penalty += carb_weight * (meal_carb_g - carb) / meal_carb_g
+        # 碳水明显超标时（减脂）略微惩罚
+        if goal_key == "fat_loss" and meal_carb_g > 0 and carb > meal_carb_g * 1.25:
+            penalty += 0.25 * (carb - meal_carb_g) / meal_carb_g
+        fat_share = fat * KCAL_PER_G_FAT / kcal if kcal else 0.0
+        if fat_share > fat_threshold:
+            penalty += fat_weight * (fat_share - fat_threshold)
+        if not has_staple:
+            penalty += 0.35  # 缺少主食的方案降权
+
+        seq += 1
+        item = (-penalty, seq, combo)
+        if len(heap) < _TOP_K:
+            heappush(heap, item)
+        elif penalty < -heap[0][0]:
+            heappushpop(heap, item)
+
+    # 主路径：荤 + 素 + 主食
+    for pi, (pk, pp, pf, pc) in enumerate(protein_pool):
+        if pk > kcal_cap:
+            break
+        for vi, (vk, vp, vf, vc) in enumerate(veggie_pool):
+            k2 = pk + vk
+            if k2 > kcal_cap:
+                break
+            for si, (sk, sp, sf, sc) in enumerate(staple_pool):
+                k3 = k2 + sk
+                if k3 > kcal_cap:
+                    break
+                consider(
+                    k3,
+                    pp + vp + sp,
+                    pf + vf + sf,
+                    pc + vc + sc,
+                    (("p", pi), ("v", vi), ("s", si)),
+                    has_staple=True,
+                )
+
+    # 荤 + 主食（素菜装不下时）
+    for pi, (pk, pp, pf, pc) in enumerate(protein_pool):
+        if pk > kcal_cap:
+            break
+        for si, (sk, sp, sf, sc) in enumerate(staple_pool):
+            k2 = pk + sk
+            if k2 > kcal_cap:
+                break
+            consider(
+                k2,
+                pp + sp,
+                pf + sf,
+                pc + sc,
+                (("p", pi), ("s", si)),
+                has_staple=True,
+            )
+
+    # 荤 + 素 + 素（无主食，仅作兜底）
+    for pi, (pk, pp, pf, pc) in enumerate(protein_pool):
+        if pk > kcal_cap:
+            break
+        for vi, (v1k, v1p, v1f, v1c) in enumerate(veggie_pool):
+            k2 = pk + v1k
+            if k2 > kcal_cap:
+                break
+            for vj in range(vi + 1, len(veggie_pool)):
+                v2k, v2p, v2f, v2c = veggie_pool[vj]
+                k3 = k2 + v2k
+                if k3 > kcal_cap:
+                    break
+                consider(
+                    k3,
+                    pp + v1p + v2p,
+                    pf + v1f + v2f,
+                    pc + v1c + v2c,
+                    (("p", pi), ("v", vi), ("v", vj)),
+                    has_staple=False,
+                )
+
+    # 荤 + 荤 + 主食（高蛋白需求）
+    for pi, (p1k, p1p, p1f, p1c) in enumerate(protein_pool):
+        if p1k > kcal_cap:
+            break
+        for pj in range(pi + 1, len(protein_pool)):
+            p2k, p2p, p2f, p2c = protein_pool[pj]
+            k2 = p1k + p2k
+            if k2 > kcal_cap:
+                break
+            for si, (sk, sp, sf, sc) in enumerate(staple_pool):
+                k3 = k2 + sk
+                if k3 > kcal_cap:
+                    break
+                consider(
+                    k3,
+                    p1p + p2p + sp,
+                    p1f + p2f + sf,
+                    p1c + p2c + sc,
+                    (("p", pi), ("p", pj), ("s", si)),
+                    has_staple=True,
+                )
+
+    return sorted(((-neg, combo) for neg, _, combo in heap), key=lambda item: item[0])
+
+
+def _enumerate_breakfast(
+    meal_kcal: float,
+    meal_protein_g: float,
+    meal_carb_g: float,
+    goal_key: str,
+    kcal_cap: float,
+) -> list[tuple[float, tuple[tuple[str, int], ...]]]:
+    """早餐从粥点、蛋、饮品和小菜里搭配，不使用午饭热菜和米饭。"""
+    pools = _candidate_pools("breakfast")
+    proteins = pools["p"]
+    veggies = pools["v"]
+    staples = pools["s"]
+    drinks = pools["d"]
+    fat_threshold, fat_weight = _fat_penalty_threshold(goal_key)
+    protein_weight = 0.55 if meal_protein_g > 0 else 0.0
+    carb_weight = 0.55 if meal_carb_g > 0 else 0.0
+
+    heap: list[tuple[float, int, tuple[tuple[str, int], ...]]] = []
+    seq = 0
+
+    def consider(combo: tuple[tuple[str, int], ...]) -> None:
+        nonlocal seq
+        chosen = [pools[pool][idx] for pool, idx in combo]
+        kcal = float(sum(d.kcal for d in chosen))
+        protein = sum(d.protein_g for d in chosen)
+        fat = sum(d.fat_g for d in chosen)
+        carb = sum(d.carb_g for d in chosen)
+        if kcal > kcal_cap:
+            return
+        penalty = abs(kcal - meal_kcal) / meal_kcal
+        if kcal > meal_kcal:
+            penalty *= 1.3
+        if protein_weight and protein < meal_protein_g:
+            penalty += protein_weight * (meal_protein_g - protein) / meal_protein_g
+        if carb_weight and carb < meal_carb_g:
+            penalty += carb_weight * (meal_carb_g - carb) / meal_carb_g
+        if goal_key == "fat_loss" and meal_carb_g > 0 and carb > meal_carb_g * 1.25:
+            penalty += 0.25 * (carb - meal_carb_g) / meal_carb_g
+        fat_share = fat * KCAL_PER_G_FAT / kcal if kcal else 0.0
+        if fat_share > fat_threshold:
+            penalty += fat_weight * (fat_share - fat_threshold)
+        roles = {d.role for d in chosen}
+        if "carb" not in roles:
+            penalty += 0.45
+        if "protein" not in roles:
+            penalty += 0.4
+        # 粥点或饼 + 蛋 + 豆浆，更接近日常早餐
+        has_egg = any(d.category == "蛋类" for d in chosen)
+        has_drink = "drink" in roles
+        if has_egg and has_drink:
+            penalty -= 0.12
+        elif has_egg or has_drink:
+            penalty -= 0.04
+
+        seq += 1
+        item = (-penalty, seq, combo)
+        if len(heap) < _TOP_K:
+            heappush(heap, item)
+        elif penalty < -heap[0][0]:
+            heappushpop(heap, item)
+
+    for si in range(len(staples)):
+        for pi in range(len(proteins)):
+            consider((("s", si), ("p", pi)))
+            for vi in range(len(veggies)):
+                consider((("s", si), ("p", pi), ("v", vi)))
+            for di in range(len(drinks)):
+                consider((("s", si), ("p", pi), ("d", di)))
+        for di in range(len(drinks)):
+            consider((("s", si), ("d", di)))
+            for vi in range(len(veggies)):
+                consider((("s", si), ("d", di), ("v", vi)))
+
+    return sorted(((-neg, combo) for neg, _, combo in heap), key=lambda item: item[0])
+
+
+def build_plans(
+    meal_kcal: float,
+    meal_protein_g: float,
+    goal_key: str,
+    meal_carb_g: float = 0.0,
+    meal_key: str = "lunch",
+    limit: int = 3,
+) -> list[MealPlan]:
+    """挑选 ``limit`` 套互不重复用菜的搭配方案。"""
+    if meal_kcal <= 0:
+        return []
+    if meal_key not in MEAL_BY_KEY:
+        meal_key = "lunch"
+
+    if meal_key == "breakfast":
+        scored = _enumerate_breakfast(
+            meal_kcal, meal_protein_g, meal_carb_g, goal_key, meal_kcal * 1.35
+        )
+        if len(scored) < limit:
+            scored = _enumerate_breakfast(
+                meal_kcal, meal_protein_g, meal_carb_g, goal_key, float("inf")
+            )
+    else:
+        scored = _enumerate_combos(
+            meal_kcal, meal_protein_g, meal_carb_g, goal_key, meal_key, meal_kcal * 1.35
+        )
+        if len(scored) < limit:
+            scored = _enumerate_combos(
+                meal_kcal,
+                meal_protein_g,
+                meal_carb_g,
+                goal_key,
+                meal_key,
+                float("inf"),
+            )
+
+    pools = _candidate_pools(meal_key)
+
+    plans: list[MealPlan] = []
+    used: set[str] = set()
+    for score, combo in scored:
+        dishes = [pools[pool][idx] for pool, idx in combo]
+        names = {d.name for d in dishes}
+        # 白米饭、馒头可在多套午晚餐方案中复用；其余菜不重复
+        unique_names = {n for n in names if n not in {"米饭", "馒头"}}
+        if unique_names & used:
+            continue
+        plans.append(
+            MealPlan(dishes=dishes, score=round(score, 4)).finalize(meal_kcal, meal_key)
+        )
+        used |= unique_names
+        if len(plans) >= limit:
+            break
+
+    return plans

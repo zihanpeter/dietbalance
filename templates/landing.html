@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }}</title>
+    <meta name="description" content="{{ app_name }} 让你一键查询食品营养与食堂菜品搭配，吃得明白又轻盈。" />
+    <link rel="stylesheet" href="{{ versioned_static('styles.css') }}" />
+</head>
+<body class="landing-body">
+    <main class="landing">
+        {% include "_account_bar.html" %}
+
+        <div class="landing-card">
+
+            <h1 class="landing-title">
+                <span class="brand">DietBalance</span>
+            </h1>
+            <p class="landing-desc-en">
+                This is a website that helps you check the calories of food,
+                manage your daily nutrient intake and look up cafeteria menus.
+                You can search for the calorie and nutrient composition of each
+                ingredient, browse the cafeteria menu to decide on your lunch,
+                or provide relevant information to get a meal schedule for
+                three meals a day for different purposes.
+            </p>
+
+            <nav class="landing-entries" aria-label="功能入口">
+                <a class="landing-entry" href="{{ url_for('dishes') }}">
+                    <span class="feat-icon" aria-hidden="true">🍱</span>
+                    <div>
+                        <strong>DISHES · 食堂菜品</strong>
+                        <span>一层 / 二层 / 三层 / 早餐菜单，共 {{ dish_count }} 道菜。</span>
+                    </div>
+                </a>
+                <a class="landing-entry" href="{{ url_for('plan') }}">
+                    <span class="feat-icon" aria-hidden="true">⚖️</span>
+                    <div>
+                        <strong>PLAN · 配餐方案</strong>
+                        <span>按身体数据与活动量，搭配一日三餐。</span>
+                    </div>
+                </a>
+                <a class="landing-entry" href="{{ url_for('search') }}">
+                    <span class="feat-icon" aria-hidden="true">🔎</span>
+                    <div>
+                        <strong>SEARCH · 营养查询</strong>
+                        <span>中英文搜索，每 100 g / ml 关键营养数据。</span>
+                    </div>
+                </a>
+            </nav>
+        </div>
+
+        <footer class="footer landing-footer">
+            <span class="copyright">
+                © {{ year }} {{ app_name }}<br>
+                Data Provided by: Haoxuan Deng<br>
+                Website Developed by: Zihan Lu
+            </span>
+            <span class="visit-count">浏览量 {{ "{:,}".format(visit_count) }}</span>
+            <span class="dim">数据来源：USDA FoodData Central · Open Food Facts · 食堂菜品表</span>
+        </footer>
+    </main>
+</body>
+</html>
